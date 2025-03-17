@@ -2,7 +2,7 @@
 
 ## Wymagana wiedza
 
-Podstawy języka Python (wczytywanie, wypisywanie)
+Podstawy języka Python (wczytywanie, wypisywanie, zmienne)
 
 ## Treści z podstawy programowej
 
@@ -108,7 +108,7 @@ następujące informacje:
 * Połowa (rozwiązanie: `x/2`)
 * Kwadrat liczby (rozwiązanie: `x*x`)
 
-Przykładowo, dla `3`, program powinien wypisać
+Przykładowo, dla `5`, program powinien wypisać
 
 ```
 Wczytana: 5
@@ -163,4 +163,16 @@ print(a + b)
 print(a - b)
 ```
 
+### Odgadnij dane
 
+Oto następujący program w Pythonie:
+
+```python
+a = int(input())
+b = int(input())
+print(2 * a + 3 * b)
+```
+
+* Uruchom program i wpisz liczby `3 5`. Jaki wynik otrzymasz?
+* Jakie dwie liczby należy wpisać, żeby otrzymać wynik `40`?
+* Czy istnieją różne dane wejściowe, dla ktorych program wypisze liczbę `40`?
