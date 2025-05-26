@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fontspec}          % nowoczesna obsługa czcionek
+\usepackage[polish]{babel}
+\usepackage{csquotes}          % inteligentne cudzysłowy
+\usepackage{polski}
+\usepackage{textcomp}
+\usepackage{enumerate}
+\usepackage{csquotes}
+
+\usepackage{anysize}
+\marginsize{2cm}{3cm}{3cm}{3cm}
+
+\usepackage{lipsum}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\fancyhead[LE,RO]{\thepage}
+
+
+
+
+%kropki po tytu�ach rozdzia��w (dla klasy book)
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \huge\bfseries \@chapapp\space \thechapter.
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+%kropki po tytu�ach podrozdzia��w i ni�szych jednostek podzia�u
+\makeatletter
+\renewcommand*\@seccntformat[1]%
+{\csname the#1\endcsname.\enspace}
+\makeatother
+
+%kropki w spisie tre�ci
+\makeatletter
+\def\numberline#1{\hb@xt@\@tempdima{#1.\hfil}}
+\makeatother
+
+%Definicje �rodowisk matematycznych
+
+\newtheoremstyle{bartektw}% name
+  {3pt}%      Space above
+  {3pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}%  Thm head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{bartekdf}% name
+  {3pt}%      Space above
+  {3pt}%      Space below
+  {}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}%  Thm head spec (can be left empty, meaning `normal')
+
+
+\theoremstyle{bartektw}
+\newtheorem{tw}{Twierdzenie}[chapter]
+\newtheorem{wn}[tw]{Wniosek}
+\newtheorem{ft}[tw]{Fakt}
+\newtheorem{lm}[tw]{Lemat}
+\theoremstyle{bartekdf}
+\newtheorem{df}[tw]{Definicja}
+\newtheorem{ex}[tw]{Przykład}
+\newtheorem{uw}[tw]{Uwaga}
+
+\newcommand{\defin}[1]{\emph{#1}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+
+\input{stronatytulowa.tex}
+
+%wstawia spis tre�ci
+\tableofcontents
+%usuwa nag��wki ze strony po spisie tre�ci
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+% do��czamy tre�� poszczeg�lnych rozdzia��w
+\include{wstep}
+\include{rozdzial1}
+
+\begin{thebibliography}{9}
+\bibitem{Thies} On plugging "unplugged" into CS classes, 2013
+\bibitem{Krieger} Are Females Disinclined to Tinker in Computer Science? 2015
+\bibitem{academie2013} L’enseignement de l’Informatique en France: Il est urgent de ne plus
+attendre, 2013
+\bibitem{Keller} A short introduction to classical cryptology as a way to motivate high school students for informatics, 2011
+\bibitem{Naps} Exploring the role of visualization and engagement in computer science education
+\end{thebibliography}
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+
+\end{document} 
