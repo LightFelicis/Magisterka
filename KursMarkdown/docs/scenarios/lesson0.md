@@ -129,7 +129,7 @@ Następnie niech wypisze zdanie:
 
 `[Imię] ma [wiek] lat, a ulubiona liczba pomnożona przez 2 to [wynik]`.
 
-## Praca domowa do rozwiązania na platformie Szkopuł
+## Zadania do rozwiązania na platformie Szkopuł
 
 ### Bond
 

@@ -176,3 +176,9 @@ print(2 * a + 3 * b)
 * Uruchom program i wpisz liczby `3 5`. Jaki wynik otrzymasz?
 * Jakie dwie liczby należy wpisać, żeby otrzymać wynik `40`?
 * Czy istnieją różne dane wejściowe, dla ktorych program wypisze liczbę `40`?
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+### Zakupy
+
+[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/HodOdonWADxq3z5dnEjsOrlv/site/?key=submit){ .md-button .md-button--primary }
