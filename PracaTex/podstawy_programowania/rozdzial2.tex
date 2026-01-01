@@ -1,0 +1,72 @@
+\chapter{Automatyczny system sprawdzający - Szkopuł}
+\markboth{Automatyczny system sprawdzający - Szkopuł}{Automatyczny system sprawdzający - Szkopuł}
+
+
+Platforma Szkopuł\footnote{\url{https://szkopul.edu.pl}} jest autorskim systemem automatycznego sprawdzania zadań programistycznych,
+stworzonym i rozwijanym przez zespół Uniwersytetu Warszawskiego. System jest wykorzystywany w edukacji informatycznej na różnych
+poziomach nauczania, od szkół podstawowych po studia wyższe. Jest również podstawowym systemem weryfikującym rozwiązania uczestników Olimpiady Informatycznej,
+najbardziej prestiżowego konkursu programistycznego dla uczniów szkół średnich w Polsce.
+
+Ze względu na istniejące zaplecze techniczne i doświadczenie zespołu Szkopuł stanowi doskonałą platformę do wdrożenia kursu programowania dla klas 7-8.
+System jest oparty na technologii webowej (Django, Python) i umożliwia łatwe tworzenie oraz zarządzanie zadaniami i użytkownikami.
+Ponadto, Szkopuł posiada zintegrowaną stronę "Szkopuł Kursy", która umożliwia publikację gotowych kursów edukacyjnych,
+co idealnie wpisuje się w cele niniejszej pracy magisterskiej.
+
+\subsection*{Działanie systemów automatycznego sprawdzania}
+
+Użytkownik po zalogowaniu do platformy otrzymuje dostęp do zbioru zadań programistycznych i ma możliwość przesyłania swoich rozwiązań.
+Każde zadanie jest wyposażone w zestaw przypadków testowych jawnych (widocznych dla użytkownika) oraz ukrytych (niewidocznych dla użytkownika).
+
+Przypadki testowe jawne służą do wstępnej weryfikacji poprawności rozwiązania, są z reguły proste 
+i mają na celu pomoc użytkownikowi w zrozumieniu treści zadania. Dodatkowo, stanowią podstawę do testowania rozwiązań podczas procesu nauki i debugowania kodu,
+kiedy uczniowie nie są jeszcze doświadczeni w samodzielnym tworzeniu kompleksowych testów.
+Zwyczajowo przypadki jawne są umieszczane na początku opisu zadania, aby użytkownik mógł je łatwo znaleźć i wykorzystać podczas pracy nad rozwiązaniem.
+
+Przypadki testowe ukryte służą do oceny poprawności i efektywności rozwiązania, zapewniając, że program działa zgodnie z wymaganiami zadania.
+Są one zazwyczaj bardziej złożone i obejmują różnorodne scenariusze, w tym przypadki brzegowe. Przypadków ukrytych
+nie udostępnia się uczniowi, ale nauczyciel ma do nich dostęp.
+
+Po nadesłaniu kodu źródłowego, system kompiluje i uruchamia program w bezpiecznym środowisku izolowanym (tzw. piaskownicy).
+Następnie, program jest uruchamiany na kolejnych przypadkach testowych, a wyniki (zapisane w standardowym wyjściu) są
+porównywane z oczekiwanymi wynikami.
+
+W przypadku niepowodzenia któregokolwiek z przypadków, użytkownik otrzymuje informację zwrotną:
+\begin{itemize}
+    \item "Zła odpowiedź" (Wrong Answer) - gdy wynik programu różni się od oczekiwanego. Nauczyciel może zdecydować, czy ujawnić użytkownikowi szczegóły dotyczące nieudanego testu,
+          na przykład oczekiwanego wyniki.
+    \item "Przekroczenie limitu czasu" (Time Limit Exceeded) - gdy program nie zakończył działania w określonym czasie,
+    \item "Przekroczenie limitu pamięci" (Memory Limit Exceeded) - gdy program przekroczył przydzielony limit pamięci,
+    \item "Błąd wykonania" (Runtime Error) - gdy program zakończył się z powodu błędu podczas wykonywania, np. dzielenie przez zero.  
+\end{itemize}
+
+Jeśli program zakończy działanie i zwróci poprawny wynik, użytkownik otrzymuje informację o sukcesie.
+
+Przypadki testowe mogą być grupowane w zestawy testów, co pozwala na bardziej szczegółową ocenę rozwiązania.
+Użytkownik otrzymuje punkty za każdy zestaw testów, który jego rozwiązanie przejdzie pomyślnie.
+
+Zwyczajowo, poprawne rozwiązanie otrzymuje 100\% punktów, jednak nauczyciel może dostosować system punktacji według własnych potrzeb.
+Dla przykładu, rozwiązanie "wolne" (działające poprawnie, ale przekraczające limit czasu) może otrzymać 50\% punktów, poprzez
+ustawienie odpowiednich wag dla poszczególnych zestawów testów.
+
+\subsection*{Zalety platform automatycznego sprawdzania}
+
+Platformy automatycznego sprawdzania, takie jak Szkopuł, oferują szereg korzyści zarówno dla uczniów, jak i nauczycieli:
+\begin{itemize}
+    \item Natychmiastowa informacja zwrotna: Uczniowie otrzymują szybkie informacje o poprawności swoich rozwiązań, co umożliwia im szybkie uczenie się na błędach i poprawę swoich umiejętności programistycznych
+    \item Standaryzacja oceny: Automatyczne systemy zapewniają spójność i obiektywność w ocenie rozwiązań, eliminując subiektywne błędy ludzkie.
+    \item Skalowalność: Systemy te mogą obsługiwać dużą liczbę użytkowników jednocześnie, co jest szczególnie przydatne w przypadku dużych klas lub kursów online.
+    \item Różnorodność zadań: Szkopuł posiada bogatą (na moment pisania pracy, ponad 3000 zadań) bazę zadań, co pozwala na szeroki zakres tematyki i poziomu trudności.
+\end{itemize}
+
+\subsection*{Stos technologiczny platformy Szkopuł}
+
+Szkopuł (serwis internetowy) jest zbudowany w oparcu o technologię webową Django (Python).
+Do przechowywania danych wykorzystywana jest relacyjna baza danych PostgreSQL.
+Aplikacja jest hostowana na serwerach uczelni i korzysta z kontenerów Docker do izolacji środowisk uruchomieniowych dla przesyłanych rozwiązań.
+System obsługuje wiele języków programowania, w tym Python, C++, Java i Rust, co pozwala na elastyczność w tworzeniu zadań i dostosowanie do różnych potrzeb edukacyjnych.
+Należy jednak pamiętać, że limity czasowe i pamięci mogą się różnić w zależności od wybranego języka programowania.
+
+Szkopuł Kursy to rozszerzenie platformy Szkopuł, które umożliwia tworzenie i publikację kompletnych kursów edukacyjnych.
+Serwis jest zbudowany w oparcu o framework MkDocs, który pozwala na łatwe tworzenie i zarządzanie treściami kursów w formacie Markdown.
+
+\clearpage{\pagestyle{empty}\cleardoublepage}

@@ -2,4 +2,26 @@ site_name: Scenariusze lekcji Informatyka
 theme:
   name: material
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - md_in_html
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/preview-popup.js
+  - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Strona główna: index.md
+  - Scenariusze lekcji:
+      - Lekcja 0: scenarios/lesson0.md
+      - Lekcja 1: scenarios/lesson1.md
