@@ -8,10 +8,15 @@ Podstawy języka Python: wczytywanie danych (input()), wypisywanie (print()), zm
 
 | Dział      | Sekcja                          |
 | ----------- | ------------------------------------ |
+| Dział      | Sekcja                          |
+| ----------- | ------------------------------------ |
 | I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: (...) **instrukcje warunkowe** (...) oraz zmienne. |
-| I. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) Projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia wyjścia, wyrażenia arytmetyczne, oraz zmienne. |
+|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróż-
+nia kroki w algorytmicznym rozwiązywaniu problemów. |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
+| | 1) W programach stosuje: instrukcje wejścia/wyjścia, **wyrażenia arytmetyczne
+i logiczne, instrukcje warunkowe**, instrukcje iteracyjne, funkcje oraz zmienne
+i tablice. |
 
 ## Wstęp teoretyczny (przewidziany na około 15 minut)
 

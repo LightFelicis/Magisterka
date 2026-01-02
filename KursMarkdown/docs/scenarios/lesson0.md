@@ -19,12 +19,19 @@ Współczesna informatyka to nie tylko umiejętność korzystania z gotowych apl
 
 ### Zadanie wprowadzające (7 minut)
 
-Wyobraź sobie, że masz robota, który rozumie tylko bardzo proste polecenia: "narysuj odcinek o długości `X` cm", "obróć się o `X` stopni w lewo/prawo" oraz "powtórz `X` razy".
+Wyobraź sobie, że masz robota, który rozumie tylko bardzo proste polecenia: "narysuj odcinek o długości `X` cm", "obróć się o `X` stopni w lewo/prawo".
 
 Na przykład, dla komend:
 
 ```
-Powtórz 2 razy: narysuj odcinek o długości 5 cm, obróć się o 90 stopni w lewo, narysuj odcinek o długości 3 cm, obróć się o 90 stopni w prawo
+narysuj odcinek o długości 5 cm
+obróć się o 90 stopni w lewo
+narysuj odcinek o długości 3 cm
+obróć się o 90 stopni w prawo
+narysuj odcinek o długości 5 cm
+obróć się o 90 stopni w lewo
+narysuj odcinek o długości 3 cm
+obróć się o 90 stopni w prawo
 ```
 
 Robot narysuje schodki:
@@ -32,7 +39,7 @@ Robot narysuje schodki:
 ![robot.gif](./lesson0-materials/robot.gif)
 
 
-Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko trzech komend, które zna robot.
+Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko komend, które zna robot.
 
 **Wniosek**: Komputery są bardzo szybkie, ale wykonują instrukcje dosłownie. Programowanie to proces precyzyjnego wydawania takich instrukcji.
 
