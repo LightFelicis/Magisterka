@@ -8,15 +8,10 @@ Podstawy języka Python (wczytywanie, wypisywanie, zmienne)
 
 | Dział      | Sekcja                          |
 | ----------- | ------------------------------------ |
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
 | I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróż-
-nia kroki w algorytmicznym rozwiązywaniu problemów. |
+|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
 | II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: **instrukcje wejścia/wyjścia, wyrażenia arytmetyczne**
-i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne
-i tablice. |
+| | 1) W programach stosuje: **instrukcje wejścia/wyjścia, wyrażenia arytmetyczne** i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. |
 
 ## Wstęp teoretyczny (przewidziany na około 15 minut)
 
