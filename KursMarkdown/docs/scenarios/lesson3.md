@@ -26,7 +26,11 @@ Wyobraź sobie, że masz robota, który rozumie tylko bardzo proste polecenia: "
 Na przykład, dla komend:
 
 ```
-Powtórz 2 razy: narysuj odcinek o długości 5 cm, obróć się o 90 stopni w lewo, narysuj odcinek o długości 3 cm, obróć się o 90 stopni w prawo
+Powtórz 2 razy: 
+    narysuj odcinek o długości 5 cm, 
+    obróć się o 90 stopni w lewo, 
+    narysuj odcinek o długości 3 cm, 
+    obróć się o 90 stopni w prawo
 ```
 
 Robot narysuje schodki:
