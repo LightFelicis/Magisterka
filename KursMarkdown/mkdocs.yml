@@ -23,8 +23,9 @@ extra_javascript:
 nav:
   - Strona główna: index.md
   - Scenariusze lekcji:
-      - Lekcja 0: scenarios/lesson0.md
-      - Lekcja 1: scenarios/lesson1.md
-      - Lekcja 2: scenarios/lesson2.md
-      - Lekcja 3: scenarios/lesson3.md
-      - Lekcja 4: scenarios/lesson4.md
+      - Lekcja 1 - Wprowadzenie: scenarios/lesson0.md
+      - Lekcja 2 - Co to algorytm?: scenarios/lesson1.md
+      - Lekcja 3 - Instrukcja warunkowa: scenarios/lesson2.md
+      - Lekcja 4 - Pętle: scenarios/lesson3.md
+      - Lekcja 5 - Projekt: scenarios/lesson4.md
+      - Lekcja 6 - Funkcje: scenarios/lesson5.md

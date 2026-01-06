@@ -160,7 +160,7 @@ Pamiętaj, że każdy algorytm iteracyjny wymaga jasnej specyfikacji, czyli okre
 
 ### Kwadrat
 
-??? Wskazówka:
+??? Wskazówka
     W Pythonie możesz wypisać wiele razy ten sam znak, korzystając z mnożenia: `'#'*5`
 
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/m7d6WQdRnYjrZQo6s3g6v5hY/site/?key=statement){ .md-button .md-button--primary }
