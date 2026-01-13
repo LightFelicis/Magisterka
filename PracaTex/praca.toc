@@ -1,0 +1,5 @@
+\babel@toc {polish}{}\relax 
+\contentsline {chapter}{Wstęp}{5}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Z czego składa się kurs? Filary programu.}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Automatyczny system sprawdzający - Szkopuł}{11}{chapter.2}%
+\contentsline {chapter}{Bibliografia}{15}{chapter*.10}%
