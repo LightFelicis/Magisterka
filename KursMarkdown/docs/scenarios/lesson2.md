@@ -1,4 +1,4 @@
-# Temat: Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+# Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
 
 ## Wymagana wiedza
 

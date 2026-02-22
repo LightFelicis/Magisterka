@@ -1,4 +1,4 @@
-# Temat Podstawy Pythona – pierwsze kroki. Po co programować?
+# Podstawy Pythona – pierwsze kroki. Po co programować?
 
 ## Wymagana wiedza
 
@@ -21,7 +21,7 @@ Współczesna informatyka to nie tylko umiejętność korzystania z gotowych apl
 
 Wyobraź sobie, że masz robota, który rozumie tylko bardzo proste polecenia: "narysuj odcinek o długości `X` cm", "obróć się o `X` stopni w lewo/prawo".
 
-Na przykład, dla komend:
+Na przykład, dla poleceń:
 
 ```
 narysuj odcinek o długości 5 cm
@@ -39,7 +39,7 @@ Robot narysuje schodki:
 ![robot.gif](./lesson0-materials/robot.gif)
 
 
-Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko komend, które zna robot.
+Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko poleceń, które zna robot.
 
 **Wniosek**: Komputery są bardzo szybkie, ale wykonują instrukcje dosłownie. Programowanie to proces precyzyjnego wydawania takich instrukcji.
 
@@ -100,7 +100,7 @@ wiek = int(input())
 print(imie, "ma lat", wiek)
 ```
 
-Python potrzebuje innej komendy żeby wczytać słowa (imię to słowo), a innej komendy żeby wczytać liczbę (wiek to liczba).
+Python potrzebuje innego polecenia żeby wczytać słowa (imię to słowo), a innego polecenia żeby wczytać liczbę (wiek to liczba).
 
 ## Zadanie do rozwiązania na komputerze (25 minut)
 

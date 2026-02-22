@@ -1,4 +1,4 @@
-# Temat Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja.
+# Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja.
 
 ## Wymagana wiedza
 

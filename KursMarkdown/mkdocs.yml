@@ -23,9 +23,12 @@ extra_javascript:
 nav:
   - Strona główna: index.md
   - Scenariusze lekcji:
-      - Lekcja 1 - Wprowadzenie: scenarios/lesson0.md
-      - Lekcja 2 - Co to algorytm?: scenarios/lesson1.md
-      - Lekcja 3 - Instrukcja warunkowa: scenarios/lesson2.md
-      - Lekcja 4 - Pętle: scenarios/lesson3.md
-      - Lekcja 5 - Projekt: scenarios/lesson4.md
-      - Lekcja 6 - Funkcje: scenarios/lesson5.md
+      - Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?: scenarios/lesson0.md
+      - Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.: scenarios/lesson1.md
+      - Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?: scenarios/lesson2.md
+      - Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?: scenarios/lesson3.md
+      - Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?: scenarios/lesson4.md
+      - Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.: scenarios/lesson5.md
+      - Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?: scenarios/lesson6.md
+      - Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.: scenarios/lesson7.md
+      - Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.: scenarios/lesson8.md

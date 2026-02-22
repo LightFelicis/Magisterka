@@ -1,4 +1,4 @@
-## Temat: Zastosowanie praktyczne: Quiz. Jak użyć tego co umiem?
+## Zastosowanie praktyczne: Quiz. Jak użyć tego co umiem?
 
 ## Wymagana wiedza
 

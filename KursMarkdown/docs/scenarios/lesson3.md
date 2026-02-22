@@ -1,4 +1,4 @@
-# Temat: Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+# Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
 
 ## Wymagana wiedza
 
