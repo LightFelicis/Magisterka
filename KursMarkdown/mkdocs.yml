@@ -32,3 +32,6 @@ nav:
       - Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?: scenarios/lesson6.md
       - Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.: scenarios/lesson7.md
       - Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.: scenarios/lesson8.md
+      - Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?: scenarios/lesson9.md
+      - Lekcja 11 - Kody ASCII – zmiana liter w liczbę.: scenarios/lesson10.md
+      - Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.: scenarios/lesson11.md
