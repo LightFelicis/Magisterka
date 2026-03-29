@@ -19,6 +19,8 @@ W tej lekcji skupimy się na przekazaniu intuicyjnego rozumienia algorytmu i spe
 
 ### Zadanie wprowadzające (4 minuty)
 
+![pizza](./lesson1-materials/pizza.png)
+
 Uszereguj następujące kroki w kolejności tak, by otrzymać przepis na pizzę.
 
 * Dodaj składniki: Przełóż uformowane ciasto na blachę i dodaj wybrane składniki.
