@@ -36,7 +36,7 @@ musi być **zaszyfrowana**.
 Wyobraźmy sobie, że Bob chce wysłać Alicji tajną wiadomość, ale wie, że może ona zostać
 przechwycona po drodze. Hakerka Ewa otworzy kopertę, przeczyta jej zawartość, a następnie przekaże
 list od Boba do Alicji. Alicja i Bob ustalą **metodę szyfrowania** przed wysłaniem listu. Ewa go nie zna,
-więc nawet otwierając kopertę, nie dowie się prawdziwej wiadomości.
+więc nawet otwierając kopertę, nie pozna prawdziwej wiadomości.
 
 ![zakodowana.png](./lesson9-materials/coded.png)
 

@@ -46,10 +46,11 @@ print("Zaszyfrowane metodą <METODA>")
 ## Samodzielna implementacja i pomysły na rozszerzenie programu (35+45 minut)
 
 Dla chętnych, bazową wersję algorytmu mozna rozszerzyć o takie funkcjonalności, jak:
-- Wsparcie dla liter języka polskiego
-- Wybór metody szyfrowania (zaimplementowanie 2-3 metod)
-- Szyfrowanie zawartości pliku tekstowego (wczytaj plik.txt i stwórz plik_zakodowany.txt)
-- **TRUDNE**: Zaimplementuj metodę szyfrowania Rozier.
+
+* Wsparcie dla liter języka polskiego
+* Wybór metody szyfrowania (zaimplementowanie 2-3 metod)
+* Szyfrowanie zawartości pliku tekstowego (wczytaj plik.txt i stwórz plik_zakodowany.txt)
+* **TRUDNE**: Zaimplementuj metodę szyfrowania Rozier.
 
 ## Podsumowanie i prezentacja projektów
 

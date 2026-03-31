@@ -48,10 +48,11 @@ else:
 ## Samodzielna implementacja i pomysły na rozszerzenie programu (35 minut)
 
 Dla chętnych, bazową wersję gry mozna rozszerzyć o takie funkcjonalności, jak:
-- Koła ratunkowe, na przykład odrzucenie połowy odpowiedzi
-- System akceptujący zarówno odpowiedź "A", "a", słowną: "Warszawa"
-- Punkty i gwarantowane wygrane
-- Dodaj system ocen na koniec gry (np. jeśli punkty > 5, wypisz „Jesteś ekspertem!”)
+
+* Koła ratunkowe, na przykład odrzucenie połowy odpowiedzi
+* System akceptujący zarówno odpowiedź "A", "a", słowną: "Warszawa"
+* Punkty i gwarantowane wygrane
+* Dodaj system ocen na koniec gry (np. jeśli punkty > 5, wypisz „Jesteś ekspertem!”)
 
 ## Podsumowanie i prezentacja projektów
 
