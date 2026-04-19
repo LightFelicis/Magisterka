@@ -35,3 +35,11 @@ nav:
       - Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?: scenarios/lesson9.md
       - Lekcja 11 - Kody ASCII – zmiana liter w liczbę.: scenarios/lesson10.md
       - Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.: scenarios/lesson11.md
+      - Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.: scenarios/lesson12.md
+      - Lekcja 14 - Kod binarny, szesnastkowy.: scenarios/lesson13.md
+      - Lekcja 15 - Algorytm Euklidesa – zastosowanie.: scenarios/lesson14.md
+      - Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.: scenarios/lesson15.md
+      - Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.: scenarios/lesson16.md
+      - Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.: scenarios/lesson17.md
+      - Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.: scenarios/lesson18.md
+      - Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.: scenarios/lesson19.md
