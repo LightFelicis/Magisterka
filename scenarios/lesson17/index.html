@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../lesson16/">
+      
+      
+        <link rel="next" href="../lesson18/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne. - Scenariusze lekcji Informatyka</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#czym-jest-sztuczna-inteligencja-implementujemy-uproszczone-drzewo-decyzyjne" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
             
           </span>
         </div>
@@ -169,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -211,18 +220,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -243,7 +254,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -261,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson0/" class="md-nav__link">
+      <a href="../lesson0/" class="md-nav__link">
         
   
   
@@ -289,7 +300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson1/" class="md-nav__link">
+      <a href="../lesson1/" class="md-nav__link">
         
   
   
@@ -317,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson2/" class="md-nav__link">
+      <a href="../lesson2/" class="md-nav__link">
         
   
   
@@ -345,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson3/" class="md-nav__link">
+      <a href="../lesson3/" class="md-nav__link">
         
   
   
@@ -373,7 +384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson4/" class="md-nav__link">
+      <a href="../lesson4/" class="md-nav__link">
         
   
   
@@ -401,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson5/" class="md-nav__link">
+      <a href="../lesson5/" class="md-nav__link">
         
   
   
@@ -429,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson6/" class="md-nav__link">
+      <a href="../lesson6/" class="md-nav__link">
         
   
   
@@ -457,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson7/" class="md-nav__link">
+      <a href="../lesson7/" class="md-nav__link">
         
   
   
@@ -485,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson8/" class="md-nav__link">
+      <a href="../lesson8/" class="md-nav__link">
         
   
   
@@ -513,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson9/" class="md-nav__link">
+      <a href="../lesson9/" class="md-nav__link">
         
   
   
@@ -541,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson10/" class="md-nav__link">
+      <a href="../lesson10/" class="md-nav__link">
         
   
   
@@ -569,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson11/" class="md-nav__link">
+      <a href="../lesson11/" class="md-nav__link">
         
   
   
@@ -597,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson12/" class="md-nav__link">
+      <a href="../lesson12/" class="md-nav__link">
         
   
   
@@ -625,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson13/" class="md-nav__link">
+      <a href="../lesson13/" class="md-nav__link">
         
   
   
@@ -653,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson14/" class="md-nav__link">
+      <a href="../lesson14/" class="md-nav__link">
         
   
   
@@ -681,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson15/" class="md-nav__link">
+      <a href="../lesson15/" class="md-nav__link">
         
   
   
@@ -709,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson16/" class="md-nav__link">
+      <a href="../lesson16/" class="md-nav__link">
         
   
   
@@ -734,10 +745,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/scenarios/lesson17/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -753,6 +791,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wymagana-wiedza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wymagana wiedza
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wstep-teoretyczny-20-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wstęp teoretyczny (20 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wspólne eksperymenty (15 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-10-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania (10 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -765,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson18/" class="md-nav__link">
+      <a href="../lesson18/" class="md-nav__link">
         
   
   
@@ -793,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/scenarios/lesson19/" class="md-nav__link">
+      <a href="../lesson19/" class="md-nav__link">
         
   
   
@@ -838,6 +940,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wymagana-wiedza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wymagana wiedza
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wstep-teoretyczny-20-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wstęp teoretyczny (20 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wspólne eksperymenty (15 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-10-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania (10 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -850,8 +1006,53 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="czym-jest-sztuczna-inteligencja-implementujemy-uproszczone-drzewo-decyzyjne">Czym jest sztuczna inteligencja? Implementujemy uproszczone "drzewo decyzyjne"</h1>
+<h2 id="wymagana-wiedza">Wymagana wiedza</h2>
+<ul>
+<li>Instrukcje warunkowe <code>if-elif-else</code></li>
+</ul>
+<h2 id="wstep-teoretyczny-20-minut">Wstęp teoretyczny (20 minut)</h2>
+<p>Sztuczna inteligencja (AI) to dziedzina informatyki zajmująca się tworzeniem programów, które potrafią wykonywać zadania wymagające "ludzkiej" inteligencji.
+Jednym z najprostszych modeli AI jest <strong>drzewo decyzyjne</strong> – seria pytań, które prowadzą do wyniku (decyzji).</p>
+<p><strong>Przykłady z życia wzięte:</strong>
+*   <strong>Bankowość</strong>: Decyzja o przyznaniu pożyczki (Pytania o zarobki, wiek, historię spłat).
+*   <strong>Medycyna</strong>: Wstępna diagnoza choroby (np. czy pacjent ma gorączkę? czy ma wysypkę? -&gt; jeśli tak, to może być ospa).</p>
+<h2 id="wspolne-eksperymenty-15-minut">Wspólne eksperymenty (15 minut)</h2>
+<p>Stwórzmy system klasyfikujący zwierzęta:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Odpowiedz na pytania (tak/nie):&quot;</span><span class="p">)</span>
+<span class="n">czy_ma_piora</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy ma pióra? &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">czy_ma_piora</span> <span class="o">==</span> <span class="s2">&quot;tak&quot;</span><span class="p">:</span>
+    <span class="n">czy_lata</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy lata? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">czy_lata</span> <span class="o">==</span> <span class="s2">&quot;tak&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To prawdopodobnie wróbel!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To prawdopodobnie struś!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To prawdopodobnie ssak lub gad.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="zadania-do-rozwiazania-10-minut">Zadania do rozwiązania (10 minut)</h2>
+<ol>
+<li><strong>Akinator</strong>: Rozbuduj drzewo decyzyjne tak, aby potrafiło rozpoznać co najmniej 5 różnych zwierząt lub postaci z gier.</li>
+<li><strong>Diagnoza komputera</strong>: Napisz program, który pyta o objawy (np. "czy ekran działa?", "czy słychać wiatrak?") i sugeruje rozwiązanie problemu z komputerem.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -888,14 +1089,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": [], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="/javascripts/preview-popup.js"></script>
+        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       
