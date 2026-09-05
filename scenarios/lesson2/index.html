@@ -1559,13 +1559,21 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jesteś jeszcze za młody na prawo jazdy.&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="interaktywny-system-zamowien-pizza-bot">Interaktywny system zamówień „Pizza-Bot”</h3>
-<p>Napisz program, który zdecyduje, czy zamówienie klienta może zostać zrealizowane na podstawie dostępności składników i jego preferencji.
-Specyfikacja problemu:
-- Dane wejściowe: Odpowiedzi „tak” lub „nie” (wczytane jako tekst) na pytania o posiadanie sera, sosu pomidorowego, szynki oraz pieczarek.
-- Wynik: Komunikat „Zamówienie przyjęte!” lub „Niestety, nie możemy zrobić Twojej pizzy”.</p>
-<p>Zasady logiczne do zaimplementowania:
-1. Warunek konieczny (and): Aby pizza w ogóle powstała, musisz mieć ser ORAZ sos. Jeśli brakuje choć jednego z nich, zamówienie jest odrzucane.
-2. Warunek preferencji (or): Klient zje pizzę tylko wtedy, gdy będzie na niej szynka LUB pieczarki. Jeśli nie ma żadnego z tych dodatków, zamówienie jest odrzucane (nawet jeśli jest ser i sos).</p>
+<p>Napisz program, który zdecyduje, czy zamówienie klienta może zostać zrealizowane na podstawie dostępności składników i jego preferencji.</p>
+<p><strong>Specyfikacja problemu:</strong></p>
+<ul>
+<li>Dane wejściowe: Odpowiedzi „tak” lub „nie” (wczytane jako tekst) na pytania o posiadanie sera, sosu pomidorowego, szynki oraz pieczarek.</li>
+<li>Wynik: Komunikat „Zamówienie przyjęte!” lub „Niestety, nie możemy zrobić Twojej pizzy”.</li>
+</ul>
+<p>Zasady logiczne do zaimplementowania:</p>
+<ol>
+<li>
+<p>Warunek konieczny (and): Aby pizza w ogóle powstała, musisz mieć ser ORAZ sos. Jeśli brakuje choć jednego z nich, zamówienie jest odrzucane.</p>
+</li>
+<li>
+<p>Warunek preferencji (or): Klient zje pizzę tylko wtedy, gdy będzie na niej szynka LUB pieczarki. Jeśli nie ma żadnego z tych dodatków, zamówienie jest odrzucane (nawet jeśli jest ser i sos).</p>
+</li>
+</ol>
 <p>Początkowy kod uzupełnij warunkami tak, by spełniały specyfikację:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Wczytywanie danych od użytkownika</span>
 <span class="n">ser</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy jest ser? (tak/nie): &quot;</span><span class="p">)</span>
