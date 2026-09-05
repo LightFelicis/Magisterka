@@ -1565,14 +1565,10 @@
 <li>Dane wejściowe: Odpowiedzi „tak” lub „nie” (wczytane jako tekst) na pytania o posiadanie sera, sosu pomidorowego, szynki oraz pieczarek.</li>
 <li>Wynik: Komunikat „Zamówienie przyjęte!” lub „Niestety, nie możemy zrobić Twojej pizzy”.</li>
 </ul>
-<p>Zasady logiczne do zaimplementowania:</p>
+<p><strong>Zasady logiczne do zaimplementowania:</strong></p>
 <ol>
-<li>
-<p>Warunek konieczny (and): Aby pizza w ogóle powstała, musisz mieć ser ORAZ sos. Jeśli brakuje choć jednego z nich, zamówienie jest odrzucane.</p>
-</li>
-<li>
-<p>Warunek preferencji (or): Klient zje pizzę tylko wtedy, gdy będzie na niej szynka LUB pieczarki. Jeśli nie ma żadnego z tych dodatków, zamówienie jest odrzucane (nawet jeśli jest ser i sos).</p>
-</li>
+<li>Warunek konieczny (and): Aby pizza w ogóle powstała, musisz mieć ser ORAZ sos. Jeśli brakuje choć jednego z nich, zamówienie jest odrzucane.</li>
+<li>Warunek preferencji (or): Klient zje pizzę tylko wtedy, gdy będzie na niej szynka LUB pieczarki. Jeśli nie ma żadnego z tych dodatków, zamówienie jest odrzucane (nawet jeśli jest ser i sos).</li>
 </ol>
 <p>Początkowy kod uzupełnij warunkami tak, by spełniały specyfikację:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Wczytywanie danych od użytkownika</span>
