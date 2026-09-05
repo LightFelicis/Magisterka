@@ -817,6 +817,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na platformie Szkopuł
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nww-najmniejsza-wspolna-wielokrotnosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NWW (Najmniejsza Wspólna Wielokrotność)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NWW (Najmniejsza Wspólna Wielokrotność)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1093,6 +1160,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na platformie Szkopuł
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nww-najmniejsza-wspolna-wielokrotnosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NWW (Najmniejsza Wspólna Wielokrotność)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NWW (Najmniejsza Wspólna Wielokrotność)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1176,6 +1310,41 @@
 <p class="admonition-title">Note</p>
 <p>W bibliotece <code>math</code> istnieje gotowa funkcja <code>gcd(a, b)</code>, która robi to samo!</p>
 </div>
+<h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
+<h3 id="nww-najmniejsza-wspolna-wielokrotnosc">NWW (Najmniejsza Wspólna Wielokrotność)</h3>
+<p>Napisz program, który wczyta dwie liczby całkowite i obliczy ich najmniejszą wspólną wielokrotność (NWW).</p>
+<p>Do wczytania danych wykorzystaj polecenie:
+<code>import sys</code>
+<code>a, b = map(int, sys.stdin.read().split())</code></p>
+<h4 id="wejscie">Wejście</h4>
+<p>Wejście składa się z dwóch liczb całkowitych <span class="arithmatex">\(a\)</span> oraz <span class="arithmatex">\(b\)</span> (<span class="arithmatex">\(2 \le a, b \le 32\ 000\)</span>), podanych w osobnych liniach lub oddzielonych odstępem.</p>
+<h4 id="wyjscie">Wyjście</h4>
+<p>W jedynym wierszu wyjścia wypisz jedną liczbę całkowitą – najmniejszą wspólną wielokrotność liczb <span class="arithmatex">\(a\)</span> i <span class="arithmatex">\(b\)</span>.</p>
+<h4 id="przykad">Przykład</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Wejście</th>
+<th style="text-align: left;">Wyjście</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">12<br>15</td>
+<td style="text-align: left;">60</td>
+</tr>
+<tr>
+<td style="text-align: left;">7<br>14</td>
+<td style="text-align: left;">14</td>
+</tr>
+</tbody>
+</table>
+<details class="wskazówka">
+<summary>Wskazówka</summary>
+<p>Najmniejszą wspólną wielokrotność można obliczyć, wykorzystując Największy Wspólny Dzielnik (NWD) ze wzoru:
+$<span class="arithmatex">\(\text{NWW}(a, b) = \frac{a \cdot b}{\text{NWD}(a, b)}\)</span>$</p>
+</details>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/r2en9YCg-KJu9-nMJCMxQfZQ/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
 
 
 
