@@ -62,5 +62,3 @@ Podczas pracy nad zadaniami projektuj, twórz i testuj swoje programy, dbając o
 
 
 
-
-

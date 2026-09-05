@@ -19,6 +19,8 @@
 
 ## Wstęp do projektu (10 minut)
 
+![quiz](./lesson4-materials/quiz.jpeg)
+
 Zamiast rozwiązywać krótkie zadania, uczniowie stworzą kompleksowy program – Quiz, który będzie sprawdzał wiedzę użytkownika na wybrany temat (np. sport, historia, gry wideo). Program musi:
 - Zadawać pytania.
 - Pobierać odpowiedzi od użytkownika.

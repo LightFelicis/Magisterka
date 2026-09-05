@@ -145,11 +145,60 @@ Napisz program, który wczyta trzy liczby całkowite (długości boków). Sprawd
 
 ## Zadania do rozwiązania na platformie Szkopuł
 
-### Trzy liczby
+### Trzy liczby rosnąco
+
+Napisz program, który czyta trzy liczby całkowite, a następnie wypisuje je w kolejności niemalejącej.
+
+Do wczytania danych wykorzystaj polecenie `a, b, c = map(int, input().split())`.
+
+#### Wejście
+
+Dane wejściowe zawierają trzy liczby całkowite $a, b, c$ ($1 \le a, b, c \le 1\ 000\ 000$) oddzielone pojedynczym odstępem.
+
+#### Wyjście
+
+Na wyjściu wypisz podane trzy liczby uporządkowane w kolejności niemalejącej, oddzielone odstępem.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 7 5 3 | 3 5 7 |
+
+??? Wskazówka
+    Możesz użyć funkcji `sorted()` do posortowania wczytanych liczb, np.:
+    `liczby = sorted([a, b, c])`
+    a następnie wypisać je za pomocą `print(*liczby)`.
 
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/HSmxAaEATSIyNA_Dw8iA84yZ/site/?key=statement){ .md-button .md-button--primary }
 
-### Ćwiartka układu współrzędnych
+### Ćwiartka
+
+Napisz program, który dla danego punktu na płaszczyźnie sprawdzi, w której ćwiartce układu współrzędnych się on znajduje. Może jednak być tak, że punkt nie znajduje się w żadnej ćwiartce – leży na jednej z osi lub w środku układu współrzędnych. Wówczas program powinien to stwierdzić.
+
+Do wczytania danych możesz wykorzystać polecenie `x, y = map(int, input().split())`.
+
+#### Wejście
+
+Na wejściu znajdują się dwie liczby całkowite $x$ oraz $y$ ($-1\,000\,000\,000 \leq x, y \leq 1\,000\,000\,000$) oddzielone spacją, oznaczające współrzędne danego punktu.
+
+#### Wyjście
+
+Jeżeli podany punkt nie leży na żadnej z osi, Twój program powinien wypisać: `I`, `II`, `III` lub `IV`, w przypadku gdy punkt należy do, odpowiednio, pierwszej, drugiej, trzeciej lub czwartej ćwiartki układu współrzędnych.
+
+Jeżeli punkt leży w środku układu współrzędnych, program powinien wypisać liczbę `0`. W przeciwnym razie, program powinien wypisać `OX` (duże O i duże X), jeśli punkt leży na osi X, a `OY` – jeśli punkt leży na osi Y.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 5 7 | I |
+| 0 -1000000000 | OY |
+| 0 0 | 0 |
+
+??? Wskazówka
+    Użyj instrukcji warunkowej `if ... elif ... else`. Najpierw sprawdź przypadek $(0, 0)$, potem leżenie na osiach (`x == 0` lub `y == 0`), a na końcu sprawdź znaki współrzędnych $x$ i $y$, aby określić ćwiartkę (np. $x > 0$ i $y > 0$ to I ćwiartka).
+
 
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/QbhwEI326MIf0rE4BlshlObK/site/?key=statement
 ){ .md-button .md-button--primary }

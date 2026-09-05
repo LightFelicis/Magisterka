@@ -179,8 +179,33 @@ print(2 * a + 3 * b)
 * Jakie dwie liczby należy wpisać, żeby otrzymać wynik `40`?
 * Czy istnieją różne dane wejściowe, dla ktorych program wypisze liczbę `40`?
 
-## Zadania do rozwiązania na platformie Szkopuł
-
 ### Zakupy
+
+Mały Jaś dostał od mamy bardzo ważną misję. Ma kupić masło i chleb. Zważając na wagę misji, nie możemy pozwolić na to, aby pieniądze dostały się w niepowołane ręce. Aby temu zaradzić, mama Jasia dała swojemu synkowi równo $K$ złotych – czyli dokładnie tyle ile razem kosztują oba produkty.
+
+Jaś jest już w drodze do sklepu. Teraz pozostało tylko kupić masło i... O nie! Jaś zapomniał co, oprócz masła, miał kupić. Czy cała misja skazana jest już na porażkę? Na szczęście mama Jasia doskonale wiedziała, kogo wysyła – swojego najlepszego agenta. Jaś od razu zauważył, że masło w sklepie kosztuje $M$ złotych. Teraz w prosty sposób będzie mógł obliczyć cenę zapomnianego produktu.
+
+Pomóż Jasiowi! Znając ile złotych dostał Jaś oraz ile złotych kosztuje masło, podaj cenę drugiego produktu.
+
+Do wczytania danych możesz wykorzystać polecenie `M, K = map(int, input().split())`.
+
+#### Wejście
+
+W pierwszym wierszu wejścia znajdują się dwie liczby całkowite $M$ oraz $K$ ($1 \leq M < K \leq 10$) oddzielone pojedynczym odstępem i oznaczające odpowiednio cenę masła oraz ile złotych otrzymał na początku Jaś.
+
+#### Wyjście
+
+Na wyjście wypisz jedną liczbę całkowitą określającą cenę zapomnianego produktu.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :------ | :------ |
+| 2 5     | 3       |
+
+Wyjaśnienie: Jaś dostał 5 złotych, a cena masła to 2 złote. Oznacza to, że brakujący produkt kosztował 3 złote.
+
+??? Wskazówka
+    Cena drugiego produktu to różnica między kwotą, którą otrzymał Jaś ($K$), a ceną masła ($M$). W Pythonie możesz wypisać wynik odejmowania za pomocą `print(K - M)`.
 
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/HodOdonWADxq3z5dnEjsOrlv/site/?key=submit){ .md-button .md-button--primary }

@@ -88,3 +88,44 @@ Zaprojektuj programy, które pomogą Ci w nauce innych przedmiotów (wybierz 2 z
 - Kalkulator NWD: Wykorzystaj `gcd(a, b)`, aby sprawdzić, przez jaką największą liczbę można skrócić ułamek $\frac{a}{b}$.
 - Zakupy i reszta: Napisz program, który wczyta cenę towaru i kwotę, jaką zapłacił klient. Oblicz resztę, ale wypisz ją jako wartość bezwzględną (użyj `abs()`), na wypadek gdyby klient dał za mało pieniędzy.
 - Średnia ocen: Wczytaj 5 ocen z informatyki i oblicz ich średnią arytmetyczną. Jeśli średnia wynosi np. `4.75`, użyj `ceil()`, aby sprawdzić, czy uczeń ma szansę na ocenę bardzo dobrą.
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+### Łamanie czekolady
+
+![czekolada](./lesson6-materials/czekolada.png)
+
+Pan Integer kupił swoją ulubioną czekoladę z nadzieniem toffi. Czekolada ma kształt prostokąta o rozmiarze $n \times m$ kawałków. 
+
+Pan Integer chciałby teraz odłamać **jednym prostym ruchem** (wzdłuż linii podziału) dokładnie $k$ kawałków. Czy jest to możliwe?
+
+Do wczytania danych wykorzystaj polecenia:
+`n, m = map(int, input().split())`
+`k = int(input())`
+
+#### Wejście
+
+Pierwszy wiersz wejścia zawiera dwie liczby całkowite $n$ oraz $m$ ($1 \le n, m \le 10^6$), oznaczające rozmiar czekolady. 
+
+W drugim wierszu znajduje się jedna liczba całkowita $k$ ($1 \le k \le 10^6$), oznaczająca liczbę kawałków, które chce odłamać Pan Integer.
+
+#### Wyjście
+
+Na wyjściu wypisz słowo `TAK`, jeśli Pan Integer może jednym przełamaniem oderwać dokładnie $k$ kawałków czekolady, lub `NIE` w przeciwnym wypadku.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 3 5<br>6 | TAK |
+| 4 8<br>6 | NIE |
+
+??? Wskazówka
+    Jedno przełamanie prostokątnej czekolady wzdłuż linii podziału oddziela pasek o wymiarach $x \times m$ (jeśli łamiemy wzdłuż wierszy) lub $n \times y$ (jeśli łamiemy wzdłuż kolumn).
+    
+    Oznacza to, że odłamana część składa się z liczby kawałków będącej wielokrotnością $m$ (i nie większej niż cała czekolada $n \times m$) LUB wielokrotnością $n$ (i nie większej niż $n \times m$).
+    
+    Warunek można zapisać tak:
+    `k <= n * m and (k % n == 0 or k % m == 0)`
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/eSgi8Ae29vCPojodBrdDAooI/site/?key=statement){ .md-button .md-button--primary }

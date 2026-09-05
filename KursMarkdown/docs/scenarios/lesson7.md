@@ -148,3 +148,52 @@ Z poniższych zadań wybierz `2` i zaimplementuj je na komputerze.
 Zadanie dla wszystkich:
 
 **Poszukiwacz skarbów**: Wczytaj listę 10 liczb. Poproś użytkownika o podanie jednej liczby i sprawdź, czy znajduje się ona na liście. Jeśli tak, wypisz jej numer indeksu.
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+### Woda Czyści
+
+Czy wiesz, od czego wziął się skrót **OKI**? Myślisz, że od *Olimpijskie Koło Informatyczne*?
+Otóż nie! OKI to *Ojej, Ktoś Informatyczny*!
+
+A czy wiesz, skąd pochodzi słowo **POT**? Nie zastanawiałeś(-aś) się? Szkoda, bo to proste! To skrót od *Pamiętaj O Treningu*!
+
+Jak widzisz, skróty nie zawsze są oczywiste. Mówimy *kreatywni odkrywcy nowych kierunków – uśmiech, radość, sukces*, a to przecież konkurs!
+
+Dlatego wielka prośba: napisz program, który automatycznie generuje skrót z podanych wyrazów (akronim utworzony z pierwszych liter każdego ze słów).
+
+I nie zapomnij! **WC! Woda Czyści!**
+
+Do wczytania danych wykorzystaj polecenie:
+`import sys`
+`słowa = sys.stdin.read().split()`
+
+#### Wejście
+
+W pierwszym wierszu wejścia znajduje się jedna liczba całkowita $n$ ($1 \le n \le 100\ 000$), oznaczająca liczbę słów.
+
+W kolejnych $n$ wierszach znajdują się słowa. W $i$-tym z nich znajduje się jedno słowo złożone z małych i dużych liter alfabetu angielskiego.
+
+Suma długości wszystkich słów na wejściu nie przekroczy $500\ 000$.
+
+#### Wyjście
+
+W jedynym wierszu wyjścia wypisz jedno słowo – skrót utworzony z pierwszych liter kolejnych słów z wejścia.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 4<br>Mistrz<br>Programowania<br>runda<br>pierwsza | MPrp |
+| 1<br>qwerty | q |
+| 3<br>d<br>e<br>f | def |
+
+*Wyjaśnienie dla pierwszego przykładu:*
+Są 4 słowa. Pierwsze litery tych słów (`M`, `P`, `r`, `p`) tworzą skrót `MPrp`.
+
+??? Wskazówka
+    Aby wczytać bardzo szybko dużą liczbę wierszy ($100\ 000$), warto użyć modułu `sys.stdin.read().split()`. Pierwszym elementem wczytanej listy będzie liczba $n$, a kolejnymi elementami będą słowa.
+    Pierwszą literę każdego słowa możesz pobrać za pomocą indeksu `[0]`, następnie wypisywać ją poleceniem `print(litera, end="")`.
+
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/jAqYLpzf_o8fRGM8PW37L6zJ/site/?key=statement){ .md-button .md-button--primary }

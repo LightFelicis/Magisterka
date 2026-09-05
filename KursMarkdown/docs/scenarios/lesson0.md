@@ -45,6 +45,8 @@ Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko poleceń,
 
 ### Podstawowe pojęcia języka Python (8 minut)
 
+![print.jpeg](./lesson0-materials/print.jpeg)
+
 W języku Python będziemy korzystać z trzech fundamentów:
 
 * Instrukcja wyjścia (print()): Pozwala komputerowi "mówić" do nas, czyli wyświetlać tekst na ekranie.

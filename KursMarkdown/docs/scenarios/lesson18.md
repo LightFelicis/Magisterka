@@ -11,6 +11,8 @@ Zamiast ręcznie pisać instrukcje `if`, możemy pozwolić komputerowi "nauczyć
 
 ## Przykład kodu (20 minut)
 
+![owoce](./lesson18-materials/owoce.png)
+
 Nauczymy komputer rozpoznawać, czy owoc to jabłko czy pomarańcza na podstawie wagi i tekstury:
 
 ```python

@@ -129,10 +129,36 @@ Zaimplementuj wybrane 3 funkcje z poniższej listy:
 
 Zastosuj funkcję `len()` w praktyce.
 
+Wczytaj słowo, a następnie podaj jego długość. Możesz założyć, że słowo nie będzie dłuższe niż 15.
+
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/SAuc7UAS2ZnCLOMrnfURVcr5/site/?key=statement){ .md-button .md-button--primary }
 
-### Kwadrat 0
+### Kwadrat
 
-Napisz funkcję, która rysuje kwadrat za pomocą ASCII.
+**Uwaga! W tym zadaniu logika rysująca kwadrat powinna być zawarta w funkcji `def kwadrat(n)`**
+
+Napisz program, w którym użytkownik wprowadzi jedną liczbę nieparzystą $n$.
+
+Twoim zadaniem jest wypisanie wzoru o wymiarach $n \times n$ złożonego ze znaków `@`.
+
+Do wczytania danych wykorzystaj polecenie `n = int(input())`.
+
+#### Wejście
+
+W jedynym wierszu wejścia znajduje się jedna nieparzysta liczba całkowita $n$ ($2 < n < 1002$).
+
+#### Wyjście
+
+Na wyjściu wypisz $n$ wierszy po $n$ znaków w każdym, tworzących wzór złożony ze znaków `@` oraz `X`.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 5 | @@@@@<br>@@@@@<br>@@@@@<br>@@@@@<br>@@@@@ |
+| 7 | @@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@ |
+
+??? Wskazówka
+    W Pythonie możesz wypisać wiele razy ten sam znak, korzystając z mnożenia: `'#'*5`
 
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/m7d6WQdRnYjrZQo6s3g6v5hY/site/?key=statement){ .md-button .md-button--primary }

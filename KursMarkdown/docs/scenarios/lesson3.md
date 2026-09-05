@@ -152,13 +152,87 @@ Pamiętaj, że każdy algorytm iteracyjny wymaga jasnej specyfikacji, czyli okre
 
 ### Śmiech informatyka i matematyka
 
+Jak śmieje się matematyk? $(Ha)^3$ albo $(Ha)^{10}$, jeśli jest bardzo rozbawiony.
+
+Jak śmieje się informatyk? Wypisuje na konsoli `Ha` tyle razy, jak bardzo się cieszy.
+
+Ponieważ jesteś informatykiem, jednym z Twoich zadań jest napisanie programu, który będzie się śmiał za Ciebie. A więc do dzieła!
+
+Do wczytania danych wykorzystaj polecenie `n = int(input())`.
+
+#### Wejście
+
+Wejście składa się z jednej liczby naturalnej $n$ ($1 \leq n \leq 10\,000$), oznaczającej jak bardzo rozbawiony jest informatyk.
+
+#### Wyjście
+
+Program powinien w pojedynczej linii wypisać tekst `Ha` dokładnie $n$ razy. Każde dwa napisy `Ha` muszą być oddzielone pojedynczym odstępem.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 2 | Ha Ha |
+| 5 | Ha Ha Ha Ha Ha |
+
+??? Wskazówka
+    Zastosuj pętlę, która wykona `n` powtórzeń. Żeby nie oddzielać wyrażeń nową linią, zastosuj polecenie 
+    `print('Ha', end=" ")`
+
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/W-j2XQW1kC2sRuNtGwTEbGeQ/site/?key=statement){ .md-button .md-button--primary }
 
 ### Koszykarz
 
+![koszykarz](./lesson3-materials/koszykarz.png)
+
+Kozik pragnie zostać koszykarzem. Po rozmowie z trenerem okazało się, że jest za niski. Kozik jest jednak tak zdeterminowany, że chce spełnić wymagania trenera, nawet jeśli okazałoby się to oszustwem.
+
+Wpadł więc na genialny pomysł robienia sobie guzów na głowie, aż osiągnie wymagany wzrost. Zauważył, że przy każdym uderzeniu guz powiększa się o $a$ cm. Kozik zastanawia się, ile minimalnie razy będzie musiał się uderzyć.
+
+Do wczytania danych wykorzystaj polecenie `k, w, a = map(int, input().split())`.
+
+#### Wejście
+
+W pierwszej i jedynej linii wejścia znajdują się trzy liczby całkowite $k, w, a$ ($1 \le k, w, a \le 1\ 000\ 000\ 000$), oznaczające odpowiednio aktualną wysokość Kozika, wymaganą przez trenera wysokość oraz przyrost wysokości po każdym uderzeniu.
+
+#### Wyjście
+
+Pierwszy i jedyny wiersz wyjścia powinien zawierać jedną liczbę całkowitą równą minimalnej liczbie uderzeń, które musi wykonać Kozik, aby osiągnąć wzrost co najmniej $w$.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 180 202 10 | 3 |
+
+??? Wskazówka
+    Różnicę wzrostu do nadrobienia stanowi $w - k$. Jeśli $k \ge w$, Kozik nie musi się uderzać wcale ($0$ razy). Zastanów się, czy to zadanie musisz wykonać za pomocą pętli? A może wystarczy działanie
+    dzielenia?
+
 [Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/Iq7nk3Jqo4PzMs5MIx-sI2ET/site/?key=statement){ .md-button .md-button--primary }
 
 ### Kwadrat
+
+Napisz program, w którym użytkownik wprowadzi jedną liczbę nieparzystą $n$.
+
+Twoim zadaniem jest wypisanie wzoru o wymiarach $n \times n$ złożonego ze znaków `@`.
+
+Do wczytania danych wykorzystaj polecenie `n = int(input())`.
+
+#### Wejście
+
+W jedynym wierszu wejścia znajduje się jedna nieparzysta liczba całkowita $n$ ($2 < n < 1002$).
+
+#### Wyjście
+
+Na wyjściu wypisz $n$ wierszy po $n$ znaków w każdym, tworzących wzór złożony ze znaków `@` oraz `X`.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 5 | @@@@@<br>@@@@@<br>@@@@@<br>@@@@@<br>@@@@@ |
+| 7 | @@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@ |
 
 ??? Wskazówka
     W Pythonie możesz wypisać wiele razy ten sam znak, korzystając z mnożenia: `'#'*5`

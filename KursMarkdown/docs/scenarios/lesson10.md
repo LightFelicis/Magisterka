@@ -58,3 +58,47 @@ Napisz program, który wczyta jedną wielką literę alfabetu i wypisze literę 
 ### Zadanie 4: Szyfrator słów
 
 Zmodyfikuj program tak, aby wczytał słowo i wypisał je w postaci zaszyfrowanej, przesunięte o 1 miejsce. Potraktuj słowo jako zbiór znaków i do każdego zastosuj przesunięcie.
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+### Haxor
+
+![haxor](./lesson10-materials/haxor.png)
+
+Od dawna wiadomo, że hakerzy posługują się własnym językiem, różnymi skrótami i innymi formami zaciemniania, żeby zacierać ścieżki po sobie. O najlepszych z nich zwykle mawia się „h4x0rzy”.
+
+Niektórzy hakerzy czasami zamieniają niektóre litery na cyfry, żeby ich tekst wyglądał bardziej profesjonalnie. Każde wystąpienie jednej z liter podanych poniżej w tabeli zamieniane jest na odpowiadającą jej cyfrę. Pozostałe znaki pozostają niezmienione.
+
+| Litera | Cyfra |
+| :---: | :---: |
+| **a** | **4** |
+| **e** | **3** |
+| **i** | **1** |
+| **o** | **0** |
+| **s** | **5** |
+
+Napisz program, który wczyta napis, przekształci go do hakerskiego slangu zgodnie z powyższą tabelą i wypisze wynik na standardowe wyjście.
+
+Do wczytania danych wykorzystaj polecenie `tekst = input()`.
+
+#### Wejście
+
+W pierwszym (jedynym) wierszu wejścia znajduje się niepusty ciąg małych liter alfabetu angielskiego – napis, który należy przekształcić. Długość napisu nie przekracza $1\ 000\ 000$ znaków.
+
+#### Wyjście
+
+W pierwszym (jedynym) wierszu wyjścia powinien się znaleźć napis z wejścia przedstawiony w hakerskim slangu.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| haxor | h4x0r |
+| rigcz | r1gcz |
+| aeios | 43105 |
+
+??? Wskazówka
+    Wykorzystaj instrukcję `if` i sprawdź kody ASCII kolejnych liter słowa. Jeśli kodem jest kod litery `a`,
+    wypisz `4`, podobnie z pozostałymi literami `e`, `i` itd.
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/-sW59iNCsLGhh8xyFPEmtn7F/site/?key=statement){ .md-button .md-button--primary }

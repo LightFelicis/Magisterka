@@ -62,3 +62,34 @@ print("NWD to:", a)
 
 !!! note
     W bibliotece `math` istnieje gotowa funkcja `gcd(a, b)`, która robi to samo!
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+### NWW (Najmniejsza Wspólna Wielokrotność)
+
+Napisz program, który wczyta dwie liczby całkowite i obliczy ich najmniejszą wspólną wielokrotność (NWW).
+
+Do wczytania danych wykorzystaj polecenie:
+`import sys`
+`a, b = map(int, sys.stdin.read().split())`
+
+#### Wejście
+
+Wejście składa się z dwóch liczb całkowitych $a$ oraz $b$ ($2 \le a, b \le 32\ 000$), podanych w osobnych liniach lub oddzielonych odstępem.
+
+#### Wyjście
+
+W jedynym wierszu wyjścia wypisz jedną liczbę całkowitą – najmniejszą wspólną wielokrotność liczb $a$ i $b$.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| 12<br>15 | 60 |
+| 7<br>14 | 14 |
+
+??? Wskazówka
+    Najmniejszą wspólną wielokrotność można obliczyć, wykorzystując Największy Wspólny Dzielnik (NWD) ze wzoru:
+    $$\text{NWW}(a, b) = \frac{a \cdot b}{\text{NWD}(a, b)}$$
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/r2en9YCg-KJu9-nMJCMxQfZQ/site/?key=statement){ .md-button .md-button--primary }
