@@ -1032,7 +1032,7 @@ owoc i sprawdzimy, czy dobrze odgadnie jego typ.</p>
 <span class="c1"># Wyniki: 0 dla jabłka, 1 dla pomarańczy</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">67</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rozpoczynam uczenie...&quot;</span><span class="p">)</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Koniec uczenia! Pora na test.&quot;</span><span class="p">)</span>
