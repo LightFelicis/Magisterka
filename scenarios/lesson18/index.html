@@ -847,10 +847,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-15-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-5-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (15 minut)
+        Wstęp teoretyczny (5 minut)
       
     </span>
   </a>
@@ -869,10 +869,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-10-minut" class="md-nav__link">
+  <a href="#zadania-do-rozwiazania-20-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (10 minut)
+        Zadania do rozwiązania (20 minut)
       
     </span>
   </a>
@@ -961,10 +961,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-15-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-5-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (15 minut)
+        Wstęp teoretyczny (5 minut)
       
     </span>
   </a>
@@ -983,10 +983,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-10-minut" class="md-nav__link">
+  <a href="#zadania-do-rozwiazania-20-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (10 minut)
+        Zadania do rozwiązania (20 minut)
       
     </span>
   </a>
@@ -1016,36 +1016,64 @@
 <li>Podstawy funkcji i list</li>
 <li>Instalacja bibliotek (<code>pip install scikit-learn</code>)</li>
 </ul>
-<h2 id="wstep-teoretyczny-15-minut">Wstęp teoretyczny (15 minut)</h2>
+<h2 id="wstep-teoretyczny-5-minut">Wstęp teoretyczny (5 minut)</h2>
 <p>Zamiast ręcznie pisać instrukcje <code>if</code>, możemy pozwolić komputerowi "nauczyć się" zasad na podstawie przykładów. Do tego służy biblioteka <strong>scikit-learn</strong>.</p>
 <h2 id="przykad-kodu-20-minut">Przykład kodu (20 minut)</h2>
 <p><img alt="owoce" src="../lesson18-materials/owoce.png" /></p>
-<p>Nauczymy komputer rozpoznawać, czy owoc to jabłko czy pomarańcza na podstawie wagi i tekstury:</p>
+<p>Nauczymy komputer rozpoznawać, czy owoc to jabłko czy pomarańcza na podstawie wagi i tekstury.
+Wiadomo, że pomarańcza jest zazwyczaj większa od jabłka, i ma szorstką skórkę.
+Nasz komputer nauczy się na kilku przykładach jabłek i pomarańczy (<strong>dane - features</strong>) które
+są już oznaczone, jakim owocem są (<strong>wyniki - labels</strong>). Później, podamy mu nieznany wcześniej
+owoc i sprawdzimy, czy dobrze odgadnie jego typ.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">tree</span>
 
 <span class="c1"># Dane: [waga w gramach, tekstura (0-gładka, 1-szorstka)]</span>
-<span class="n">features</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">210</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <span class="c1"># Wyniki: 0 dla jabłka, 1 dla pomarańczy</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rozpoczynam uczenie...&quot;</span><span class="p">)</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Koniec uczenia! Pora na test.&quot;</span><span class="p">)</span>
 
-<span class="n">wynik</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">160</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">wynik</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gładka skórka, waga 130 gramów.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">wynik</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To jabłko!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To pomarańcza!&quot;</span><span class="p">)</span>
+
+<span class="c1"># wyjątkowo duże jabłko</span>
+<span class="n">wynik</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">220</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gładka skórka, waga 220 gramów.&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">wynik</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To jabłko!&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To pomarańcza!&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="zadania-do-rozwiazania-10-minut">Zadania do rozwiązania (10 minut)</h2>
-<ol>
-<li><strong>Więcej danych</strong>: Dodaj 4 własne przykłady do listy <code>features</code> i <code>labels</code>. Czy model stał się "mądrzejszy"?</li>
-<li><strong>Nowa cecha</strong>: Dodaj trzecią cechę (np. kolor: 0-czerwony, 1-pomarańczowy) i sprawdź, jak wpływa na wynik.</li>
-</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To, co zrobiliśmy, nazywa się <strong>uczeniem nadzorowanym</strong> (supervised learning).</p>
 </div>
+<h2 id="zadania-do-rozwiazania-20-minut">Zadania do rozwiązania (20 minut)</h2>
+<ol>
+<li>
+<p><strong>Więcej testów</strong>: Dodaj więcej testów owoców, sprawdź małe jabłko i małą pomarańczę.</p>
+</li>
+<li>
+<p><strong>Śmieci na wejściu, śmieci na wyjściu (GIGO)</strong>: Spróbujmy celowo oszukać nasz model! 
+   Dodaj do danych ewidentną pomarańczę (waga <code>190</code>, tekstura szorstka <code>1</code>), ale w liście <code>labels</code> przypisz jej złą etykietę: <code>0</code> (jabłko). Uruchom ponownie program.</p>
+</li>
+</ol>
+<p><strong>Pytanie:</strong> Jaką decyzję podjął komputer? Dlaczego zignorował fakt, że to oczywista pomarańcza?</p>
+<div class="admonition warning">
+<p class="admonition-title">Garbage In, Garbage Out</p>
+<p>Zauważ, że model nie ma "zdrowego rozsądku". Uczy się dokładnie tego, co mu przekażesz. Jeśli dostarczysz mu błędne, niepełne lub bezsensowne dane (Śmieci na wejściu), jego przewidywania będą równie bezużyteczne (Śmieci na wyjściu). W świecie IT nazywamy to <strong>Garbage In, Garbage Out</strong></p>
+</div>
+<ol>
+<li><strong>Jedna dana mniej</strong>: Usuń informację o teksturze (zostaw samą wagę) i sprawdź, jak wpływa na wynik. Czy model stał się "mądrzejszy"?</li>
+</ol>
 
 
 
