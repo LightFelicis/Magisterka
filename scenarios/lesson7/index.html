@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza. - Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej? - Scenariusze lekcji informatyki</title>
       
     
     
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,8 +66,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#lista-sowa-kiedy-zmienna-nie-wystarcza" class="md-skip">
-          Skip to content
+        <a href="#lekcja-7-matematyka-z-pomoca-pythona-jak-napisac-program-rozwiazujacy-zadania-z-pracy-domowej" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -79,8 +81,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-header__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Scenariusze lekcji Informatyka
+            Scenariusze lekcji informatyki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+              Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
             
           </span>
         </div>
@@ -122,16 +124,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -142,7 +144,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -176,15 +178,15 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-nav__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Scenariusze lekcji Informatyka
+    Scenariusze lekcji informatyki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -272,34 +274,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../lesson1/" class="md-nav__link">
         
   
@@ -307,7 +281,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.
+    Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
   
 
     
@@ -335,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+    Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
   
 
     
@@ -363,7 +337,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -391,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?
+    Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?
   
 
     
@@ -419,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.
+    Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
   
 
     
@@ -447,7 +421,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+    Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
   
 
     
@@ -484,7 +458,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -502,7 +476,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -514,7 +488,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -523,7 +497,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -550,33 +524,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-przewidziany-na-okoo-10-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-przewidziany-na-okoo-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (przewidziany na około 10 minut)
+        Wstęp teoretyczny (przewidziany na około 15 minut)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 10 minut)">
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 15 minut)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lista" class="md-nav__link">
+  <a href="#rozszerzenie-mozliwosci-modu-math" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lista
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sowa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Słowa
+        Rozszerzenie możliwości – moduł math
       
     </span>
   </a>
@@ -589,52 +552,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-w-jezyku-python-15-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-z-jezykiem-python-10-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty w języku Python (15 minut)
+        Wspólne eksperymenty z językiem Python (10 minut)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Wspólne eksperymenty w języku Python (15 minut)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#petla-po-liscie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pętla po liście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wczytywanie-danych-do-listy-dane-oddzielone-znakiem-nowej-linii" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wczytywanie danych do listy (dane oddzielone znakiem nowej linii)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wczytywanie-danych-do-listy-dane-oddzielone-spacja" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wczytywanie danych do listy (dane oddzielone spacją)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -662,15 +586,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#woda-czysci" class="md-nav__link">
+  <a href="#amanie-czekolady" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Woda Czyści
+        Łamanie czekolady
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Woda Czyści">
+    <nav class="md-nav" aria-label="Łamanie czekolady">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -739,7 +663,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.
+    Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza
   
 
     
@@ -767,7 +691,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?
+    Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle
   
 
     
@@ -795,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -823,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+    Lekcja 11 – Kody ASCII – zamiana liter na liczby
   
 
     
@@ -851,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.
+    Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania
   
 
     
@@ -879,7 +803,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -907,7 +831,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 15 - Algorytm Euklidesa – zastosowanie.
+    Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy
   
 
     
@@ -935,7 +859,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -963,7 +887,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.
+    Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu
   
 
     
@@ -991,7 +915,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -1019,7 +943,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.
+    Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
   
 
     
@@ -1047,7 +971,35 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.
+    Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 20 – Trenowanie własnego modelu i eksploracja danych
   
 
     
@@ -1081,7 +1033,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -1090,7 +1042,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1117,33 +1069,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-przewidziany-na-okoo-10-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-przewidziany-na-okoo-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (przewidziany na około 10 minut)
+        Wstęp teoretyczny (przewidziany na około 15 minut)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 10 minut)">
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 15 minut)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lista" class="md-nav__link">
+  <a href="#rozszerzenie-mozliwosci-modu-math" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lista
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sowa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Słowa
+        Rozszerzenie możliwości – moduł math
       
     </span>
   </a>
@@ -1156,52 +1097,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-w-jezyku-python-15-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-z-jezykiem-python-10-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty w języku Python (15 minut)
+        Wspólne eksperymenty z językiem Python (10 minut)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Wspólne eksperymenty w języku Python (15 minut)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#petla-po-liscie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pętla po liście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wczytywanie-danych-do-listy-dane-oddzielone-znakiem-nowej-linii" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wczytywanie danych do listy (dane oddzielone znakiem nowej linii)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wczytywanie-danych-do-listy-dane-oddzielone-spacja" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wczytywanie danych do listy (dane oddzielone spacją)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1229,15 +1131,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#woda-czysci" class="md-nav__link">
+  <a href="#amanie-czekolady" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Woda Czyści
+        Łamanie czekolady
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Woda Czyści">
+    <nav class="md-nav" aria-label="Łamanie czekolady">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1300,16 +1202,17 @@
 
 
 
-<h1 id="lista-sowa-kiedy-zmienna-nie-wystarcza">Lista, słowa – kiedy zmienna nie wystarcza</h1>
+<h1 id="lekcja-7-matematyka-z-pomoca-pythona-jak-napisac-program-rozwiazujacy-zadania-z-pracy-domowej">Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?</h1>
+<p class="lesson-duration"><strong>Czas realizacji:</strong> 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.</p>
 <h2 id="wymagana-wiedza">Wymagana wiedza</h2>
 <ul>
-<li>Podstawy języka Python: instrukcje wejścia/wyjścia (input(), print()).</li>
+<li>Podstawy języka Python: instrukcje wejścia/wyjścia (<code>input()</code>, <code>print()</code>).</li>
 <li>Stosowanie zmiennych do przechowywania danych.</li>
-<li>Instrukcje warunkowe (if, else) do podejmowania decyzji przez program.</li>
-<li>Pętle for i while.</li>
-<li>Stosowanie własnych funkcji (def, return).</li>
+<li>Instrukcje warunkowe (<code>if</code>, <code>else</code>) do podejmowania decyzji przez program.</li>
+<li>Stosowanie własnych funkcji (<code>def</code>, <code>return</code>).</li>
 </ul>
 <h2 id="tresci-z-podstawy-programowej">Treści z podstawy programowej</h2>
+<p><em>Wybrane wymagania z podstawy programowej dla klas VII–VIII. <a href="https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka">Źródło</a>.</em></p>
 <table>
 <thead>
 <tr>
@@ -1319,131 +1222,91 @@
 </thead>
 <tbody>
 <tr>
-<td>I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów.</td>
-</tr>
-<tr>
 <td>II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:</td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td>1) W programach stosuje: instrukcje wejścia/wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i <strong>tablice</strong>.</td>
+<td>1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, <strong>wyrażenia arytmetyczne i logiczne</strong>, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2;</td>
+</tr>
+<tr>
+<td>I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […]</td>
 </tr>
 </tbody>
 </table>
-<h2 id="wstep-teoretyczny-przewidziany-na-okoo-10-minut">Wstęp teoretyczny (przewidziany na około 10 minut)</h2>
-<p>Do tej pory używaliśmy zmiennych jako pojedynczych „pudełek” na dane. Jednak w informatyce często musimy zarządzać setkami lub tysiącami informacji naraz (np. listą uczniów w szkole lub postaciami w grze komputerowej). Tworzenie oddzielnej zmiennej dla każdego elementu byłoby niemożliwe.</p>
-<p>W Pythonie istnieją specjalne <strong>struktury</strong> do przechowywania danych, dzisiaj poznamy kilka z nich:</p>
-<h3 id="lista">Lista</h3>
-<p><strong>Lista (list)</strong>: To uporządkowany zbiór elementów. Możesz ją sobie wyobrazić jako regał z ponumerowanymi szufladami. Do każdej szuflady możemy zajrzeć, używając indeksu (numeru szuflady). Możemy również dodawać kolejne szuflady
-za pomocą polecenia <code>append()</code>. Za pomocą <code>len</code>, możemy sprawdzić liczbę elementów w liście.</p>
-<p><img alt="lista" src="../lesson7-materials/lista.png" /></p>
-<p>Przeanalizujmy następujący program</p>
-<div class="highlight"><pre><span></span><code><span class="n">oceny</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pierwsza ocena: &quot;</span><span class="p">,</span> <span class="n">oceny</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Druga ocena: &quot;</span><span class="p">,</span> <span class="n">oceny</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ile ocen? &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">))</span>
-
-<span class="n">oceny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pierwsza ocena: &quot;</span><span class="p">,</span> <span class="n">oceny</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ile ocen? &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">))</span>
+<h2 id="wstep-teoretyczny-przewidziany-na-okoo-15-minut">Wstęp teoretyczny (przewidziany na około 15 minut)</h2>
+<p>Python to nie tylko język dla programistów, ale potężne narzędzie matematyczne, które może zastąpić zaawansowany kalkulator naukowy. Pozwala on na automatyzację obliczeń z twojej pracy domowej – od geometrii po teorię liczb.</p>
+<p>Aby skutecznie rozwiązywać zadania matematyczne, musimy najpierw stworzyć specyfikację, czyli określić, jakie dane otrzymujemy w zadaniu (wejście), a co mamy obliczyć (wynik).</p>
+<p>Większość operacji wykonujemy za pomocą standardowych operatorów i funkcji wbudowanych. Część z nich już znamy, na przykład operatory działań  <code>+, -, *, /</code>. W Pythonie mamy również operator potęgowania: <code>2**4</code> oznacza matematyczne <span class="arithmatex">\(2^4\)</span>.</p>
+<p>Przydatne są także operator dzielenia całkowitego <code>//</code> oraz operator reszty z dzielenia <code>%</code>.</p>
+<p>Popatrzmy na następujący przykład programu w Pythonie:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wynik dzielenia całkowitego 12/5 to: &quot;</span><span class="p">,</span> <span class="mi">12</span><span class="o">//</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot; a reszta z dzielenia to: &quot;</span><span class="p">,</span> <span class="mi">12</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Wyzwanie</strong>: Uzupełnij luki tak, aby program działał poprawnie</p>
-<div class="highlight"><pre><span></span><code><span class="n">oceny</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Druga ocena: &quot;</span><span class="p">,</span> <span class="n">oceny</span><span class="p">[</span><span class="err">???</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ostatnia ocena: &quot;</span><span class="p">,</span> <span class="n">oceny</span><span class="p">[</span><span class="err">???</span><span class="p">])</span>
-
-<span class="n">oceny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ostatnia ocena: &quot;</span><span class="p">,</span> <span class="n">oceny</span><span class="p">[</span><span class="err">???</span><span class="p">])</span>
-
-<span class="n">suma_ocen</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
-<span class="n">ile_ocen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Średnia ocen: &quot;</span><span class="p">,</span> <span class="err">???</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="sowa">Słowa</h3>
-<p><strong>Słowa (string)</strong>: W Pythonie słowo to w rzeczywistości ciąg znaków (liter). Możemy wyciągnąć pojedynczą literę ze słowa tak samo, jak element z listy.</p>
-<div class="highlight"><pre><span></span><code><span class="n">imie</span> <span class="o">=</span> <span class="s2">&quot;Michal&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">imie</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imie</span><span class="p">))</span>
-</code></pre></div>
-<h2 id="wspolne-eksperymenty-w-jezyku-python-15-minut">Wspólne eksperymenty w języku Python (15 minut)</h2>
-<p>Uruchom poniższe przykłady, aby zobaczyć, jak w Pythonie wykorzystać listy:</p>
-<h3 id="petla-po-liscie">Pętla po liście</h3>
-<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</code></pre></div>
-<p><strong>Wyzwanie</strong>: Napisz program, który wypisze co drugi element listy</p>
-<h3 id="wczytywanie-danych-do-listy-dane-oddzielone-znakiem-nowej-linii">Wczytywanie danych do listy (dane oddzielone znakiem nowej linii)</h3>
-<div class="highlight"><pre><span></span><code><span class="n">ile_liczb_bedzie</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-<span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ile_liczb_bedzie</span><span class="p">):</span>
-    <span class="n">liczba</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę&quot;</span><span class="p">))</span>
-    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liczba</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="wczytywanie-danych-do-listy-dane-oddzielone-spacja">Wczytywanie danych do listy (dane oddzielone spacją)</h3>
-<p>Zbadajmy działanie polecenia <code>split()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">bardzo_dlugie_slowo</span> <span class="o">=</span> <span class="s2">&quot;Ala ma kota&quot;</span>
-<span class="n">slowa</span> <span class="o">=</span> <span class="n">bardzo_dlugie_slowo</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">slowa</span><span class="p">)</span>
-</code></pre></div>
-<p>Teraz możemy wczytywać słowa oddzielone spacją za pomocą polecenia <code>input()</code>!</p>
-<div class="highlight"><pre><span></span><code><span class="n">imiona</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># Aleksandra Basia Celina</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">imiona</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Aleksandra</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">imiona</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Celina</span>
-</code></pre></div>
-<p>Sytuacja komplikuje się, gdy wczytywane są liczby. Żeby je wczytać, musimy
-podzielić <code>input()</code> na pojedyncze fragmenty używając <code>split()</code>. Problem:
-wczytane dane są słowami, a nie liczbami! Żeby to naprawić, musimy zastosować <code>int()</code> na
-każdym elemencie listy.</p>
-<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
-    <span class="c1"># Weź i-ty element</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="c1"># Zmień na liczbę</span>
-    <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-</code></pre></div>
-<p>Dla zaawansowanych: powyższy kod można skrócić, korzystając z polecenia <code>map()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-20-minut">Zadania do rozwiązania na komputerze (przewidziane na około 20 minut)</h2>
-<p>Z poniższych zadań wybierz <code>2</code> i zaimplementuj je na komputerze.</p>
+<p><strong>Wyzwanie</strong>: Jak napisać program, który sprawdzi, czy wczytana liczba jest parzysta?</p>
+<p>Oprócz operatorów w Pythonie mamy kilka przydatnych <strong>funkcji</strong> wbudowanych, na przykład:</p>
 <ul>
-<li><strong>Parzyste liczby</strong>: Wczytaj 10 liczb całkowitych. Napisz program, który przejdzie przez listę liczb i wypisze tylko te liczby, które są parzyste. Podpowiedź: Wykorzystaj pętlę for oraz operator modulo <code>% 2 == 0</code>.</li>
-<li><strong>Lista od tyłu</strong>: Wczytaj od użytkownika 5 słów i zapisz je na liście. Następnie wypisz te słowa w odwrotnej kolejności (od ostatniego do pierwszego).</li>
-<li><strong>Co drugi element</strong>: Wczytaj listę imion (np. 6-8 słów), wypisz co drugie imię z tej listy (indeksy 0, 2, 4...).</li>
-<li><strong>Filtr bezpieczeństwa</strong>: Wczytaj listę słów, która zawiera różne wyrazy oraz słowo "zakazane" (może występować kilka razy). Napisz program, który wypisze wszystkie elementy tej listy oprócz słowa "zakazane".</li>
-<li><strong>Suma ocen</strong>: Wczytaj listę liczb - ocen z matematyki. Napisz funkcję, która obliczy ich sumę <strong>bez używania gotowej funkcji sum()</strong>, przechodząc przez listę element po elemencie.</li>
-<li><strong>Analizator długości</strong>: Wczytaj listę nazw miast. Wypisz tylko te nazwy, które mają więcej niż 5 liter. Podpowiedź: Wykorzystaj funkcję wbudowaną len() do sprawdzenia długości każdego słowa.</li>
+<li><code>abs(liczba)</code> – zwraca wartość bezwzględną liczby;</li>
+<li><code>min(x, y, z)</code> oraz <code>max(x, y, z)</code> – zwracają odpowiednio najmniejszą i największą spośród podanych liczb;</li>
+<li><code>round(liczba, ile_po_przecinku)</code> – zaokrągla liczbę.</li>
 </ul>
-<p>Zadanie dla wszystkich:</p>
-<p><strong>Poszukiwacz skarbów</strong>: Wczytaj listę 10 liczb. Poproś użytkownika o podanie jednej liczby i sprawdź, czy znajduje się ona na liście. Jeśli tak, wypisz jej numer indeksu.</p>
+<p>Przeanalizujmy następujący program w Pythonie:</p>
+<div class="highlight"><pre><span></span><code><span class="n">liczba</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wartość bezwzględna: &quot;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">liczba</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum z liczby i 0: &quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">liczba</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jedna trzecia część liczby, zaokrąglona: &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">liczba</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+<p>Co zostanie wypisane na ekranie po podaniu liczby <code>−1</code> jako danych wejściowych?</p>
+<h3 id="rozszerzenie-mozliwosci-modu-math">Rozszerzenie możliwości – moduł math</h3>
+<p>Aby uzyskać dostęp do bardziej zaawansowanych funkcji, musimy „zaimportować” dodatkowy zestaw narzędzi <code>math</code>.
+Zawiera on przydatne funkcje, na przykład:</p>
+<ul>
+<li><code>sqrt(liczba)</code> – pierwiastek kwadratowy z liczby.</li>
+<li><code>ceil(liczba)</code> – zaokrąglenie w górę (sufit), z <code>2.5</code> zrobi <code>3</code>.</li>
+<li><code>floor(liczba)</code> – zaokrąglenie w dół (podłoga), z <code>2.5</code> zrobi <code>2</code>.</li>
+<li><code>gcd(a, b)</code> – największy wspólny dzielnik (NWD).</li>
+</ul>
+<p>Moduł zawiera także stałą <code>pi</code>, przybliżającą liczbę π. Nie jest ona funkcją.</p>
+<p>Aby korzystać z <code>math</code>, na początku programu należy umieścić wiersz z instrukcją <code>import</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="wspolne-eksperymenty-z-jezykiem-python-10-minut">Wspólne eksperymenty z językiem Python (10 minut)</h2>
+<p>Sprawdźmy, jak Python radzi sobie z typowymi problemami z podręcznika:</p>
+<ol>
+<li>Liczba przeciwna i odwrotna - wczytaj liczbę różną od zera i wypisz liczbę przeciwną oraz odwrotną.</li>
+<li>Precyzja zaokrągleń - wczytaj liczbę i zaokrąglij ją do 2 miejsc po przecinku.</li>
+<li>Pierwiastkowanie/potęgowanie - wczytaj nieujemną liczbę i wypisz jej pierwiastek rzeczywisty oraz kwadrat.</li>
+</ol>
+<h2 id="zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-20-minut">Zadania do rozwiązania na komputerze (przewidziane na około 20 minut)</h2>
+<p>Zaprojektuj programy, które pomogą ci w nauce innych przedmiotów (wybierz 2 z poniższej listy):</p>
+<ul>
+<li>Twierdzenie Pitagorasa: Napisz funkcję, która przyjmuje długości dwóch przyprostokątnych a i b, a zwraca długość przeciwprostokątnej c. Wykorzystaj <code>math.sqrt()</code> oraz wzór <span class="arithmatex">\(a^2 + b^2 = c^2\)</span>.</li>
+<li>Pole i obwód koła: Wczytaj promień <code>r</code>. Oblicz pole (<span class="arithmatex">\(\pi r^2\)</span>) i obwód (<span class="arithmatex">\(2\pi r\)</span>). Użyj stałej <code>pi</code>. Zaokrąglij wynik do 2 miejsc po przecinku.</li>
+<li>Kalkulator NWD: Wykorzystaj <code>gcd(a, b)</code>, aby sprawdzić, przez jaką największą liczbę można skrócić ułamek <span class="arithmatex">\(\frac{a}{b}\)</span>.</li>
+<li>Zakupy i reszta: Napisz program, który wczyta cenę towaru i kwotę, jaką zapłacił klient. Jeśli wpłacona kwota jest wystarczająca, wypisz resztę. W przeciwnym razie wypisz kwotę niedopłaty z osobnym komunikatem.</li>
+<li>Zaokrąglanie średniej: Wczytaj 5 liczb i oblicz ich średnią arytmetyczną. Użyj <code>ceil()</code>, aby zaokrąglić średnią w górę do liczby całkowitej.</li>
+</ul>
 <h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
-<h3 id="woda-czysci">Woda Czyści</h3>
-<p>Czy wiesz, od czego wziął się skrót <strong>OKI</strong>? Myślisz, że od <em>Olimpijskie Koło Informatyczne</em>?
-Otóż nie! OKI to <em>Ojej, Ktoś Informatyczny</em>!</p>
-<p>A czy wiesz, skąd pochodzi słowo <strong>POT</strong>? Nie zastanawiałeś(-aś) się? Szkoda, bo to proste! To skrót od <em>Pamiętaj O Treningu</em>!</p>
-<p>Jak widzisz, skróty nie zawsze są oczywiste. Mówimy <em>kreatywni odkrywcy nowych kierunków – uśmiech, radość, sukces</em>, a to przecież konkurs!</p>
-<p>Dlatego wielka prośba: napisz program, który automatycznie generuje skrót z podanych wyrazów (akronim utworzony z pierwszych liter każdego ze słów).</p>
-<p>I nie zapomnij! <strong>WC! Woda Czyści!</strong></p>
-<p>Do wczytania danych wykorzystaj polecenie:
-<code>import sys</code>
-<code>słowa = sys.stdin.read().split()</code></p>
+<p><em>Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.</em></p>
+<h3 id="amanie-czekolady">Łamanie czekolady</h3>
+<p><img alt="czekolada" src="../lesson7-materials/czekolada.png" /></p>
+<p>Pan Integer kupił swoją ulubioną czekoladę z nadzieniem toffi. Czekolada ma kształt prostokąta o rozmiarze <span class="arithmatex">\(n \times m\)</span> kawałków.</p>
+<p>Pan Integer chciałby teraz odłamać <strong>jednym prostym ruchem</strong> (wzdłuż linii podziału) dokładnie <span class="arithmatex">\(k\)</span> kawałków. Czy jest to możliwe?</p>
+<p>Do wczytania danych wykorzystaj polecenia:
+<code>n, m = map(int, input().split())</code>
+<code>k = int(input())</code></p>
 <h4 id="wejscie">Wejście</h4>
-<p>W pierwszym wierszu wejścia znajduje się jedna liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 100\ 000\)</span>), oznaczająca liczbę słów.</p>
-<p>W kolejnych <span class="arithmatex">\(n\)</span> wierszach znajdują się słowa. W <span class="arithmatex">\(i\)</span>-tym z nich znajduje się jedno słowo złożone z małych i dużych liter alfabetu angielskiego.</p>
-<p>Suma długości wszystkich słów na wejściu nie przekroczy <span class="arithmatex">\(500\ 000\)</span>.</p>
+<p>Pierwszy wiersz wejścia zawiera dwie liczby całkowite <span class="arithmatex">\(n\)</span> oraz <span class="arithmatex">\(m\)</span> (<span class="arithmatex">\(1 \le n, m \le 10^6\)</span>), oznaczające rozmiar czekolady.</p>
+<p>W drugim wierszu znajduje się jedna liczba całkowita <span class="arithmatex">\(k\)</span> (<span class="arithmatex">\(1 \le k \le 10^6\)</span>), oznaczająca liczbę kawałków, które chce odłamać Pan Integer.</p>
 <h4 id="wyjscie">Wyjście</h4>
-<p>W jedynym wierszu wyjścia wypisz jedno słowo – skrót utworzony z pierwszych liter kolejnych słów z wejścia.</p>
+<p>Na wyjściu wypisz słowo <code>TAK</code>, jeśli Pan Integer może jednym przełamaniem oderwać dokładnie <span class="arithmatex">\(k\)</span> kawałków czekolady, lub <code>NIE</code> w przeciwnym wypadku.</p>
 <h4 id="przykad">Przykład</h4>
 <table>
 <thead>
@@ -1454,27 +1317,24 @@ Otóż nie! OKI to <em>Ojej, Ktoś Informatyczny</em>!</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">4<br>Mistrz<br>Programowania<br>runda<br>pierwsza</td>
-<td style="text-align: left;">MPrp</td>
+<td style="text-align: left;">3 5<br>6</td>
+<td style="text-align: left;">TAK</td>
 </tr>
 <tr>
-<td style="text-align: left;">1<br>qwerty</td>
-<td style="text-align: left;">q</td>
-</tr>
-<tr>
-<td style="text-align: left;">3<br>d<br>e<br>f</td>
-<td style="text-align: left;">def</td>
+<td style="text-align: left;">4 8<br>6</td>
+<td style="text-align: left;">NIE</td>
 </tr>
 </tbody>
 </table>
-<p><em>Wyjaśnienie dla pierwszego przykładu:</em>
-Są 4 słowa. Pierwsze litery tych słów (<code>M</code>, <code>P</code>, <code>r</code>, <code>p</code>) tworzą skrót <code>MPrp</code>.</p>
-<details class="wskazówka">
+<details class="tip">
 <summary>Wskazówka</summary>
-<p>Aby wczytać bardzo szybko dużą liczbę wierszy (<span class="arithmatex">\(100\ 000\)</span>), warto użyć modułu <code>sys.stdin.read().split()</code>. Pierwszym elementem wczytanej listy będzie liczba <span class="arithmatex">\(n\)</span>, a kolejnymi elementami będą słowa.
-Pierwszą literę każdego słowa możesz pobrać za pomocą indeksu <code>[0]</code>, następnie wypisywać ją poleceniem <code>print(litera, end="")</code>.</p>
+<p>Jedno przełamanie prostokątnej czekolady wzdłuż linii podziału oddziela pasek o wymiarach <span class="arithmatex">\(x \times m\)</span> (jeśli łamiemy wzdłuż wierszy) lub <span class="arithmatex">\(n \times y\)</span> (jeśli łamiemy wzdłuż kolumn).</p>
+<p>Oznacza to, że odłamana część składa się z liczby kawałków będącej wielokrotnością <span class="arithmatex">\(m\)</span> (i mniejszej niż cała czekolada <span class="arithmatex">\(n \times m\)</span>) LUB wielokrotnością <span class="arithmatex">\(n\)</span> (i mniejszej niż <span class="arithmatex">\(n \times m\)</span>).</p>
+<p>Warunek można zapisać tak:
+<code>0 &lt; k &lt; n * m and (k % n == 0 or k % m == 0)</code></p>
 </details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/jAqYLpzf_o8fRGM8PW37L6zJ/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/eSgi8Ae29vCPojodBrdDAooI/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/eSgi8Ae29vCPojodBrdDAooI/site/?key=statement">odnośnik do zadania</a>.</p>
 
 
 
@@ -1524,14 +1384,12 @@ Pierwszą literę każdego słowa możesz pobrać za pomocą indeksu <code>[0]</
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       

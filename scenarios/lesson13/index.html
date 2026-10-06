@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lekcja 14 - Kod binarny, szesnastkowy. - Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr - Scenariusze lekcji informatyki</title>
       
     
     
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,8 +66,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#kod-binarny-szesnastkowy" class="md-skip">
-          Skip to content
+        <a href="#lekcja-13-wasnosci-liczb-podzielnosc-suma-cyfr-i-iloczyn-cyfr" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -79,8 +81,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-header__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Scenariusze lekcji Informatyka
+            Scenariusze lekcji informatyki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lekcja 14 - Kod binarny, szesnastkowy.
+              Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
             
           </span>
         </div>
@@ -122,16 +124,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -142,7 +144,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -176,15 +178,15 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-nav__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Scenariusze lekcji Informatyka
+    Scenariusze lekcji informatyki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -272,34 +274,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../lesson1/" class="md-nav__link">
         
   
@@ -307,7 +281,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.
+    Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
   
 
     
@@ -335,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+    Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
   
 
     
@@ -363,7 +337,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -391,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?
+    Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?
   
 
     
@@ -419,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.
+    Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
   
 
     
@@ -447,7 +421,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+    Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
   
 
     
@@ -475,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -503,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.
+    Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza
   
 
     
@@ -531,7 +505,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?
+    Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle
   
 
     
@@ -559,7 +533,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -587,7 +561,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+    Lekcja 11 – Kody ASCII – zamiana liter na liczby
   
 
     
@@ -615,7 +589,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.
+    Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania
   
 
     
@@ -652,7 +626,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -670,7 +644,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -682,7 +656,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -691,7 +665,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -718,100 +692,67 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-20-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (20 minut)
+        Wstęp teoretyczny (15 minut)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Wstęp teoretyczny (20 minut)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemy-addytywne-dodawanie-symboli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Systemy addytywne (Dodawanie symboli)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#systemy-pozycyjne-znaczenie-pozycji-cyfry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Systemy pozycyjne (Znaczenie pozycji cyfry)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Systemy pozycyjne (Znaczenie pozycji cyfry)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-dziesietny-ludzki" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System dziesiętny (Ludzki)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#system-dwojkowy-komputerowy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System dwójkowy (Komputerowy)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#algorytm-zamiany-metoda-dzielenia-przez-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorytm zamiany (metoda dzielenia przez 2)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-20-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty (20 minut)
+        Wspólne eksperymenty (15 minut)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Wspólne eksperymenty (20 minut)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-60-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania (60 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na platformie Szkopuł
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#krok-1-zbieranie-reszt-do-listy" class="md-nav__link">
+  <a href="#atak-na-mleczarnie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Krok 1: Zbieranie reszt do listy
+        Atak na mleczarnię
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atak na mleczarnię">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
       
     </span>
   </a>
@@ -819,10 +760,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dlaczego-nie-mozemy-po-prostu-dodawac" class="md-nav__link">
+  <a href="#wyjscie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dlaczego nie możemy po prostu dodawać?
+        Wyjście
       
     </span>
   </a>
@@ -830,21 +771,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#krok-2-zamiana-na-tekst-string" class="md-nav__link">
+  <a href="#przykad" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Krok 2: Zamiana na tekst (String)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wyzwanie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyzwanie
+        Przykład
       
     </span>
   </a>
@@ -855,15 +785,59 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-15-minut" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#patrol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (15 minut)
+        Patrol
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Patrol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -890,7 +864,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 15 - Algorytm Euklidesa – zastosowanie.
+    Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy
   
 
     
@@ -918,7 +892,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -946,7 +920,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.
+    Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu
   
 
     
@@ -974,7 +948,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -1002,7 +976,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.
+    Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
   
 
     
@@ -1030,7 +1004,35 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.
+    Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 20 – Trenowanie własnego modelu i eksploracja danych
   
 
     
@@ -1064,7 +1066,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -1073,7 +1075,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1100,100 +1102,67 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-20-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (20 minut)
+        Wstęp teoretyczny (15 minut)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Wstęp teoretyczny (20 minut)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemy-addytywne-dodawanie-symboli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Systemy addytywne (Dodawanie symboli)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#systemy-pozycyjne-znaczenie-pozycji-cyfry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Systemy pozycyjne (Znaczenie pozycji cyfry)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Systemy pozycyjne (Znaczenie pozycji cyfry)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-dziesietny-ludzki" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System dziesiętny (Ludzki)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#system-dwojkowy-komputerowy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System dwójkowy (Komputerowy)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#algorytm-zamiany-metoda-dzielenia-przez-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorytm zamiany (metoda dzielenia przez 2)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-20-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty (20 minut)
+        Wspólne eksperymenty (15 minut)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Wspólne eksperymenty (20 minut)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-60-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania (60 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na platformie Szkopuł
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#krok-1-zbieranie-reszt-do-listy" class="md-nav__link">
+  <a href="#atak-na-mleczarnie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Krok 1: Zbieranie reszt do listy
+        Atak na mleczarnię
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atak na mleczarnię">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
       
     </span>
   </a>
@@ -1201,10 +1170,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dlaczego-nie-mozemy-po-prostu-dodawac" class="md-nav__link">
+  <a href="#wyjscie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dlaczego nie możemy po prostu dodawać?
+        Wyjście
       
     </span>
   </a>
@@ -1212,21 +1181,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#krok-2-zamiana-na-tekst-string" class="md-nav__link">
+  <a href="#przykad" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Krok 2: Zamiana na tekst (String)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wyzwanie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyzwanie
+        Przykład
       
     </span>
   </a>
@@ -1237,15 +1195,59 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-15-minut" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#patrol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (15 minut)
+        Patrol
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Patrol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1266,13 +1268,19 @@
 
 
 
-<h1 id="kod-binarny-szesnastkowy">Kod binarny, szesnastkowy</h1>
+<h1 id="lekcja-13-wasnosci-liczb-podzielnosc-suma-cyfr-i-iloczyn-cyfr">Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr</h1>
+<p class="lesson-duration"><strong>Czas realizacji:</strong> 90 minut (2 godziny lekcyjne). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.</p>
 <h2 id="wymagana-wiedza">Wymagana wiedza</h2>
 <ul>
-<li>Podstawowe operacje na liczbach</li>
-<li>Znajomość potęg liczby 2</li>
+<li>
+<p>Pętle <code>while</code> oraz <code>for</code>.</p>
+</li>
+<li>
+<p>Operatory <code>%</code> (modulo) oraz <code>//</code> (dzielenie całkowite).</p>
+</li>
 </ul>
 <h2 id="tresci-z-podstawy-programowej">Treści z podstawy programowej</h2>
+<p><em>Wybrane wymagania z podstawy programowej dla klas VII–VIII. <a href="https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka">Źródło</a>.</em></p>
 <table>
 <thead>
 <tr>
@@ -1282,97 +1290,157 @@
 </thead>
 <tbody>
 <tr>
-<td>I. Rozumienie, analizowanie i rozwiązywanie problemów.</td>
-<td>3) Przedstawia sposób reprezentacji w komputerze: znaków, liczb (system binarny).</td>
+<td>I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […]</td>
+</tr>
+<tr>
+<td>II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2;</td>
 </tr>
 </tbody>
 </table>
-<h2 id="wstep-teoretyczny-20-minut">Wstęp teoretyczny (20 minut)</h2>
-<p>System liczbowy to zbiór reguł, według którego zapisuje się liczby.
-Takie systemy można podzielić na dwa typy - pozycyjny oraz addytywny.</p>
-<h3 id="systemy-addytywne-dodawanie-symboli">Systemy addytywne (Dodawanie symboli)</h3>
-<p>W systemie <strong>addytywnym</strong> wartość liczby to suma jej cyfr. Taki system znamy ze szkoły,
-jest nim system rzymski - <code>I = 1</code>, <code>V = 5</code>, <code>X = 10</code>, <code>L = 50</code>, <code>C = 100</code>, <code>D = 500</code>, <code>M = 1000</code>.
-Liczba <code>CXXIII</code> to <code>100 + 10 + 10 + 1 + 1 + 1 = 123</code>.</p>
-<h3 id="systemy-pozycyjne-znaczenie-pozycji-cyfry">Systemy pozycyjne (Znaczenie pozycji cyfry)</h3>
-<p>W systemie pozycyjnym każda pozycja ma swoją <strong>wagę</strong>, która wpływa na
-zapisaną na tej pozycji cyfrę.</p>
-<h4 id="system-dziesietny-ludzki">System dziesiętny (Ludzki)</h4>
-<p>Używamy go codziennie. Składa się z dziesięciu cyfr (od <code>0</code> do <code>9</code>), a waga każdej pozycji to kolejna potęga liczby <code>10</code>.</p>
-<p>Przykład liczby 123:
-- 1 stoi na miejscu setek (<span class="arithmatex">\(10^2\)</span>)
-- 2 stoi na miejscu dziesiątek (<span class="arithmatex">\(10^1\)</span>)
-- 3 stoi na miejscu jedności (<span class="arithmatex">\(10^0\)</span>)</p>
-<p>W zapisie matematycznym <span class="arithmatex">\(123 = 10^2 \cdot 1 + 10^1 \cdot 2 + 10^0 \cdot 3\)</span>.</p>
-<h4 id="system-dwojkowy-komputerowy">System dwójkowy (Komputerowy)</h4>
-<p>Komputery nie rozumieją dziesięciu cyfr. Ich procesory składają się z milionów malutkich przełączników, które mogą być tylko w dwóch stanach: włączony (1) lub wyłączony (0). Dlatego komputery używają systemu dwójkowego, gdzie wagą jest potęga liczby 2.</p>
-<p>O systemie binarnym najlepiej myśleć jak o rozkładzie liczby na potęgi dwójki, które trzeba do siebie dodać.</p>
-<p>Na przykład liczba <code>50</code> to <code>32 + 16 + 2</code>, czyli potęg <span class="arithmatex">\(2^5\)</span>, <span class="arithmatex">\(2^4\)</span> i <span class="arithmatex">\(2^1\)</span>.
-W zapisie systemu dwójkowego, liczba w systemie dziesiętnym <code>50</code> wygląda tak: <code>110010</code>.
-<code>1</code> oznacza "bierzemy tę potęgę <code>2</code> do sumy", a <code>0</code> oznacza "nie bierzemy".</p>
-<h3 id="algorytm-zamiany-metoda-dzielenia-przez-2">Algorytm zamiany (metoda dzielenia przez 2)</h3>
-<p>Aby zamienić liczbę dziesiętną na binarną "ręcznie", dzielimy ją przez 2 i zapisujemy reszty z dzielenia. Proces powtarzamy, aż wynik dzielenia wyniesie 0. Wynik czytamy od dołu (od ostatniej zapisanej reszty).</p>
-<p>Przykład dla liczby 13:
-- <code>13 // 2 = 6</code>, reszta <strong>1</strong>
-- <code>6 // 2 = 3</code>, reszta <strong>0</strong>
-- <code>3 // 2 = 1</code>, reszta <strong>1</strong>
-- <code>1 // 2 = 0</code>, reszta <strong>1</strong>
-Wynik: <code>1101</code>.</p>
-<h2 id="wspolne-eksperymenty-20-minut">Wspólne eksperymenty (20 minut)</h2>
-<h3 id="krok-1-zbieranie-reszt-do-listy">Krok 1: Zbieranie reszt do listy</h3>
-<p>Najpierw zapiszmy nasze reszty do listy, tak jak robiliśmy to na kartce.</p>
-<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę: &quot;</span><span class="p">))</span>
-<span class="n">reszty</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">reszta</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span>
-    <span class="n">reszty</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reszta</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
-
-<span class="n">reszty</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>  <span class="c1"># Pamiętasz? Wynik czytamy od dołu/od końca!</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista bitów:&quot;</span><span class="p">,</span> <span class="n">reszty</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="dlaczego-nie-mozemy-po-prostu-dodawac">Dlaczego nie możemy po prostu dodawać?</h3>
-<p>Gdybyśmy napisali <code>wynik = wynik + reszta</code>, gdzie <code>wynik</code> jest liczbą (np. <code>0</code>), to dla liczby <code>13</code> (reszty: 1, 0, 1, 1) otrzymalibyśmy wynik <code>3</code>. </p>
-<p><strong>Dlaczego?</strong> Bo komputer wykonałby działanie matematyczne: <span class="arithmatex">\(1 + 0 + 1 + 1 = 3\)</span>. My natomiast nie chcemy <strong>sumy</strong> tych liczb, ale ich <strong>zlepienia</strong> w odpowiedniej kolejności.</p>
-<h3 id="krok-2-zamiana-na-tekst-string">Krok 2: Zamiana na tekst (String)</h3>
-<p>Aby otrzymać czytelny wynik, musimy zamienić listę cyfr na tekst:</p>
-<div class="highlight"><pre><span></span><code><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">reszty</span><span class="p">:</span>
-    <span class="n">tekst</span> <span class="o">=</span> <span class="n">tekst</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Postać binarna:&quot;</span><span class="p">,</span> <span class="n">tekst</span><span class="p">)</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Krótszy kod</p>
-<p>W Pythonie możemy to zrobić w jednej linijce, dodając resztę bezpośrednio do tekstu:
-<code>wynik = str(reszta) + wynik</code>. Zauważ, że dodajemy <code>str(reszta)</code> na <strong>początek</strong>, co automatycznie odwraca nam wynik!</p>
-</div>
-<p>System szesnastkowy to system, w którym podstawą jest liczba <strong>16</strong>. Ponieważ zabrakło nam pojedynczych cyfr, po <code>9</code> używamy liter: <strong>A</strong> (10), <strong>B</strong> (11), <strong>C</strong> (12), <strong>D</strong> (13), <strong>E</strong> (14) oraz <strong>F</strong> (15).</p>
-<p><strong>Gdzie go stosujemy?</strong></p>
+<h2 id="wstep-teoretyczny-15-minut">Wstęp teoretyczny (15 minut)</h2>
+<p>Operacje na cyfrach omawiamy dla nieujemnych liczb całkowitych. Liczba 0 ma jedną cyfrę, a iloczyn jej cyfr wynosi 0; w tych zadaniach obsłuż ten przypadek osobno.</p>
+<p>Aby wyznaczyć ostatnią cyfrę liczby, używamy operacji <code>n % 10</code>.
+Aby „pozbyć się” ostatniej cyfry, używamy operacji dzielenia całkowitego <code>n // 10</code>.</p>
+<p>Przykład dla liczby 123:</p>
 <ul>
 <li>
-<p><strong>Kolory na stronach WWW (HEX)</strong>: Zapis typu <code>#FF0000</code> to nic innego jak trzy liczby szesnastkowe określające jasność barwy czerwonej, zielonej i niebieskiej.</p>
+<p><code>123 % 10 = 3</code></p>
 </li>
 <li>
-<p><strong>Adresy fizyczne urządzeń (MAC)</strong>: Każdy telefon i komputer ma unikalny numer karty sieciowej zapisany właśnie tak: <code>00:1A:2B:3C:4D:5E</code>.</p>
+<p><code>123 // 10 = 12</code></p>
 </li>
 </ul>
-<h3 id="wyzwanie">Wyzwanie</h3>
-<p>Wybierzcie dowolną trzycyfrową liczbę i zamieńcie ją na system szesnastkowy. Następnie przekażcie kod sąsiadowi z ławki i spróbujcie nawzajem odszyfrować swoje liczby. Kto jako pierwszy poprawnie przeliczy szyfr z powrotem na system dziesiętny i odgadnie oryginał?</p>
-<h2 id="zadania-do-rozwiazania-15-minut">Zadania do rozwiązania (15 minut)</h2>
+<h2 id="wspolne-eksperymenty-15-minut">Wspólne eksperymenty (15 minut)</h2>
+<p>Przeanalizujmy algorytm sumujący cyfry liczby:</p>
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę: &quot;</span><span class="p">))</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">cyfra</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">cyfra</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Suma cyfr wynosi:&quot;</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+</code></pre></div>
+<p>Algorytm „obcina” kolejne cyfry, dodając je do wyniku.</p>
+<p>Przeanalizujmy algorytm dla <code>n = 123</code>:</p>
+<p>W pierwszej iteracji pętli w zmiennej <code>cyfra</code> zostanie zapisana wartość <code>3</code>.
+Suma zostanie zwiększona o <code>3</code>, a nowa wartość <code>n</code> po podzieleniu <strong>całkowitym</strong> przez <code>10</code> będzie równa <code>12</code>.</p>
+<p>W kolejnej iteracji pętli w zmiennej <code>cyfra</code> zostanie zapisana wartość <code>2</code>.
+Suma zostanie zwiększona o <code>2</code>, a nowa wartość <code>n</code> po podzieleniu <strong>całkowitym</strong> przez <code>10</code> będzie równa <code>1</code>.</p>
+<p>W kolejnej iteracji pętli w zmiennej <code>cyfra</code> zostanie zapisana wartość <code>1</code>.
+Suma zostanie zwiększona o <code>1</code>, a nowa wartość <code>n</code> po podzieleniu <strong>całkowitym</strong> przez <code>10</code> będzie równa <code>0</code>.</p>
+<p>Po zakończeniu pętli w zmiennej <code>suma</code> znajduje się wartość <code>6</code>.</p>
+<h2 id="zadania-do-rozwiazania-60-minut">Zadania do rozwiązania (60 minut)</h2>
 <ol>
-<li><strong>Wypisywacz binarny</strong>: Napisz program, który wczyta liczby <code>a</code> i <code>b</code> i wypisze ich zapis w systemie binarnym.</li>
-<li><strong>Suma w systemie binarnym</strong> Napisz program, który wczyta liczby <code>a</code> i <code>b</code> i wypisze ich sumę w systemie binarnym.</li>
-<li><strong>Wypisywacz szesnastkowy</strong> Napisz program, który wczyta liczbę w systemie dziesiętnym i wypisze jej zapis w systemie szesnastkowym.</li>
+<li><strong>Iloczyn cyfr</strong>: Zmodyfikuj powyższy program tak, aby obliczał iloczyn cyfr podanej liczby.</li>
 </ol>
-<div class="admonition wskazówka">
+<div class="admonition tip">
 <p class="admonition-title">Wskazówka</p>
-<p>Wykorzystaj kod do zamiany do systemu dwójkowego, ale dziel przez 16.</p>
+<p>Pamiętaj, że dla iloczynu początkowa wartość zmiennej przechowującej iloczyn powinna wynosić 1, a nie 0!</p>
 </div>
 <ol>
-<li><strong>Szesnastkowe kolory</strong>: Wypisz zapisy szesnastkowe dla liczb od 0 do 255.</li>
-<li><strong>Własna potęga</strong>: Napisz program, który sprawdzi, czy podana liczba jest potęgą dwójki (liczby te w systemie binarnym mają tylko jedną jedynkę).</li>
+<li><strong>Liczba cyfr</strong>: Napisz program, który policzy, ile cyfr ma podana liczba.</li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Wskazówka</p>
+<p>Przy każdej iteracji pętli zwiększaj zmienną pomocniczą <code>ile_cyfr</code> o 1.</p>
+</div>
+<ol>
+<li><strong>Podzielność</strong>: Napisz program, który wczyta liczbę i sprawdzi, czy jest ona podzielna przez sumę swoich cyfr.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Wskazówka</p>
+<p>Najpierw oblicz sumę cyfr, a później za pomocą polecenia <code>%</code> sprawdź, czy liczba jest podzielna przez obliczoną sumę cyfr.
+Uwaga: po zakończeniu pętli wartość <code>n</code> będzie równa <code>0</code>. Przed rozpoczęciem pętli zapisz początkową wartość liczby w osobnej zmiennej. Nie wykonuj dzielenia przez zero: dla liczby 0 suma cyfr wynosi 0.</p>
+</div>
+<ol>
+<li><strong>Suma parzystych cyfr</strong>: Napisz program, który obliczy sumę tylko tych cyfr liczby, które są parzyste.</li>
+</ol>
+<h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
+<p><em>Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.</em></p>
+<h3 id="atak-na-mleczarnie">Atak na mleczarnię</h3>
+<p><img alt="mleko" src="../lesson13-materials/krowa.png" /></p>
+<p>Mleczarnia <em>Rogate Mleko</em> dostarcza mleko do centrali <em>Rzeka Mleka</em>. Centrala każdego dnia wysyła depeszę z informacją, ile potrzeba mleka.</p>
+<p>Depesza z centrali to ciąg oddzielonych spacją znaków. Gdy dodamy wszystkie cyfry z depeszy, otrzymamy liczbę litrów mleka, które mleczarnia musi wysłać.</p>
+<p>Niestety depesze są nagminnie atakowane i zmieniane przez wrogich hakerów. Wplatają oni w ciąg dodatkowe znaki – litery, przecinki, średniki, wykrzykniki itp. Na szczęście hakerzy nie dodają żadnych dodatkowych cyfr.</p>
+<p>Twoim zadaniem jest napisanie programu, który odrzuci z depeszy wszystkie znaki niebędące cyframi i obliczy sumę cyfr znajdujących się w wiadomości.</p>
+<p>Do wczytania danych wykorzystaj polecenia:
+<code>import sys</code>
+<code>dane = sys.stdin.read().split()</code></p>
+<h4 id="wejscie">Wejście</h4>
+<p>W pierwszym wierszu znajduje się jedna liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 10^6\)</span>), oznaczająca liczbę znaków w depeszy.</p>
+<p>W drugim wierszu znajduje się <span class="arithmatex">\(n\)</span> znaków oddzielonych spacjami.</p>
+<h4 id="wyjscie">Wyjście</h4>
+<p>W jedynym wierszu wyjścia wypisz jedną liczbę całkowitą – sumę wszystkich cyfr znajdujących się w depeszy.</p>
+<h4 id="przykad">Przykład</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Wejście</th>
+<th style="text-align: left;">Wyjście</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">9<br>x 4 ! 3 4 * 8 2 2</td>
+<td style="text-align: left;">23</td>
+</tr>
+</tbody>
+</table>
+<p><em>Wyjaśnienie:</em>
+Depesza zawiera cyfry: <span class="arithmatex">\(4, 3, 4, 8, 2, 2\)</span>. Suma tych cyfr wynosi <span class="arithmatex">\(4 + 3 + 4 + 8 + 2 + 2 = 23\)</span>.</p>
+<details class="tip">
+<summary>Wskazówka</summary>
+<p>Napisz funkcję pomocniczą <code>czy_cyfra</code>, która sprawdzi kod ASCII kolejnych znaków.</p>
+</details>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/anm/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/anm/site/?key=statement">odnośnik do zadania</a>.</p>
+<h3 id="patrol">Patrol</h3>
+<p>Przez pustkowia, pędząc na motocyklach o napędzie nuklearnym z prędkością tysiąca mil na godzinę, porusza się patrol. A dokładniej – poruszał się, bo teraz jego członkowie stoją w miejscu i uzupełniają paliwo w reaktorach. To dobry moment na pochwalenie się przebiegiem pojazdów – udało ci się nawet zobaczyć jedną z tych wartości. Całkiem ładna liczba <span class="arithmatex">\(n\)</span>, chociaż byłaby ładniejsza, gdyby składała się z jednakowych cyfr.</p>
+<p>Uzupełnianie paliwa jeszcze trochę potrwa, więc znajdź w tym czasie najmniejszą liczbę <span class="arithmatex">\(k\)</span> składającą się z jednakowych cyfr, dla której zachodzi <span class="arithmatex">\(n \le k\)</span>.</p>
+<p>Do wczytania danych wykorzystaj polecenie <code>n_str = input().strip()</code>.</p>
+<h4 id="wejscie_1">Wejście</h4>
+<p>W pierwszym wierszu znajduje się jedna dodatnia liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 10^{10\,000}\)</span>), oznaczająca zaobserwowany przebieg motocykla patrolowego.</p>
+<h4 id="wyjscie_1">Wyjście</h4>
+<p>Na wyjściu wypisz jedną liczbę całkowitą <span class="arithmatex">\(k\)</span> składającą się z jednakowych cyfr, będącą najmniejszą taką liczbą spełniającą warunek <span class="arithmatex">\(k \ge n\)</span>.</p>
+<h4 id="przykad_1">Przykład</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Wejście</th>
+<th style="text-align: left;">Wyjście</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">329</td>
+<td style="text-align: left;">333</td>
+</tr>
+<tr>
+<td style="text-align: left;">797</td>
+<td style="text-align: left;">888</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Wskazówka</summary>
+<p>Ponieważ <span class="arithmatex">\(n\)</span> może mieć aż <span class="arithmatex">\(10\,001\)</span> cyfr, potraktuj ją jako napis (ciąg znaków), a nie klasyczną liczbę.</p>
+</details>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/ew5Aw-TuOaBMVIC3EkFJKP9G/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/ew5Aw-TuOaBMVIC3EkFJKP9G/site/?key=statement">odnośnik do zadania</a>.</p>
 
 
 
@@ -1422,14 +1490,12 @@ Wynik: <code>1101</code>.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       
