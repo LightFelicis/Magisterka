@@ -1,6 +1,7 @@
-site_name: Scenariusze lekcji Informatyka
+site_name: Scenariusze lekcji informatyki
 theme:
   name: material
+  language: pl
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -14,32 +15,34 @@ markdown_extensions:
       generic: true
   - md_in_html
 
+extra_css:
+  - stylesheets/extra.css
+
 extra_javascript:
   - javascripts/mathjax.js
-  - javascripts/preview-popup.js
   - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - Strona główna: index.md
   - Scenariusze lekcji:
-      - Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?: scenarios/lesson0.md
-      - Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.: scenarios/lesson1.md
-      - Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?: scenarios/lesson2.md
-      - Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?: scenarios/lesson3.md
-      - Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?: scenarios/lesson4.md
-      - Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.: scenarios/lesson5.md
-      - Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?: scenarios/lesson6.md
-      - Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.: scenarios/lesson7.md
-      - Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.: scenarios/lesson8.md
-      - Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?: scenarios/lesson9.md
-      - Lekcja 11 - Kody ASCII – zmiana liter w liczbę.: scenarios/lesson10.md
-      - Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.: scenarios/lesson11.md
-      - Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.: scenarios/lesson12.md
-      - Lekcja 14 - Kod binarny, szesnastkowy.: scenarios/lesson13.md
-      - Lekcja 15 - Algorytm Euklidesa – zastosowanie.: scenarios/lesson14.md
-      - Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.: scenarios/lesson15.md
-      - Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.: scenarios/lesson16.md
-      - Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.: scenarios/lesson17.md
-      - Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.: scenarios/lesson18.md
-      - Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.: scenarios/lesson19.md
+      - "Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?": scenarios/lesson1.md
+      - "Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja": scenarios/lesson2.md
+      - "Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?": scenarios/lesson3.md
+      - "Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?": scenarios/lesson4.md
+      - "Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?": scenarios/lesson5.md
+      - "Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?": scenarios/lesson6.md
+      - "Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?": scenarios/lesson7.md
+      - "Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza": scenarios/lesson8.md
+      - "Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle": scenarios/lesson9.md
+      - "Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?": scenarios/lesson10.md
+      - "Lekcja 11 – Kody ASCII – zamiana liter na liczby": scenarios/lesson11.md
+      - "Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania": scenarios/lesson12.md
+      - "Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr": scenarios/lesson13.md
+      - "Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy": scenarios/lesson14.md
+      - "Lekcja 15 – Algorytm Euklidesa – zastosowanie": scenarios/lesson15.md
+      - "Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu": scenarios/lesson16.md
+      - "Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie": scenarios/lesson17.md
+      - "Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne": scenarios/lesson18.md
+      - "Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych": scenarios/lesson19.md
+      - "Lekcja 20 – Trenowanie własnego modelu i eksploracja danych": scenarios/lesson20.md

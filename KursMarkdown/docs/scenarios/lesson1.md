@@ -1,211 +1,228 @@
-# Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja.
+# Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
+
+**Czas realizacji:** 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-Podstawy języka Python (wczytywanie, wypisywanie, zmienne)
+Nie jest wymagana wcześniejsza wiedza – to lekcja wprowadzająca.
 
 ## Treści z podstawy programowej
 
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
-| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
-| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: **instrukcje wejścia/wyjścia, wyrażenia arytmetyczne** i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. |
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
+
+| Dział | Sekcja |
+| --- | --- |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
+| III. Posługiwanie się komputerem, urządzeniami cyfrowymi i sieciami komputerowymi. Uczeń: | |
+| | 3) poprawnie posługuje się terminologią związaną z informatyką i technologią. |
 
 ## Wstęp teoretyczny (przewidziany na około 15 minut)
 
-W tej lekcji skupimy się na przekazaniu intuicyjnego rozumienia algorytmu i specyfikacji problemu.
+Współczesna informatyka to nie tylko umiejętność korzystania z gotowych aplikacji, ale przede wszystkim rozwiązywanie problemów za pomocą metod informatycznych. Programowanie pozwala nam przejść z roli „cyfrowego konsumenta” do roli „cyfrowego twórcy”.
 
-### Zadanie wprowadzające (4 minuty)
+### Zadanie wprowadzające (7 minut)
 
-![pizza](./lesson1-materials/pizza.png)
+Wyobraź sobie, że masz robota, który rozumie tylko bardzo proste polecenia: „narysuj odcinek o długości `X` cm”, „obróć się o `X` stopni w lewo/prawo”.
 
-Uszereguj następujące kroki w kolejności tak, by otrzymać przepis na pizzę.
-
-* Dodaj składniki: Przełóż uformowane ciasto na blachę i dodaj wybrane składniki.
-* Odstaw do wyrośnięcia: Przykryj ciasto ściereczką i zostaw w ciepłym miejscu na 1 godzinę, aż podwoi objętość.
-* Uformuj pizzę: Na oprószonym mąką blacie rozwałkuj ciasto na cienki placek.
-* Zrób zaczyn: W miseczce wymieszaj ciepłą wodę, drożdże i cukier. Odstaw na 5-10 minut, aż zacznie się pienić.
-* Podawaj: Po wyjęciu z piekarnika możesz dodać świeżą rukolę lub oliwę. Smacznego! 😋
-* Piecz pizzę: Wstaw do gorącego piekarnika i piecz przez 7-10 minut, aż brzegi będą złociste, a ser się roztopi.
-* Wyrób ciasto: Do dużej miski wsyp mąkę, dodaj sól, oliwę i zaczyn. Wyrabiaj ciasto ok. 10 minut, aż będzie elastyczne.
-
-**Wnioski**: Utworzony przepis jest niczym innym, jak listą kroków działania (można nazwać go również algorytmem).
-Aby wykonać kolejny krok, poprzednie muszą zostać zakończone (np. nie mogę dodać składników na placek, jeśli nie mam jeszcze wyrobionego ciasta).
-
-### Specyfikacja problemu (3 minuty)
-
-Problem algorytmiczny można opisać za pomocą dwóch elementów: danych wejściowych i oczekiwanego wyniku.
-Dla przykładu, w poprzednim zadaniu problem "Jak ugotować pizzę" można opisać za pomocą danych
-(składniki takie jak drożdże, mąka, woda, ser) oraz oczekiwanego wyniku (jadalna pizza). 
-Rolą człowieka jest zazwyczaj opracowanie rozwiązania, na przykład za pomocą listy kroków, co zrobiliśmy przed chwilą.
-
-### Zadanie utrwalające pojęcia związane ze specyfikacją (8 minut)
-
-Opisz dane wejściowe oraz wyniki. Propozycje problemów:
-
-* Jak stworzyć żurawia z origami?
-* Jak przygotować kanapkę?
-* Jak ubrać się na jazdę na nartach?
-* (**Chemia**) Jak przygotować "słoniową pastę do zębów"?
-* (**Język Polski**) Jak napisać charakterystykę?
-* (**Wychowanie fizyczne**) Jak ćwiczyć rozciąganie? Podpowiedź: wynikiem rozwiązania jest poprawienie stopnia rozciągnięcia mięśni.
-
-**Wnioski**: Specyfikacja problemu pozwala nam lepiej zrozumieć nasze "dostępne środki" oraz "cel", który chcemy osiągnąć.
-Bez nich nie będziemy w stanie opracować kroków, które rozwiążą problem.
-
-## Zadania do rozwiązania w trakcie lekcji na kartkach (przewidziane na około 10-15 minut)
-
-Propozycje typów zadań, które utrwalą w uczniach myślenie komputacyjne (specyfikacja + lista kroków).
-
-Typy zadań:
-
-* Dla danego określonego zachowania (listy kroków lub wizualizacji działania algorytmu), określ wynik dla podanych danych.
-    * Fabryka kształtów
-    * Robot Aneta
-* Dla danej specyfikacji (dane wejściowe, wynik), odgadnij listę kroków.
-    * Ukryta zasada
-    * Opracuj kroki
-
-### Fabryka kształtów (XIX konkurs Bóbr)
-
-![zadanie](./lesson1-materials/maszyny-bobr.png)
-
-### Robot Aneta
-
-Robot Aneta, gdy usłyszy liczbę całkowitą,
-oblicza trzykrotność tej liczby a następnie wygłasza ten wynik pomniejszony o 13.
-Robot Beata, gdy słyszy liczbę całkowitą, oblicza jej połowę (dla liczb nieparzystych zaokrągli w dół) i wygłasza
-obliczony wynik.
-Robot Beata stoi obok Anety i usłyszy wypowiedziany przez nią wynik.
-
-Jaką liczbę podasz robotowi Anecie, żeby Beata powiedziała na koniec taką samą liczbę, którą podałeś/podałaś?
-
-### Ukryta zasada
-
-Jaka będzie kolejna liczba w ciągu?
-
-* 1, 2, 3, 4, 5, 6, ?
-* 1, 1, 2, 3, 5, 8, ?
-* 1, 2, 4, 8, 16, 32, ?
-* 1, 4, 13, 40, 121, ?
-
-### Opracuj kroki
-
-Dla wybranego problemu (np. z listy z zadania o specyfikacji) opracuj kolejne kroki, które pozwolą osiągnąć
-wynik.
-
-## Zadanie do rozwiązania na komputerze (przewidziane na około 15 minut)
-
-Janek interesuje się liczbami, chciałby poznać różne informacje dla wybranej przez siebie liczby.
-
-Napisz program w języku Python, który po wczytaniu liczby całkowitej za pomocą polecenia `input()` wypisze
-następujące informacje:
-
-* Wczytana liczba (rozwiązanie: `x`)
-* Liczba przeciwna (rozwiązanie: `-x`)
-* Liczba odwrotna (rozwiązanie: `1/x`)
-* Dwukrotność (rozwiązanie: `2*x`)
-* Połowa (rozwiązanie: `x/2`)
-* Kwadrat liczby (rozwiązanie: `x*x`)
-
-Przykładowo, dla `5`, program powinien wypisać
+Na przykład po wykonaniu następujących poleceń:
 
 ```
-Wczytana: 5
-Przeciwna: -5
-Odwrotna: 0.2
-Dwukrotność: 10
-Połowa: 2.5
-Kwadrat: 25
+narysuj odcinek o długości 5 cm
+obróć się o 90 stopni w lewo
+narysuj odcinek o długości 3 cm
+obróć się o 90 stopni w prawo
+narysuj odcinek o długości 5 cm
+obróć się o 90 stopni w lewo
+narysuj odcinek o długości 3 cm
+obróć się o 90 stopni w prawo
 ```
 
-Rozwiązanie wzorcowe
+Robot narysuje schodki:
+
+![robot.gif](./lesson1-materials/robot.gif)
+
+
+Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko poleceń, które zna robot.
+
+**Wniosek**: Komputery są bardzo szybkie, ale wykonują instrukcje dosłownie. Programowanie to proces precyzyjnego wydawania takich instrukcji.
+
+### Podstawowe pojęcia języka Python (8 minut)
+
+![print.jpeg](./lesson1-materials/print.jpeg)
+
+W języku Python będziemy korzystać z trzech fundamentów:
+
+* instrukcja wyjścia (`print()`): pozwala komputerowi „mówić” do nas, czyli wyświetlać tekst na ekranie;
+* instrukcja wejścia (`input()`): pozwala komputerowi „słuchać”, czyli pobierać dane od użytkownika;
+* zmienne: to „pudełka” w pamięci komputera, w których przechowujemy dane, np. liczby lub imiona, aby użyć ich później.
+
+Polecenia dla komputera zapisane w języku Python nazywamy kodem. Przeanalizujmy poniższy kod:
 
 ```python
-x = int(input())
-print("Wczytana ", x)
-print("Przeciwna ", -x)
-print("Odwrotna ", 1/x)
-print("Dwukrotność ", 2*x)
-print("Połowa ", x/2)
-print("Kwadrat ", x*x)
+print("Dzień dobry, jestem robotem!")
+print("Jak masz na imię?")
+imie = input()
+print("Cześć", imie, "miło mi cię poznać!")
 ```
 
-Dodatkowe propozycje zadań:
+Po uruchomieniu programu możemy przeprowadzić rozmowę z robotem. Po ponownym uruchomieniu robot zaczyna rozmowę od początku.
 
-### Od tyłu
+## Wspólne eksperymenty z językiem Python (10 minut)
 
-Napisz program w języku Python, który po wczytaniu trzech liczb całkowitych wypisze je w odwrotnej kolejności.
-Przykładowo, dla `1 2 3` program powinien wypisać `3 2 1`.
-
-Rozwiązanie wzorcowe 
+Poniższe programy należy uruchomić w środowisku Pythona, na przykład w środowisku Spyder.
 
 ```python
-a = int(input())
-b = int(input())
-c = int(input())
-print(c)
-print(b)
-print(a)
+print(2+2)
 ```
-
-### Suma i różnica
-
-Napisz program w języku Python, który po wczytaniu dwóch liczb całkowitych wypisze ich sumę i różnicę
-Przykładowo, dla `6 2` program powinien wypisać `8 4`.
-
-Rozwiązanie wzorcowe 
 
 ```python
-a = int(input())
-b = int(input())
-print(a + b)
-print(a - b)
+print("2+2")
 ```
 
-### Odgadnij dane
-
-Oto następujący program w Pythonie:
+Jaka jest różnica między tymi kodami? Jak zachowuje się Python?
 
 ```python
-a = int(input())
-b = int(input())
-print(2 * a + 3 * b)
+print("Kasia" + 2)
 ```
 
-* Uruchom program i wpisz liczby `3 5`. Jaki wynik otrzymasz?
-* Jakie dwie liczby należy wpisać, żeby otrzymać wynik `40`?
-* Czy istnieją różne dane wejściowe, dla ktorych program wypisze liczbę `40`?
+Błąd wykonania! Nie można dodawać słów i liczb :)
 
-### Zakupy
+```python
+print("Witaj", "Świecie")
+```
 
-Mały Jaś dostał od mamy bardzo ważną misję. Ma kupić masło i chleb. Zważając na wagę misji, nie możemy pozwolić na to, aby pieniądze dostały się w niepowołane ręce. Aby temu zaradzić, mama Jasia dała swojemu synkowi równo $K$ złotych – czyli dokładnie tyle ile razem kosztują oba produkty.
+```python
+print("Witaj")
+print("Świecie")
+```
 
-Jaś jest już w drodze do sklepu. Teraz pozostało tylko kupić masło i... O nie! Jaś zapomniał co, oprócz masła, miał kupić. Czy cała misja skazana jest już na porażkę? Na szczęście mama Jasia doskonale wiedziała, kogo wysyła – swojego najlepszego agenta. Jaś od razu zauważył, że masło w sklepie kosztuje $M$ złotych. Teraz w prosty sposób będzie mógł obliczyć cenę zapomnianego produktu.
+Możemy wypisywać kilka wyrażeń obok siebie, korzystając z przecinka. Dwa wywołania `print()` wyświetlają tekst w dwóch wierszach.
 
-Pomóż Jasiowi! Znając ile złotych dostał Jaś oraz ile złotych kosztuje masło, podaj cenę drugiego produktu.
+```python
+imie = input()
+wiek = int(input())
+print(imie, "ma lat", wiek)
+```
 
-Do wczytania danych możesz wykorzystać polecenie `M, K = map(int, input().split())`.
+Funkcja `input()` wczytuje tekst. Aby zamienić wczytany tekst na liczbę całkowitą, używamy funkcji `int()`.
+
+## Zadanie do rozwiązania na komputerze (20 minut)
+
+### Symbole działań matematycznych
+
+Uruchom poniższy program. Co oznaczają symbole `+`, `-`, `/`, `*`?
+
+```python
+print(12+2)
+print(12-2)
+print(12/2)
+print(12*2)
+```
+
+### Prosty kalkulator (sumator)
+
+Uruchom poniższy program, który wczyta dwie liczby całkowite i wypisze ich sumę.
+
+Python wczytuje dane jako tekst. Aby traktował je jak liczby, należy użyć funkcji `int()`, np.: `liczba = int(input())`.
+
+```python
+a = int(input("Podaj pierwszą liczbę: "))
+b = int(input("Podaj drugą liczbę: "))
+print("Suma wynosi:", a + b)
+```
+
+Zmodyfikuj program, żeby wczytywał trzy liczby i wypisywał ich sumę.
+
+### Twoje dane
+
+Napisz program, który poprosi o podanie twojego imienia, wieku oraz ulubionej liczby.
+Następnie niech wypisze zdanie:
+
+`[Imię] ma [wiek] lat, a ulubiona liczba pomnożona przez 2 to [wynik]`.
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+*Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.*
+
+### Bond
+
+Poniżej widzisz kod programu, który na ekranie wypisuje komunikat: „HELLO WORLD!”.
+Zmodyfikuj treść programu tak, aby wypisywał w pierwszym wierszu komunikat „My name is Bond.”, zaś w drugim wierszu „James Bond.”.
+
+```python
+print("HELLO WORLD!")
+```
 
 #### Wejście
 
-W pierwszym wierszu wejścia znajdują się dwie liczby całkowite $M$ oraz $K$ ($1 \leq M < K \leq 10$) oddzielone pojedynczym odstępem i oznaczające odpowiednio cenę masła oraz ile złotych otrzymał na początku Jaś.
+Twój program nie powinien oczekiwać żadnych danych.
 
 #### Wyjście
 
-Na wyjście wypisz jedną liczbę całkowitą określającą cenę zapomnianego produktu.
+W pierwszym wierszu wypisz komunikat: „My name is Bond.”, zaś w drugim wierszu „James Bond.”.
+
+??? tip "Wskazówka"
+    W podanym jako przykład kodzie zmień odpowiednio wypisywane słowo. W Pythonie polecenie `print()` samo
+    dodaje znak nowej linii na końcu, więc wystarczy, że wywołasz `print()` dwa razy, a wypisane zostaną dwa wiersze.
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/qbVEWhU7DxBcjg5p-DgL5072/site/?key=submit){ .md-button .md-button--primary }
+
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/qbVEWhU7DxBcjg5p-DgL5072/site/?key=submit).
+
+### Obrus
+
+Mama Tosi kupiła kwadratowy stół o boku `b` centymetrów. Ile centymetrów kwadratowych obrusa potrzebuje, żeby przykryć stół?
+
+Do wczytywania danych skorzystaj z polecenia `b = int(input())`.
+
+#### Wejście
+
+Na wejściu znajduje się jedna liczba całkowita $b$ ($1 \leq b \leq 1000$), będąca długością boku stołu.
+
+#### Wyjście
+
+W pierwszym wierszu należy wypisać pole stołu w centymetrach kwadratowych.
 
 #### Przykład
 
-| Wejście | Wyjście |
-| :------ | :------ |
-| 2 5     | 3       |
+| Wejście      | Wyjście                          |
+| :---------- | :----------------------------------- |
+| 12        | 144         |
 
-Wyjaśnienie: Jaś dostał 5 złotych, a cena masła to 2 złote. Oznacza to, że brakujący produkt kosztował 3 złote.
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/5ETn93jOWgwMQuCgsqIUImOl/site/?key=submit){ .md-button .md-button--primary }
 
-??? Wskazówka
-    Cena drugiego produktu to różnica między kwotą, którą otrzymał Jaś ($K$), a ceną masła ($M$). W Pythonie możesz wypisać wynik odejmowania za pomocą `print(K - M)`.
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/5ETn93jOWgwMQuCgsqIUImOl/site/?key=submit).
 
-[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/HodOdonWADxq3z5dnEjsOrlv/site/?key=submit){ .md-button .md-button--primary }
+### Klasy (dla chętnych)
+
+W liceum w Bajtomiu przyjęto nowych uczniów do trzech klas pierwszych. Zapamiętaj liczby
+uczniów w każdej klasie, a później je wypisz.
+
+Do wczytania danych wykorzystaj polecenie `a, b, c = map(int, input().split())`.
+Jeśli masz problemy z wypisywaniem danych, zerknij na wskazówkę!
+
+#### Wejście
+
+W pierwszym wierszu wejścia znajdują się trzy liczby całkowite $a$, $b$ oraz $c$ ($1 \leq a, b, c \leq 50$),
+liczby uczniów odpowiednio w klasach $a$, $b$ i $c$.
+
+#### Wyjście
+
+W pierwszym wierszu wyjścia wypisz liczby uczniów w klasach $a$, $b$ i $c$. W kolejnych trzech
+wierszach wypisz nazwy klas (mała litera) oraz (po odstępie) liczbę uczniów w każdej z klas.
+
+
+#### Przykład
+
+| Wejście      | Wyjście                          |
+| :---------- | :----------------------------------- |
+| 12 34 23    | 12 34 23 <br> a 12 <br> b 34 <br> c 23  |
+
+??? tip "Wskazówka"
+    Do wypisania wartości obok siebie możesz wykorzystać `print()`, podając wartości oddzielone przecinkami, na przykład `print(1, 2, 3, 4)` wypisze `1 2 3 4` obok siebie.
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/1Byaj2NLd4w4vLzHQplOs27s/site/?key=submit){ .md-button .md-button--primary }
+
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/1Byaj2NLd4w4vLzHQplOs27s/site/?key=submit).

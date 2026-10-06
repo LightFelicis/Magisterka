@@ -1,24 +1,24 @@
-# Witaj w kursie informatyki dla klas 7–8!
+# Witaj na kursie informatyki dla klas 7–8!
 
-Serwis ten stanowi praktyczne uzupełnienie pracy magisterskiej poświęconej nowoczesnemu nauczaniu programowania. Znajdziesz tu kompletny materiał dydaktyczny oparty na języku Python, elementach kryptografii, algorytmiki oraz sztucznej inteligencji – dostosowany do polskiej podstawy programowej.
+Znajdziesz tu kompletny zestaw materiałów dydaktycznych obejmujących programowanie w języku Python oraz elementy kryptografii, algorytmiki i sztucznej inteligencji, dostosowany do polskiej podstawy programowej.
 
 ## Co zawierają materiały?
 
 * 🧠 Myślenie algorytmiczne i podstawy Pythona – zmienne, instrukcje warunkowe, listy, pętle oraz funkcje w praktyce.
 
-* 🔐 Kryptografia – szyfr Cezara, kody ASCII i łamanie podstawowych kodów jako wstęp do bezpieczeństwa danych.
+* 🔐 Kryptografia – szyfr Cezara, kody ASCII i łamanie prostych szyfrów jako wstęp do bezpieczeństwa danych.
 
-* ⚙️ Algorytmika z Pythonem – podzielność liczb, kod binarny, algorytm Euklidesa oraz przeszukiwanie i sortowanie zbiorów.  
+* ⚙️ Algorytmika z Pythonem – podzielność liczb, kod binarny, algorytm Euklidesa oraz przeszukiwanie i sortowanie zbiorów.
 
-* 🤖 Wstęp do AI – uproszczone drzewa decyzyjne i podstawy pracy z modułem scikit-learn. 
+* 🤖 Wstęp do sztucznej inteligencji (AI) – uproszczone drzewa decyzyjne i podstawy pracy z biblioteką scikit-learn.
 
 ## Informacja dla nauczycieli
 
-Jednostki lekcyjne zostały zaprojektowane jako gotowe scenariusze zawierające:
+Materiały do poszczególnych lekcji mają postać gotowych scenariuszy zawierających:
 
-* Wymaganą wiedzę i powiązanie z podstawą programową,  
-* Wstęp teoretyczny wraz z ćwiczeniami unplugged (bez użycia komputera), 
-* Zadania do rozwiązania współnie z nauczycielem 
-* Zadania do samodzielnego rozwiązywania, w tym zadania automatycznie sprawdzane na platformie Szkopuł.
+* informacje o wymaganej wiedzy i powiązaniach z podstawą programową;
+* wstęp teoretyczny wraz z ćwiczeniami bez użycia komputera (unplugged);
+* zadania do rozwiązania wspólnie z nauczycielem;
+* zadania do samodzielnego rozwiązania, w tym zadania automatycznie sprawdzane na platformie Szkopuł.
 
-*Materiały opracowane w ramach pracy magisterskiej na Wydziale Matematyki i Informatyki Uniwersytetu Mikołaja Kopernika w Toruniu.*
+*Materiały opracowano w ramach pracy magisterskiej na Wydziale Matematyki i Informatyki Uniwersytetu Mikołaja Kopernika w Toruniu.*

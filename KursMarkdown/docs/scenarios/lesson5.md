@@ -1,164 +1,76 @@
-# Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
+# Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
+
+**Czas realizacji:** 90 minut (2 godziny lekcyjne). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-- Podstawy języka Python: instrukcje wejścia/wyjścia (input(), print()).
+- Podstawy języka Python: instrukcje wejścia/wyjścia (`input()`, `print()`).
+
 - Stosowanie zmiennych do przechowywania danych.
-- Instrukcje warunkowe (if, else) do podejmowania decyzji przez program.
+
+- Instrukcje warunkowe (`if`, `else`) do podejmowania decyzji przez program.
 
 ## Treści z podstawy programowej
 
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
-| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: instrukcje wejścia/wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, **funkcje** oraz zmienne i tablice. |
-| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
 
-## Wstęp teoretyczny (przewidziany na około 10 minut)
+| Dział | Sekcja |
+| --- | --- |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, **instrukcje iteracyjne**, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
+| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń: | |
+| | 1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […] |
+| IV. Rozwijanie kompetencji społecznych. Uczeń: | |
+| | 1) bierze udział w różnych formach współpracy, jak: […] realizacja projektów, […] projektuje, tworzy i prezentuje efekty wspólnej pracy; |
 
-Do tej pory pisaliśmy programy, które wykonywały się od góry do dołu. Jednak wraz ze wzrostem skomplikowania kodu, powtarzanie tych samych fragmentów staje się uciążliwe. Funkcje to wydzielone części programu, które mają swoją nazwę i mogą być wielokrotnie wywoływane, co ułatwia zarządzanie kodem i czyni go bardziej czytelnym.
+## Wstęp do projektu (10 minut)
 
-Część funkcji już znamy, korzystaliśmy z nich w programach! Są to funkcje **wbudowane** w
-język Python, otrzymujemy je "w pakiecie":
+![quiz](./lesson5-materials/quiz.jpeg)
 
-- `print()` wyświetla informacje na ekranie
-- `input()` pobiera dane od użytkownika
-- `int()` przekształca tekst na liczbę całkowitą
-- `range()` generuje sekwencje (ciąg kolejnych wartości), korzystaliśmy z niej w pętli `for`
+Zamiast rozwiązywać krótkie zadania, uczniowie stworzą kompleksowy program – quiz, który będzie sprawdzał wiedzę użytkownika na wybrany temat (np. sport, historia, gry wideo). Program musi:
 
-O funkcjach myślimy często jak o "robocie", który dla wejściowych danych wyprodukuje wynik, którego
-potrzebujemy. W informatyce, uruchomienie funkcji nazywamy **wywołaniem**, a dane wejściowe nazywamy
-**argumentami**. Argumentów może być zero, lub wiele. Wynik wywołania zwracany jest za pomocą komendy `return`.
+- zadawać pytania;
 
-![funkcja_obrazek](./lesson5-materials/funkcja.png)
+- pobierać odpowiedzi od użytkownika;
 
-Dla przykładu, argumentem dla funkcji `int()` jest słowo, a wynikiem jest liczba: `int("123")`
-jako wynik zwraca liczbę `123`.
+- reagować na to, czy odpowiedź jest poprawna (używając instrukcji warunkowych).
 
-**Nowa funkcja** Zobaczmy działanie funkcji `len()`. Czy potrafisz odgadnąć, co robi?
+Szkielet gry:
 
-```Python
-wynik = len("kajak")
-print(wynik)
+```python
+# Powitanie
+print("Witaj w Wielkim Quizie Wiedzy!")
 
-wynik = len("ABC")
-print(wynik)
+# Pytanie 1
+print("Jak nazywa się stolica Polski?")
+print("A. Warszawa B. Kraków C. Żyrardów D. Poznań")
+odpowiedz1 = input()
+
+
+if odpowiedz1 == "A":
+    print("Brawo! To poprawna odpowiedź.")
+else:
+    print("Niestety, to błąd. Koniec gry!")
+    exit() # Program kończy działanie przy złej odpowiedzi
+
+# Tutaj dodaj kolejne pytania...
 ```
 
-Funkcje nie muszą zwracać wartości jako wyniku, jeśli to nie jest potrzebne. Na przykład `print("Hello World")` to funkcja, która wykonuje polecenie, ale jej wynik nie jest ważny. Ciekawostka: taka funkcja
-zwraca specjalną wartość: `None`!
+## Samodzielna implementacja i pomysły na rozszerzenie programu (45 minut)
 
-Przykład z życia:
-- Automat z napojami: wrzucasz pieniądze (dane) - dostajesz napój (wynik), jak funkcja `int()`
-- Domofon: naciskasz guzik i mówisz swoje imię (dane) - dzwoni, ale nic nie dostajesz do ręki, jak `print()`
+Chętni mogą rozszerzyć podstawową wersję gry o następujące elementy:
 
-## Jak tworzyć funkcje w Pythonie? (15 minut)
+* koła ratunkowe, na przykład odrzucenie połowy odpowiedzi;
 
-Funkcje w Pythonie piszemy następująco:
+* akceptowanie odpowiedzi w różnych formach: „A”, „a” oraz „Warszawa”;
 
-```Python
-def nazwa_funkcji(argumenty):
-    # Uwaga na wcięcie!
-    logika
-```
+* system punktów i gwarantowanych wygranych;
 
-Uruchom i przetestuj poniższe funkcje:
+* ocenę wyniku na końcu gry, np. komunikat „Jesteś ekspertem!”, jeśli liczba punktów jest większa niż 5.
 
-```Python
-def narysuj_ksztalt():
-    print("....")
-    print(".  .")
-    print("....")
+## Podsumowanie i prezentacja projektów (35 minut)
 
-narysuj_ksztalt()
-narysuj_ksztalt()
-```
-
-```Python
-def przedstaw(imie):
-    print("Witam, tu", imie)
-
-przedstaw("Kasia")
-przedstaw("Olek")
-```
-
-```Python
-def plus_jeden(x):
-    return x+1
-
-# Uwaga: Funkcja zwraca wynik, więc go wypisujemy!
-print(plus_jeden(5))
-```
-
-```Python
-def suma(a, b, c):
-    return a+b+c
-
-# Uwaga: Funkcja zwraca wynik, więc go wypisujemy!
-print(suma(1, 2, 3))
-print(suma(3, -3, 0))
-```
-
-**Ciekawostka**: powiedzieliśmy, że funkcja `print()` nie zwraca wartości wywołania, tylko
-`None`. Możemy to sprawdzić!
-
-```Python
-wynik_funkcji = print("Ala ma kota")
-print(wynik_funkcji)
-```
-
-## Zadania do rozwiązania na komputerze (przewidziane na około 20 minut)
-
-Zaimplementuj wybrane 3 funkcje z poniższej listy:
-
-- **Powitanie 2.0**: Napisz funkcję powitanie(imie), która wypisze tekst „Witaj, [imie]! Miło Cię widzieć”. Wywołaj ją dla trzech różnych imion.
-- **Kalkulator BMI**: Napisz funkcję oblicz_bmi(waga, wzrost), która zwróci wynik wskaźnika BMI ($$waga/wzrost^2$$). Następnie w programie głównym wczytaj dane, wywołaj funkcję i wypisz wynik.
-- **Parzysta**: Napisz funkcję czy_parzysta(liczba), która zwraca True, jeśli liczba jest parzysta, i False w przeciwnym razie. Użyj jej w pętli wypisującej tylko parzyste liczby z zakresu od 1 do 20.
-- **Pole trójkąta**: Napisz program z funkcją pole_trojkata(a, h), która pomoże Ci sprawdzić wyniki Twojej pracy domowej z matematyki.
-- **Rysuj gwiazdki**: Napisz funkcję rysuj_linie(dlugosc), która wypisuje ciąg gwiazdek o podanej długości. Użyj jej, aby narysować choinkę.
-- **Chemia – masa molowa**: Napisz funkcję masa_molowa(masa, liczba_moli), która zwróci masę molową substancji. Następnie w programie głównym wczytaj dane i wypisz wynik.
-- **Matematyka – średnia ocen**: Napisz funkcję srednia_ocen(oceny), która zwróci średnią arytmetyczną ocen zapisanych w liście. Sprawdź wynik dla przykładowych ocen.
-- **Geografia – temperatura**: Napisz funkcję c_na_f(celsiusz), która zamienia stopnie Celsjusza na Fahrenheity. Użyj jej dla trzech różnych temperatur.
-- **Historia – wiek postaci**: Napisz funkcję wiek_postaci(rok_urodzenia, rok_wydarzenia), która zwróci wiek historycznej postaci w danym roku.
-- **Fizyka – droga**: Napisz funkcję oblicz_droge(predkosc, czas), która zwróci drogę przebytą przez ciało (droga=predkosc*czas). Sprawdź wynik dla przykładowych danych.
-
-## Zadania do rozwiązania na platformie Szkopuł
-
-### Podaj długość słowa
-
-Zastosuj funkcję `len()` w praktyce.
-
-Wczytaj słowo, a następnie podaj jego długość. Możesz założyć, że słowo nie będzie dłuższe niż 15.
-
-[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/SAuc7UAS2ZnCLOMrnfURVcr5/site/?key=statement){ .md-button .md-button--primary }
-
-### Kwadrat
-
-**Uwaga! W tym zadaniu logika rysująca kwadrat powinna być zawarta w funkcji `def kwadrat(n)`**
-
-Napisz program, w którym użytkownik wprowadzi jedną liczbę nieparzystą $n$.
-
-Twoim zadaniem jest wypisanie wzoru o wymiarach $n \times n$ złożonego ze znaków `@`.
-
-Do wczytania danych wykorzystaj polecenie `n = int(input())`.
-
-#### Wejście
-
-W jedynym wierszu wejścia znajduje się jedna nieparzysta liczba całkowita $n$ ($2 < n < 1002$).
-
-#### Wyjście
-
-Na wyjściu wypisz $n$ wierszy po $n$ znaków w każdym, tworzących wzór złożony ze znaków `@` oraz `X`.
-
-#### Przykład
-
-| Wejście | Wyjście |
-| :--- | :--- |
-| 5 | @@@@@<br>@@@@@<br>@@@@@<br>@@@@@<br>@@@@@ |
-| 7 | @@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@ |
-
-??? Wskazówka
-    W Pythonie możesz wypisać wiele razy ten sam znak, korzystając z mnożenia: `'#'*5`
-
-[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/m7d6WQdRnYjrZQo6s3g6v5hY/site/?key=statement){ .md-button .md-button--primary }
+Po zakończeniu pracy każdy z uczniów prezentuje swój quiz klasie, korzystając z projektora. Wspólne omawianie wyników i rozgrywka
+sprzyjają budowaniu kompetencji społecznych i pozwalają na wymianę doświadczeń programistycznych.
+Testowanie własnego rozwiązania i wprowadzanie korekt to naturalna część pracy programisty.

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lekcja 11 - Kody ASCII – zmiana liter w liczbę. - Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem? - Scenariusze lekcji informatyki</title>
       
     
     
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,8 +66,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#kody-ascii-zmiana-liter-w-liczbe" class="md-skip">
-          Skip to content
+        <a href="#lekcja-10-podstawy-kryptografii-szyfr-cezara-i-rot13-dlaczego-sa-sabym-zabezpieczeniem" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -79,8 +81,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-header__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Scenariusze lekcji Informatyka
+            Scenariusze lekcji informatyki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+              Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
             
           </span>
         </div>
@@ -122,16 +124,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -142,7 +144,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -176,15 +178,15 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-nav__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Scenariusze lekcji Informatyka
+    Scenariusze lekcji informatyki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -272,34 +274,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../lesson1/" class="md-nav__link">
         
   
@@ -307,7 +281,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.
+    Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
   
 
     
@@ -335,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+    Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
   
 
     
@@ -363,7 +337,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -391,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?
+    Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?
   
 
     
@@ -419,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.
+    Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
   
 
     
@@ -447,7 +421,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+    Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
   
 
     
@@ -475,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -503,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.
+    Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza
   
 
     
@@ -531,7 +505,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?
+    Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle
   
 
     
@@ -568,7 +542,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -586,7 +560,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -598,7 +572,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -607,7 +581,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -634,33 +608,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-w-jezyku-python-15-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-przewidziany-na-okoo-45-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty w języku Python (15 minut)
+        Wstęp teoretyczny (przewidziany na około 45 minut)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-na-komputerze-30-minut" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zadania do rozwiązania na komputerze (30 minut)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Zadania do rozwiązania na komputerze (30 minut)">
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 45 minut)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#zadanie-1-rozgrzewka-z-ascii" class="md-nav__link">
+  <a href="#szyfr-cezara" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 1: Rozgrzewka z ASCII
+        Szyfr Cezara
       
     </span>
   </a>
@@ -668,10 +631,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zadanie-2-ascii-kodowanie" class="md-nav__link">
+  <a href="#wyscig-kodoamaczy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 2: ASCII kodowanie
+        Wyścig kodołamaczy
       
     </span>
   </a>
@@ -679,10 +642,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zadanie-3-may-cezar" class="md-nav__link">
+  <a href="#rot13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 3: Mały Cezar
+        ROT13
       
     </span>
   </a>
@@ -690,50 +653,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zadanie-4-szyfrator-sow" class="md-nav__link">
+  <a href="#leet-speak-hack-mowa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 4: Szyfrator słów
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zadania do rozwiązania na platformie Szkopuł
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#haxor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Haxor
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Haxor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wejscie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wejście
+        Leet speak (Hack-mowa)
       
     </span>
   </a>
@@ -741,10 +664,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#wyjscie" class="md-nav__link">
+  <a href="#metoda-podstawieniowa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wyjście
+        Metoda podstawieniowa
       
     </span>
   </a>
@@ -752,18 +675,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#przykad" class="md-nav__link">
+  <a href="#wniosek" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Przykład
+        Wniosek
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -795,7 +713,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+    Lekcja 11 – Kody ASCII – zamiana liter na liczby
   
 
     
@@ -823,7 +741,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.
+    Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania
   
 
     
@@ -851,7 +769,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -879,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 15 - Algorytm Euklidesa – zastosowanie.
+    Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy
   
 
     
@@ -907,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -935,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.
+    Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu
   
 
     
@@ -963,7 +881,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -991,7 +909,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.
+    Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
   
 
     
@@ -1019,7 +937,35 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.
+    Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 20 – Trenowanie własnego modelu i eksploracja danych
   
 
     
@@ -1053,7 +999,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -1062,7 +1008,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1089,33 +1035,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-w-jezyku-python-15-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-przewidziany-na-okoo-45-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty w języku Python (15 minut)
+        Wstęp teoretyczny (przewidziany na około 45 minut)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-na-komputerze-30-minut" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zadania do rozwiązania na komputerze (30 minut)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Zadania do rozwiązania na komputerze (30 minut)">
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 45 minut)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#zadanie-1-rozgrzewka-z-ascii" class="md-nav__link">
+  <a href="#szyfr-cezara" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 1: Rozgrzewka z ASCII
+        Szyfr Cezara
       
     </span>
   </a>
@@ -1123,10 +1058,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zadanie-2-ascii-kodowanie" class="md-nav__link">
+  <a href="#wyscig-kodoamaczy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 2: ASCII kodowanie
+        Wyścig kodołamaczy
       
     </span>
   </a>
@@ -1134,10 +1069,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zadanie-3-may-cezar" class="md-nav__link">
+  <a href="#rot13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 3: Mały Cezar
+        ROT13
       
     </span>
   </a>
@@ -1145,50 +1080,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zadanie-4-szyfrator-sow" class="md-nav__link">
+  <a href="#leet-speak-hack-mowa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadanie 4: Szyfrator słów
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zadania do rozwiązania na platformie Szkopuł
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#haxor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Haxor
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Haxor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wejscie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wejście
+        Leet speak (Hack-mowa)
       
     </span>
   </a>
@@ -1196,10 +1091,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#wyjscie" class="md-nav__link">
+  <a href="#metoda-podstawieniowa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wyjście
+        Metoda podstawieniowa
       
     </span>
   </a>
@@ -1207,18 +1102,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#przykad" class="md-nav__link">
+  <a href="#wniosek" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Przykład
+        Wniosek
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1244,15 +1134,22 @@
 
 
 
-<h1 id="kody-ascii-zmiana-liter-w-liczbe">Kody ASCII – zmiana liter w liczbę</h1>
+<h1 id="lekcja-10-podstawy-kryptografii-szyfr-cezara-i-rot13-dlaczego-sa-sabym-zabezpieczeniem">Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?</h1>
+<p class="lesson-duration"><strong>Czas realizacji:</strong> 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.</p>
 <h2 id="wymagana-wiedza">Wymagana wiedza</h2>
 <ul>
-<li>Podstawy języka Python (lekcje 1-9)</li>
-<li>Intuicyjne rozumienie algorytmu jako listy kroków</li>
-<li>Podstawy myślenia analitycznego i krytyczne podejście do informacji</li>
-<li>Podstawowe metody szyfrowania</li>
+<li>
+<p>Podstawy języka Python (lekcje 1–9).</p>
+</li>
+<li>
+<p>Intuicyjne rozumienie algorytmu jako listy kroków.</p>
+</li>
+<li>
+<p>Podstawy myślenia analitycznego i krytyczne podejście do informacji.</p>
+</li>
 </ul>
 <h2 id="tresci-z-podstawy-programowej">Treści z podstawy programowej</h2>
+<p><em>Wybrane wymagania z podstawy programowej dla klas VII–VIII. <a href="https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka">Źródło</a>.</em></p>
 <table>
 <thead>
 <tr>
@@ -1267,7 +1164,7 @@
 </tr>
 <tr>
 <td></td>
-<td>1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów.</td>
+<td>1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […]</td>
 </tr>
 <tr>
 <td>II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:</td>
@@ -1275,7 +1172,7 @@
 </tr>
 <tr>
 <td></td>
-<td>1) W programach stosuje: instrukcje wejścia/wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice.</td>
+<td>1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2;</td>
 </tr>
 <tr>
 <td>V. Przestrzeganie prawa i zasad bezpieczeństwa. Uczeń:</td>
@@ -1283,104 +1180,75 @@
 </tr>
 <tr>
 <td></td>
-<td>1) Opisuje kwestie etyczne związane z wykorzystaniem komputerów i sieci komputerowych, takie jak: <strong>bezpieczeństwo</strong>, cyfrowa tożsamość, <strong>prywatność</strong>, <strong>równy dostęp do informacji i dzielenie się informacją</strong>;</td>
+<td>1) opisuje kwestie etyczne związane z wykorzystaniem komputerów i sieci komputerowych, takie jak: <strong>bezpieczeństwo</strong>, cyfrowa tożsamość, <strong>prywatność</strong>, własność intelektualna, <strong>równy dostęp do informacji i dzielenie się informacją</strong>;</td>
 </tr>
 </tbody>
 </table>
-<h2 id="wspolne-eksperymenty-w-jezyku-python-15-minut">Wspólne eksperymenty w języku Python (15 minut)</h2>
-<p>Aby zrozumieć, jak komputer „widzi” litery, musimy poznać kody ASCII. 
-Każda litera ma przypisaną liczbę. </p>
-<p>W Pythonie funkcja <code>ord('A')</code> powie nam, jaki numer ma litera A.
-Funkcja <code>chr(65)</code> zamieni numer z powrotem na literę.</p>
-<p>Litery wielkie (od <code>A</code> do <code>Z</code>) są ponumerowane zaczynając od <code>65</code>, i kolejne litery alfabetu mają kolejne wartości.
-Litera <code>A</code> ma numer <code>65</code>, litera <code>B</code> ma numer <code>66</code> i tak dalej.</p>
-<div class="highlight"><pre><span></span><code><span class="n">litera</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
-<span class="n">kod</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">litera</span><span class="p">)</span>
-<span class="n">nowy_kod</span> <span class="o">=</span> <span class="n">kod</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="n">nowa_litera</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">nowy_kod</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nowa_litera</span><span class="p">)</span> <span class="c1"># Wypisze &quot;D&quot;</span>
+<h2 id="wstep-teoretyczny-przewidziany-na-okoo-45-minut">Wstęp teoretyczny (przewidziany na około 45 minut)</h2>
+<p>Znaczna część obecnej komunikacji odbywa się w Internecie. Kiedy wysyłamy wiadomość do kolegi
+przez Messengera lub inny komunikator, zakładamy, że ta wiadomość jest <strong>zabezpieczona</strong> i nikt inny nie
+będzie mógł jej odczytać.</p>
+<p>Zabezpieczaniem wiadomości i łamaniem ich zabezpieczeń ludzkość zajmuje się od wielu wieków.
+Dziedzina zajmująca się różnymi metodami utajniania informacji to <strong>kryptografia</strong>, a dzisiaj
+poznamy kilka takich metod.</p>
+<p>Przy projektowaniu zabezpieczeń musimy założyć, że haker (lub inna osoba planująca przechwycić wiadomość)
+może zobaczyć, co znajduje się w kopercie/wiadomości wysłanej siecią. W związku z tym zawartość
+musi być <strong>zaszyfrowana</strong>.</p>
+<p><img alt="podsluch.png" src="../lesson10-materials/lesson9_eve.png" /></p>
+<p>Wyobraźmy sobie, że Bob chce wysłać Alicji tajną wiadomość, ale wie, że może ona zostać
+przechwycona po drodze. Hakerka Ewa otworzy kopertę, przeczyta jej zawartość, a następnie przekaże
+list od Boba do Alicji. Alicja i Bob uzgadniają <strong>klucz</strong> przed wysłaniem wiadomości. Zakładamy, że Ewa zna metodę szyfrowania, ale nie zna klucza.</p>
+<p><img alt="zakodowana.png" src="../lesson10-materials/coded.png" /></p>
+<p>Zapoznajmy się z poniższą metodą szyfrowania.</p>
+<h3 id="szyfr-cezara">Szyfr Cezara</h3>
+<p>Jest to metoda, której prawdopodobnie używał Juliusz Cezar, by komunikować się z przyjaciółmi.
+Polega ona na zmianie każdej litery alfabetu na inną, przesuwając ją o ustaloną wartość, na przykład <strong>3</strong>.</p>
+<p><img alt="cezar.png" src="../lesson10-materials/cezar.png" /></p>
+<p>Przy takim przesunięciu litera <strong>A</strong> zmienia się na literę <strong>D</strong>, litera <strong>B</strong> na <strong>E</strong> i tak dalej.
+Warto zauważyć, że ta metoda zamieni literę <strong>Z</strong> na literę <strong>C</strong>.</p>
+<p>Zaszyfrujmy słowo <code>TAJNA</code>, używając alfabetu angielskiego, bez polskich liter, takich jak <code>Ż</code>.</p>
+<div class="highlight"><pre><span></span><code>T -&gt; W
+A -&gt; D
+J -&gt; M
+N -&gt; Q
+A -&gt; D
 </code></pre></div>
-<p>Zagadka: Jak przesunąć literę <code>Z</code> o <code>1</code> do przodu, czyli zamienić w <code>A</code>?</p>
-<h2 id="zadania-do-rozwiazania-na-komputerze-30-minut">Zadania do rozwiązania na komputerze (30 minut)</h2>
-<h3 id="zadanie-1-rozgrzewka-z-ascii">Zadanie 1: Rozgrzewka z ASCII</h3>
-<p>Napisz program, który wczyta jedną wielką literę alfabetu i wypisze jej kod ASCII.</p>
-<h3 id="zadanie-2-ascii-kodowanie">Zadanie 2: ASCII kodowanie</h3>
-<p>Napisz program, który wczyta słowo i wypisał wszystkie jego litery jako kody ASCII.</p>
-<p>Na przykład, dla <code>ABC</code>, program powinien wypisać <code>65 66 67</code>.</p>
-<h3 id="zadanie-3-may-cezar">Zadanie 3: Mały Cezar</h3>
-<p>Napisz program, który wczyta jedną wielką literę alfabetu i wypisze literę przesuniętą o 1 miejsce (szyfr Cezara z kluczem 1).</p>
-<h3 id="zadanie-4-szyfrator-sow">Zadanie 4: Szyfrator słów</h3>
-<p>Zmodyfikuj program tak, aby wczytał słowo i wypisał je w postaci zaszyfrowanej, przesunięte o 1 miejsce. Potraktuj słowo jako zbiór znaków i do każdego zastosuj przesunięcie.</p>
-<h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
-<h3 id="haxor">Haxor</h3>
-<p><img alt="haxor" src="../lesson10-materials/haxor.png" /></p>
-<p>Od dawna wiadomo, że hakerzy posługują się własnym językiem, różnymi skrótami i innymi formami zaciemniania, żeby zacierać ścieżki po sobie. O najlepszych z nich zwykle mawia się „h4x0rzy”.</p>
-<p>Niektórzy hakerzy czasami zamieniają niektóre litery na cyfry, żeby ich tekst wyglądał bardziej profesjonalnie. Każde wystąpienie jednej z liter podanych poniżej w tabeli zamieniane jest na odpowiadającą jej cyfrę. Pozostałe znaki pozostają niezmienione.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Litera</th>
-<th style="text-align: center;">Cyfra</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>a</strong></td>
-<td style="text-align: center;"><strong>4</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>e</strong></td>
-<td style="text-align: center;"><strong>3</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>i</strong></td>
-<td style="text-align: center;"><strong>1</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>o</strong></td>
-<td style="text-align: center;"><strong>0</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>s</strong></td>
-<td style="text-align: center;"><strong>5</strong></td>
-</tr>
-</tbody>
-</table>
-<p>Napisz program, który wczyta napis, przekształci go do hakerskiego slangu zgodnie z powyższą tabelą i wypisze wynik na standardowe wyjście.</p>
-<p>Do wczytania danych wykorzystaj polecenie <code>tekst = input()</code>.</p>
-<h4 id="wejscie">Wejście</h4>
-<p>W pierwszym (jedynym) wierszu wejścia znajduje się niepusty ciąg małych liter alfabetu angielskiego – napis, który należy przekształcić. Długość napisu nie przekracza <span class="arithmatex">\(1\ 000\ 000\)</span> znaków.</p>
-<h4 id="wyjscie">Wyjście</h4>
-<p>W pierwszym (jedynym) wierszu wyjścia powinien się znaleźć napis z wejścia przedstawiony w hakerskim slangu.</p>
-<h4 id="przykad">Przykład</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Wejście</th>
-<th style="text-align: left;">Wyjście</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">haxor</td>
-<td style="text-align: left;">h4x0r</td>
-</tr>
-<tr>
-<td style="text-align: left;">rigcz</td>
-<td style="text-align: left;">r1gcz</td>
-</tr>
-<tr>
-<td style="text-align: left;">aeios</td>
-<td style="text-align: left;">43105</td>
-</tr>
-</tbody>
-</table>
-<details class="wskazówka">
-<summary>Wskazówka</summary>
-<p>Wykorzystaj instrukcję <code>if</code> i sprawdź kody ASCII kolejnych liter słowa. Jeśli kodem jest kod litery <code>a</code>,
-wypisz <code>4</code>, podobnie z pozostałymi literami <code>e</code>, <code>i</code> itd.</p>
-</details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/-sW59iNCsLGhh8xyFPEmtn7F/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p>Gdyby Ewa przechwyciła taką wiadomość, zobaczyłaby słowo <code>WDMQD</code>, które nie istnieje w języku polskim.</p>
+<h3 id="wyscig-kodoamaczy">Wyścig kodołamaczy</h3>
+<p>Zadanie:</p>
+<ul>
+<li>
+<p>Podzielcie się na pary: Nadawca i Łamacz.</p>
+</li>
+<li>
+<p>Nadawca wybiera klucz (liczbę od 1 do 25) i szyfruje krótkie hasło (np. „PYTHON”).</p>
+</li>
+<li>
+<p>Łamacz próbuje odgadnąć hasło, nie znając klucza.</p>
+</li>
+</ul>
+<p>Wnioski: Jak szybko udało się złamać szyfr? Szyfr Cezara jest słabym zabezpieczeniem, ponieważ ma tylko 25 możliwych kluczy. Metoda brute-force (sprawdzenie wszystkich możliwości) zajmuje człowiekowi kilka minut, a komputerowi ułamek sekundy.</p>
+<h3 id="rot13">ROT13</h3>
+<p>ROT13 to specjalny przypadek szyfru Cezara, w którym przesunięcie to <code>13</code>. Alfabet angielski ma <code>26</code> liter, więc
+ta sama metoda zarówno szyfruje, jak i odszyfrowuje wiadomość.</p>
+<p>ROT13 jest stosowany na forach internetowych, by zakryć część wiadomości, która mogłaby urazić niektórych
+uczestników rozmowy. Na przykład, spojler nowego odcinka serialu mógłby być „zakryty” przed osobami, które
+jeszcze go nie obejrzały. Jednocześnie pozostali uczestnicy rozmowy mogą szybko odczytać ukrytą wiadomość.</p>
+<h3 id="leet-speak-hack-mowa">Leet speak (Hack-mowa)</h3>
+<p>W hack-mowie niektóre litery zastępujemy cyframi lub kombinacją znaków, które wyglądają podobnie. Jest to oparty na języku angielskim slang, stosowany w grach i na forach internetowych. Prawdopodobnie widzieliście taki zapis podczas gry, szczególnie w pseudonimach graczy. Leet speak jest sposobem zapisu, który nie zapewnia poufności.</p>
+<p>Przykładowe zmiany liter:</p>
+<div class="highlight"><pre><span></span><code>A -&gt; 4
+E -&gt; 3
+</code></pre></div>
+<p>Słowo <code>HAKER</code> moglibyśmy wobec tego zakodować jako <code>H4K3R</code>.</p>
+<p>Większą tabelę kodowania znajdziecie na <a href="https://pl.wikipedia.org/wiki/Leet_speak">Wikipedii</a>. Zakodujcie słowo <code>INFORMATYKA</code>. Czy można tego dokonać na wiele różnych sposobów?</p>
+<h3 id="metoda-podstawieniowa">Metoda podstawieniowa</h3>
+<p>Metoda podstawieniowa jest trudniejszym do złamania wariantem szyfru Cezara.
+Zamiast przesuwać każdą literę o taki sam klucz, możemy przypisać każdej literze dowolnie wybraną inną literę alfabetu,
+bez powtórzeń. Na przykład, literze <code>A</code> przypisać <code>Z</code>, a literze <code>B</code> przypisać <code>D</code>.</p>
+<p>Wspólnie zastanówmy się, jak można złamać taki szyfr.</p>
+<h3 id="wniosek">Wniosek</h3>
+<p>Szyfry klasyczne służą tu jako przykłady edukacyjne i nie powinny być używane do ochrony poufnych danych.</p>
 
 
 
@@ -1430,14 +1298,12 @@ wypisz <code>4</code>, podobnie z pozostałymi literami <code>e</code>, <code>i<
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       

@@ -1,211 +1,218 @@
-# Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+# Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
+
+**Czas realizacji:** 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-Podstawy języka Python: wczytywanie danych (input()), wypisywanie (print()), zmienne oraz podstawowe operatory arytmetyczne
+Podstawy języka Python (wczytywanie, wypisywanie, zmienne)
 
 ## Treści z podstawy programowej
 
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
-| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
-| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: instrukcje wejścia/wyjścia, **wyrażenia arytmetyczne i logiczne, instrukcje warunkowe**, instrukcje iteracyjne, funkcje oraz zmienne i tablice. |
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
+
+| Dział | Sekcja |
+| --- | --- |
+| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń: | |
+| | 1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […] |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: **instrukcje wejścia / wyjścia, wyrażenia arytmetyczne** i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
 
 ## Wstęp teoretyczny (przewidziany na około 15 minut)
 
-Do tej pory nasze programy działały jak proste przepisy kulinarne – komputer wykonywał instrukcje jedna po drugiej, od góry do dołu. Jednak w prawdziwym świecie często musimy podejmować decyzje na podstawie pewnych warunków. Instrukcje warunkowe pozwalają programowi "skręcać" i wybierać różne ścieżki działania w zależności od tego, czy dany warunek jest prawdziwy, czy fałszywy.
+Na tej lekcji skupimy się na intuicyjnym zrozumieniu pojęć algorytmu i specyfikacji problemu.
 
-### Zadanie wprowadzające (5 minut) – Informatyka "unplugged"
+### Zadanie wprowadzające (4 minuty)
 
-Zagrajmy w prostą grę: "Poprawna reakcja". Uczniowie reagują na polecenia nauczyciela:
+![pizza](./lesson2-materials/pizza.png)
 
-1. **IF** (jeśli) mam podniesioną prawą rękę -> wszyscy szumią.
-2. **ELIF** (w przeciwnym razie, jeśli) mam podniesioną lewą rękę -> wszyscy tupią.
-3. **ELSE** (w każdym innym przypadku) -> wszyscy siedzą cicho z rękami na blacie.
+Uporządkuj następujące kroki tak, aby powstał przepis na pizzę.
 
-Testujemy proste kombinacje - podniesiona prawa/lewa/żadna ręka, co jeśli nauczyciel podniesie obie naraz?
+* Dodaj składniki: Przełóż uformowane ciasto na blachę i dodaj wybrane składniki.
+* Odstaw do wyrośnięcia: Przykryj ciasto ściereczką i zostaw w ciepłym miejscu na 1 godzinę, aż podwoi objętość.
+* Uformuj pizzę: Na oprószonym mąką blacie rozwałkuj ciasto na cienki placek.
+* Zrób zaczyn: W miseczce wymieszaj ciepłą wodę, drożdże i cukier. Odstaw na 5–10 minut, aż zacznie się pienić.
+* Podawaj: Po wyjęciu z piekarnika możesz dodać świeżą rukolę lub oliwę. Smacznego! 😋
+* Piecz pizzę: Wstaw do gorącego piekarnika i piecz przez 7–10 minut, aż brzegi będą złociste, a ser się roztopi.
+* Wyrób ciasto: Do dużej miski wsyp mąkę, dodaj sól, oliwę i zaczyn. Wyrabiaj ciasto ok. 10 minut, aż będzie elastyczne.
 
-**Wniosek:** Komputer sprawdza warunki po kolei. Gdy tylko znajdzie taki, który jest prawdziwy, wykonuje przypisane mu zadanie i pomija resztę.
+**Wnioski**: Utworzony przepis jest niczym innym jak listą kroków działania (można nazwać go również algorytmem).
+Aby wykonać kolejny krok, poprzednie muszą zostać zakończone (np. nie mogę dodać składników na placek, jeśli nie mam jeszcze wyrobionego ciasta).
 
-### Składnia instrukcji warunkowych w Pythonie (10 minut)
+### Specyfikacja problemu (3 minuty)
 
-Aby komputer mógł podjąć decyzję, używamy następującej konstrukcji:
+Problem algorytmiczny można opisać za pomocą dwóch elementów: danych wejściowych i oczekiwanego wyniku.
+Na przykład w poprzednim zadaniu problem „Jak przygotować pizzę?” można opisać za pomocą danych
+(składniki takie jak drożdże, mąka, woda, ser) oraz oczekiwanego wyniku (jadalna pizza).
+Rolą człowieka jest zazwyczaj opracowanie rozwiązania, na przykład za pomocą listy kroków, co zrobiliśmy przed chwilą.
 
-```Python
-if warunek:
-    # kod, gdy warunek jest prawdziwy
-elif inny_warunek:
-    # kod, gdy pierwszy był fałszywy, a ten jest prawdziwy
-else:
-    # kod, gdy żadne z powyższych nie zadziałało
+### Zadanie utrwalające pojęcia związane ze specyfikacją (8 minut)
+
+Opisz dane wejściowe oraz wyniki. Propozycje problemów:
+
+* Jak stworzyć żurawia z origami?
+* Jak przygotować kanapkę?
+* Jak ubrać się na jazdę na nartach?
+* (**chemia**) Jak przygotować „słoniową pastę do zębów”?
+* (**język polski**) Jak napisać charakterystykę?
+* (**wychowanie fizyczne**) Jak ćwiczyć rozciąganie? Podpowiedź: wynikiem rozwiązania jest poprawienie stopnia rozciągnięcia mięśni.
+
+**Wnioski**: Specyfikacja problemu pozwala nam lepiej zrozumieć nasze „dostępne środki” oraz „cel”, który chcemy osiągnąć.
+Bez nich nie będziemy w stanie opracować kroków, które rozwiążą problem.
+
+## Zadania do rozwiązania w trakcie lekcji na kartkach (przewidziane na około 15 minut)
+
+Propozycje typów zadań, które pomogą uczniom rozwijać myślenie komputacyjne (specyfikacja + lista kroków).
+
+Typy zadań:
+
+* Na podstawie listy kroków lub wizualizacji działania algorytmu określ wynik dla podanych danych.
+    * Fabryka kształtów
+    * Robot Aneta
+* Dla danej specyfikacji (dane wejściowe, wynik), odgadnij listę kroków.
+    * Ukryta zasada
+    * Opracuj kroki
+
+### Fabryka kształtów (XIX konkurs Bóbr)
+
+![zadanie](./lesson2-materials/maszyny-bobr.png)
+
+### Robot Aneta
+
+Robot Aneta, gdy usłyszy liczbę całkowitą,
+oblicza trzykrotność tej liczby, a następnie wygłasza ten wynik pomniejszony o 13.
+Robot Beata, gdy słyszy liczbę całkowitą, oblicza jej połowę (dla liczb nieparzystych zaokrągli w dół) i wygłasza
+obliczony wynik.
+Robot Beata stoi obok Anety i usłyszy wypowiedziany przez nią wynik.
+
+Jaką liczbę podasz robotowi Anecie, żeby Beata powiedziała na koniec taką samą liczbę, którą podałeś/podałaś?
+
+### Ukryta zasada
+
+Jaka będzie kolejna liczba w ciągu?
+
+* 1, 2, 3, 4, 5, 6, ?
+* 1, 1, 2, 3, 5, 8, ?
+* 1, 2, 4, 8, 16, 32, ?
+* 1, 4, 13, 40, 121, ?
+
+### Opracuj kroki
+
+Dla wybranego problemu (np. z listy z zadania o specyfikacji) opracuj kolejne kroki, które pozwolą osiągnąć
+wynik.
+
+## Zadanie do rozwiązania na komputerze (przewidziane na około 15 minut)
+
+Janek interesuje się liczbami i chciałby poznać różne własności wybranej liczby.
+
+Napisz program w języku Python, który po wczytaniu liczby całkowitej różnej od zera za pomocą `int(input())` wypisze
+następujące informacje:
+
+* wczytana liczba (rozwiązanie: `x`);
+* liczba przeciwna (rozwiązanie: `-x`);
+* liczba odwrotna (rozwiązanie: `1/x`);
+* dwukrotność (rozwiązanie: `2*x`);
+* połowa (rozwiązanie: `x/2`);
+* kwadrat liczby (rozwiązanie: `x*x`).
+
+Na przykład dla liczby `5` program powinien wypisać:
+
+```
+Wczytana: 5
+Przeciwna: -5
+Odwrotna: 0.2
+Dwukrotność: 10
+Połowa: 2.5
+Kwadrat: 25
 ```
 
-Ważne: Zwróć uwagę na dwukropki na końcach linii oraz wcięcia (ang. indentation). Wcięcia informują Pythona, które linijki kodu należą do danej instrukcji warunkowej.
+Rozwiązanie wzorcowe
 
-Piszemy przykładowy program sprawdzający, czy liczba jest liczbą dodatnią:
-
-```Python
+```python
 x = int(input())
-if x == 0:
-    print("Zero!")
-elif x >= 0:
-    print("Dodatnia")
-else:
-    print("Ujemna")
+print("Wczytana ", x)
+print("Przeciwna ", -x)
+print("Odwrotna ", 1/x)
+print("Dwukrotność ", 2*x)
+print("Połowa ", x/2)
+print("Kwadrat ", x*x)
 ```
 
-## Wspólne eksperymenty z językiem Python (15 minut)
+Dodatkowe propozycje zadań:
 
-### Logika matematyczna
+### Od tyłu
 
-Uruchom poniższy kod i przeanalizuj jego działanie:
+Napisz program w języku Python, który po wczytaniu trzech liczb całkowitych wypisze je w odwrotnej kolejności.
+Liczby wejściowe podaj w osobnych wierszach. Na przykład dla liczb `1`, `2`, `3` program wypisze `3`, `2`, `1`, także w osobnych wierszach.
 
-```Python
-x = int(input())
-if x > 20:
-    print("A")
-elif x > 10:
-    print("B")
-else:
-    print("C")
+Rozwiązanie wzorcowe
+
+```python
+a = int(input())
+b = int(input())
+c = int(input())
+print(c)
+print(b)
+print(a)
 ```
 
-Co wypisze program dla liczby `15`?
+### Suma i różnica
 
-Zmodyfikuj warunki, wykorzystaj takie wyrażenia:
+Napisz program w języku Python, który po wczytaniu dwóch liczb całkowitych wypisze ich sumę i różnicę.
+Liczby wejściowe podaj w osobnych wierszach. Na przykład dla liczb `6` i `2` program wypisze `8` i `4` w osobnych wierszach.
 
-`4 > 1`,  `x == 5`, `2 + 2 == 5`, `x != 20`
+Rozwiązanie wzorcowe
 
-Jak działa teraz program?
-
-### Instrukcje `and` i `or`
-
-W bardziej skomplikowanych problemach jeden prosty warunek to za mało. Wtedy stosujemy wyrażenia logiczne, które pozwalają łączyć wiele sprawdzeń w jedną całość.
-
-- `and` (i): Cały warunek jest prawdziwy tylko wtedy, gdy wszystkie jego części są prawdziwe. 
-- `or` (lub): Cały warunek jest prawdziwy, jeśli przynajmniej jedna z jego części jest prawdziwa. Stosujemy go, gdy wystarczy nam spełnienie dowolnego z podanych wymagań. `Przykład: if wiek >= 18 or ma_zgode_rodzicow:`
-
-Analogię operatorów logicznych można porównać do zamawiania pizzy:
-
-- `and` jest jak zamówienie: "Chcę pizzę, która ma ser i pieczarki" – jeśli zabraknie choć jednego składnika, nie będziesz zadowolony.
-- `or` jest jak zamówienie: "Zjem pizzę, jeśli będzie na niej ser lub szynka" – będziesz zadowolony, gdy dostaniesz ser, gdy dostaniesz szynkę, albo oba te składniki na raz.
-
-## Zadania do rozwiązania na komputerze (przewidziane na około 15 minut)
-
-### Prawo jazdy i pełnoletniość
-Napisz program, który zapyta użytkownika o wiek.
-
-1. Jeśli ma 18 lat lub więcej, wypisz: "Jesteś osobą pełnoletnią. Możesz prowadzić samochód".
-2. Jeśli ma co najmniej 16 lat (ale mniej niż 18), wypisz: "Nie jesteś pełnoletni, ale możesz już robić prawo jazdy kategorii B1!".
-3. W innym przypadku wypisz: "Jesteś jeszcze za młody na prawo jazdy".
-
-```Python
-wiek = int(input("Ile masz lat? "))
-if wiek >= 18:
-    print("Jesteś osobą pełnoletnią. Możesz prowadzić samochód.")
-elif wiek >= 16:
-    print("Nie jesteś pełnoletni, ale możesz już robić prawo jazdy kategorii B1!")
-else:
-    print("Jesteś jeszcze za młody na prawo jazdy.")
+```python
+a = int(input())
+b = int(input())
+print(a + b)
+print(a - b)
 ```
 
-### Interaktywny system zamówień „Pizza-Bot”
+### Odgadnij dane
 
-Napisz program, który zdecyduje, czy zamówienie klienta może zostać zrealizowane na podstawie dostępności składników i jego preferencji.
-Specyfikacja problemu:
-- Dane wejściowe: Odpowiedzi „tak” lub „nie” (wczytane jako tekst) na pytania o posiadanie sera, sosu pomidorowego, szynki oraz pieczarek.
-- Wynik: Komunikat „Zamówienie przyjęte!” lub „Niestety, nie możemy zrobić Twojej pizzy”.
+Oto program w Pythonie. Liczby wejściowe podaj w osobnych wierszach:
 
-Zasady logiczne do zaimplementowania:
-1. Warunek konieczny (and): Aby pizza w ogóle powstała, musisz mieć ser ORAZ sos. Jeśli brakuje choć jednego z nich, zamówienie jest odrzucane.
-2. Warunek preferencji (or): Klient zje pizzę tylko wtedy, gdy będzie na niej szynka LUB pieczarki. Jeśli nie ma żadnego z tych dodatków, zamówienie jest odrzucane (nawet jeśli jest ser i sos).
-
-Początkowy kod uzupełnij warunkami tak, by spełniały specyfikację:
-
-```Python
-# Wczytywanie danych od użytkownika
-ser = input("Czy jest ser? (tak/nie): ")
-sos = input("Czy jest sos pomidorowy? (tak/nie): ")
-szynka = input("Czy jest szynka? (tak/nie): ")
-pieczarki = input("Czy są pieczarki? (tak/nie): ")
-
-if DODAJ_WARUNKI:
-    print("Zamówienie przyjęte!")
-else:
-    print("Niestety, nie możemy zrobić Twojej pizzy")
+```python
+a = int(input())
+b = int(input())
+print(2 * a + 3 * b)
 ```
 
-### Warunek trójkąta
-Napisz program, który wczyta trzy liczby całkowite (długości boków). Sprawdź, czy z tych odcinków można zbudować trójkąt. W Pythonie możesz użyć słowa `and` do łączenia warunków.
+* Uruchom program i wpisz liczby `3` i `5` w osobnych wierszach. Jaki wynik otrzymasz?
+* Jakie dwie liczby należy wpisać, żeby otrzymać wynik `40`?
+* Czy istnieją różne dane wejściowe, dla których program wypisze liczbę `40`?
 
-??? Podpowiedź: 
-    Zgodnie z zasadą geometrii, suma dwóch dowolnych boków musi być większa od trzeciego boku (a+b>c oraz a+c>b oraz b+c>a).
+### Zakupy
 
-## Zadania do rozwiązania na platformie Szkopuł
+Mały Jaś dostał od mamy bardzo ważną misję. Ma kupić masło i chleb. Zważając na wagę misji, nie możemy pozwolić na to, aby pieniądze dostały się w niepowołane ręce. Aby temu zaradzić, mama Jasia dała swojemu synkowi równo $K$ złotych – czyli dokładnie tyle, ile razem kosztują oba produkty.
 
-### Trzy liczby rosnąco
+Jaś jest już w drodze do sklepu. Teraz pozostało tylko kupić masło i... O nie! Jaś zapomniał, co, oprócz masła, miał kupić. Czy cała misja skazana jest już na porażkę? Na szczęście mama Jasia doskonale wiedziała, kogo wysyła – swojego najlepszego agenta. Jaś od razu zauważył, że masło w sklepie kosztuje $M$ złotych. Teraz w prosty sposób będzie mógł obliczyć cenę zapomnianego produktu.
 
-Napisz program, który czyta trzy liczby całkowite, a następnie wypisuje je w kolejności niemalejącej.
+Pomóż Jasiowi! Znając kwotę, którą dostał Jaś, oraz cenę masła, oblicz cenę drugiego produktu.
 
-Do wczytania danych wykorzystaj polecenie `a, b, c = map(int, input().split())`.
+Do wczytania danych możesz wykorzystać polecenie `M, K = map(int, input().split())`.
 
 #### Wejście
 
-Dane wejściowe zawierają trzy liczby całkowite $a, b, c$ ($1 \le a, b, c \le 1\ 000\ 000$) oddzielone pojedynczym odstępem.
+W pierwszym wierszu wejścia znajdują się dwie liczby całkowite $M$ oraz $K$ ($1 \leq M < K \leq 10$) oddzielone pojedynczym odstępem i oznaczające odpowiednio cenę masła oraz ile złotych otrzymał na początku Jaś.
 
 #### Wyjście
 
-Na wyjściu wypisz podane trzy liczby uporządkowane w kolejności niemalejącej, oddzielone odstępem.
+Na wyjście wypisz jedną liczbę całkowitą określającą cenę zapomnianego produktu.
 
 #### Przykład
 
 | Wejście | Wyjście |
-| :--- | :--- |
-| 7 5 3 | 3 5 7 |
+| :------ | :------ |
+| 2 5     | 3       |
 
-??? Wskazówka
-    Możesz użyć funkcji `sorted()` do posortowania wczytanych liczb, np.:
-    `liczby = sorted([a, b, c])`
-    a następnie wypisać je za pomocą `print(*liczby)`.
+Wyjaśnienie: Jaś dostał 5 złotych, a cena masła to 2 złote. Oznacza to, że brakujący produkt kosztował 3 złote.
 
-[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/HSmxAaEATSIyNA_Dw8iA84yZ/site/?key=statement){ .md-button .md-button--primary }
+??? tip "Wskazówka"
+    Cena drugiego produktu to różnica między kwotą, którą otrzymał Jaś ($K$), a ceną masła ($M$). W Pythonie możesz wypisać wynik odejmowania za pomocą `print(K - M)`.
 
-### Ćwiartka
+[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/HodOdonWADxq3z5dnEjsOrlv/site/?key=submit){ .md-button .md-button--primary }
 
-Napisz program, który dla danego punktu na płaszczyźnie sprawdzi, w której ćwiartce układu współrzędnych się on znajduje. Może jednak być tak, że punkt nie znajduje się w żadnej ćwiartce – leży na jednej z osi lub w środku układu współrzędnych. Wówczas program powinien to stwierdzić.
-
-Do wczytania danych możesz wykorzystać polecenie `x, y = map(int, input().split())`.
-
-#### Wejście
-
-Na wejściu znajdują się dwie liczby całkowite $x$ oraz $y$ ($-1\,000\,000\,000 \leq x, y \leq 1\,000\,000\,000$) oddzielone spacją, oznaczające współrzędne danego punktu.
-
-#### Wyjście
-
-Jeżeli podany punkt nie leży na żadnej z osi, Twój program powinien wypisać: `I`, `II`, `III` lub `IV`, w przypadku gdy punkt należy do, odpowiednio, pierwszej, drugiej, trzeciej lub czwartej ćwiartki układu współrzędnych.
-
-Jeżeli punkt leży w środku układu współrzędnych, program powinien wypisać liczbę `0`. W przeciwnym razie, program powinien wypisać `OX` (duże O i duże X), jeśli punkt leży na osi X, a `OY` – jeśli punkt leży na osi Y.
-
-#### Przykład
-
-| Wejście | Wyjście |
-| :--- | :--- |
-| 5 7 | I |
-| 0 -1000000000 | OY |
-| 0 0 | 0 |
-
-??? Wskazówka
-    Użyj instrukcji warunkowej `if ... elif ... else`. Najpierw sprawdź przypadek $(0, 0)$, potem leżenie na osiach (`x == 0` lub `y == 0`), a na końcu sprawdź znaki współrzędnych $x$ i $y$, aby określić ćwiartkę (np. $x > 0$ i $y > 0$ to I ćwiartka).
-
-
-[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/QbhwEI326MIf0rE4BlshlObK/site/?key=statement
-){ .md-button .md-button--primary }
-
-
-
-
-
-
-
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/HodOdonWADxq3z5dnEjsOrlv/site/?key=submit).

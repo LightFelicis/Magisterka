@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne. - Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie - Scenariusze lekcji informatyki</title>
       
     
     
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,8 +66,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#czym-jest-sztuczna-inteligencja-implementujemy-uproszczone-drzewo-decyzyjne" class="md-skip">
-          Skip to content
+        <a href="#lekcja-17-porzadkowanie-zbioru-sortowanie-przez-wybieranie" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -79,8 +81,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-header__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Scenariusze lekcji Informatyka
+            Scenariusze lekcji informatyki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+              Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
             
           </span>
         </div>
@@ -122,16 +124,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -142,7 +144,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -176,15 +178,15 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-nav__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Scenariusze lekcji Informatyka
+    Scenariusze lekcji informatyki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -272,34 +274,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../lesson1/" class="md-nav__link">
         
   
@@ -307,7 +281,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.
+    Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
   
 
     
@@ -335,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+    Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
   
 
     
@@ -363,7 +337,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -391,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?
+    Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?
   
 
     
@@ -419,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.
+    Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
   
 
     
@@ -447,7 +421,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+    Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
   
 
     
@@ -475,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -503,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.
+    Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza
   
 
     
@@ -531,7 +505,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?
+    Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle
   
 
     
@@ -559,7 +533,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -587,7 +561,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+    Lekcja 11 – Kody ASCII – zamiana liter na liczby
   
 
     
@@ -615,7 +589,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.
+    Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania
   
 
     
@@ -643,7 +617,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -671,7 +645,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 15 - Algorytm Euklidesa – zastosowanie.
+    Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy
   
 
     
@@ -699,7 +673,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -727,7 +701,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.
+    Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu
   
 
     
@@ -764,7 +738,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -782,7 +756,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -794,7 +768,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -803,7 +777,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -819,10 +793,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-20-minut" class="md-nav__link">
+  <a href="#tresci-z-podstawy-programowej" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (20 minut)
+        Treści z podstawy programowej
       
     </span>
   </a>
@@ -830,10 +804,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty (15 minut)
+        Wstęp teoretyczny (15 minut)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jak-to-dziaa-krok-po-kroku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jak to działa krok po kroku?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad-z-zycia-sortowanie-kart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład z życia: Sortowanie kart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wizualizacja-unplugged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wizualizacja (unplugged)
       
     </span>
   </a>
@@ -841,13 +854,191 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-10-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-20-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (10 minut)
+        Wspólne eksperymenty (20 minut)
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-55-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania (55 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na platformie Szkopuł
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sortowanie-babelkowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sortowanie bąbelkowe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sortowanie bąbelkowe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-wspaniaych" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 wspaniałych
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 wspaniałych">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwa-pod-wiedniem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bitwa pod Wiedniem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bitwa pod Wiedniem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -874,7 +1065,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.
+    Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
   
 
     
@@ -902,7 +1093,35 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.
+    Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 20 – Trenowanie własnego modelu i eksploracja danych
   
 
     
@@ -936,7 +1155,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -945,7 +1164,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -961,10 +1180,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-20-minut" class="md-nav__link">
+  <a href="#tresci-z-podstawy-programowej" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (20 minut)
+        Treści z podstawy programowej
       
     </span>
   </a>
@@ -972,10 +1191,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty (15 minut)
+        Wstęp teoretyczny (15 minut)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jak-to-dziaa-krok-po-kroku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jak to działa krok po kroku?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad-z-zycia-sortowanie-kart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład z życia: Sortowanie kart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wizualizacja-unplugged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wizualizacja (unplugged)
       
     </span>
   </a>
@@ -983,13 +1241,191 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-10-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-20-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (10 minut)
+        Wspólne eksperymenty (20 minut)
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-55-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania (55 minut)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-platformie-szkopu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na platformie Szkopuł
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na platformie Szkopuł">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sortowanie-babelkowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sortowanie bąbelkowe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sortowanie bąbelkowe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-wspaniaych" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 wspaniałych
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 wspaniałych">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwa-pod-wiedniem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bitwa pod Wiedniem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bitwa pod Wiedniem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wejscie_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wejście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wyjscie_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wyjście
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1010,36 +1446,218 @@
 
 
 
-<h1 id="czym-jest-sztuczna-inteligencja-implementujemy-uproszczone-drzewo-decyzyjne">Czym jest sztuczna inteligencja? Implementujemy uproszczone "drzewo decyzyjne"</h1>
+<h1 id="lekcja-17-porzadkowanie-zbioru-sortowanie-przez-wybieranie">Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie</h1>
+<p class="lesson-duration"><strong>Czas realizacji:</strong> 90 minut (2 godziny lekcyjne). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.</p>
 <h2 id="wymagana-wiedza">Wymagana wiedza</h2>
 <ul>
-<li>Instrukcje warunkowe <code>if-elif-else</code></li>
+<li>
+<p>Listy.</p>
+</li>
+<li>
+<p>Wyszukiwanie minimum (z poprzedniej lekcji).</p>
+</li>
+<li>
+<p>Zamiana wartości między zmiennymi.</p>
+</li>
 </ul>
-<h2 id="wstep-teoretyczny-20-minut">Wstęp teoretyczny (20 minut)</h2>
-<p>Sztuczna inteligencja (AI) to dziedzina informatyki zajmująca się tworzeniem programów, które potrafią wykonywać zadania wymagające "ludzkiej" inteligencji.
-Jednym z najprostszych modeli AI jest <strong>drzewo decyzyjne</strong> – seria pytań, które prowadzą do wyniku (decyzji).</p>
-<p><strong>Przykłady z życia wzięte:</strong>
-*   <strong>Bankowość</strong>: Decyzja o przyznaniu pożyczki (Pytania o zarobki, wiek, historię spłat).
-*   <strong>Medycyna</strong>: Wstępna diagnoza choroby (np. czy pacjent ma gorączkę? czy ma wysypkę? -&gt; jeśli tak, to może być ospa).</p>
-<h2 id="wspolne-eksperymenty-15-minut">Wspólne eksperymenty (15 minut)</h2>
-<p>Stwórzmy system klasyfikujący zwierzęta:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Odpowiedz na pytania (tak/nie):&quot;</span><span class="p">)</span>
-<span class="n">czy_ma_piora</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy ma pióra? &quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">czy_ma_piora</span> <span class="o">==</span> <span class="s2">&quot;tak&quot;</span><span class="p">:</span>
-    <span class="n">czy_lata</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy lata? &quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">czy_lata</span> <span class="o">==</span> <span class="s2">&quot;tak&quot;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To prawdopodobnie wróbel!&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To prawdopodobnie struś!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To prawdopodobnie ssak lub gad.&quot;</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="zadania-do-rozwiazania-10-minut">Zadania do rozwiązania (10 minut)</h2>
+<h2 id="tresci-z-podstawy-programowej">Treści z podstawy programowej</h2>
+<p><em>Wybrane wymagania z podstawy programowej dla klas VII–VIII. <a href="https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka">Źródło</a>.</em></p>
+<table>
+<thead>
+<tr>
+<th>Dział</th>
+<th>Sekcja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2) stosuje przy rozwiązywaniu problemów podstawowe algorytmy: […]<br>b) wyszukiwania i porządkowania: wyszukuje element w zbiorze nieuporządkowanym oraz porządkuje elementy w zbiorze metodą przez proste wybieranie;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wstep-teoretyczny-15-minut">Wstęp teoretyczny (15 minut)</h2>
+<p>Sortowanie przez wybieranie (selection sort) to intuicyjny algorytm, który dzieli naszą listę na dwie części: <strong>już posortowaną</strong> (na początku) oraz <strong>jeszcze nieposortowaną</strong>.</p>
+<h3 id="jak-to-dziaa-krok-po-kroku">Jak to działa krok po kroku?</h3>
 <ol>
-<li><strong>Akinator</strong>: Rozbuduj drzewo decyzyjne tak, aby potrafiło rozpoznać co najmniej 5 różnych zwierząt lub postaci z gier.</li>
-<li><strong>Diagnoza komputera</strong>: Napisz program, który pyta o objawy (np. "czy ekran działa?", "czy słychać wiatrak?") i sugeruje rozwiązanie problemu z komputerem.</li>
+<li><strong>Szukanie</strong>: Przeszukujemy nieposortowaną część listy, aby znaleźć w niej najmniejszy element.</li>
+<li><strong>Zamiana</strong>: Gdy znajdziemy najmniejszą liczbę, zamieniamy ją miejscami z pierwszym elementem części nieposortowanej.</li>
+<li><strong>Postęp</strong>: Teraz nasza „posortowana część” powiększyła się o jeden element. Przesuwamy się o jedną pozycję w prawo i powtarzamy cały proces dla reszty liczb.</li>
+<li><strong>Koniec</strong>: Powtarzamy te kroki tak długo, aż zostanie nam tylko jeden (ostatni) element – on siłą rzeczy musi być już największy i na właściwym miejscu.</li>
 </ol>
+<h3 id="przykad-z-zycia-sortowanie-kart">Przykład z życia: Sortowanie kart</h3>
+<p>Wyobraź sobie, że trzymasz w ręku wachlarz nieuporządkowanych kart (np. od dwójki do asa). Chcesz je ułożyć od najmniejszej do największej:</p>
+<ol>
+<li>Przeglądasz wszystkie karty w ręku i szukasz tej najniższej (np. dwójki).</li>
+<li>Wyciągasz ją i przekładasz na sam początek (lewa strona).</li>
+<li>Teraz szukasz najniższej karty wśród tych, które pozostały po prawej stronie od dwójki.</li>
+<li>Znajdujesz np. trójkę i kładziesz ją zaraz za dwójką.</li>
+<li>Powtarzasz to, aż w prawej ręce nie zostanie ci żadna karta.</li>
+</ol>
+<p><strong>Dlaczego „przez wybieranie”?</strong> Bo w każdym kroku algorytm „wybiera” konkretną wartość – tę najmniejszą z dostępnych – i umieszcza ją na właściwym miejscu.</p>
+<h2 id="wizualizacja-unplugged">Wizualizacja (unplugged)</h2>
+<p>Uczniowie dostają karty z liczbami. Muszą ustawić się w szeregu i posortować zgodnie z algorytmem.</p>
+<ol>
+<li>Nauczyciel wskazuje pierwszą osobę w szeregu jako „miejsce docelowe”.</li>
+<li>Klasa szuka osoby z najniższym numerem w pozostałej części szeregu.</li>
+<li>Wybrana osoba zamienia się miejscami z osobą na „miejscu docelowym”.</li>
+</ol>
+<h2 id="wspolne-eksperymenty-20-minut">Wspólne eksperymenty (20 minut)</h2>
+<p>Przeanalizujmy kod implementujący sortowanie przez wybieranie. Zwróć uwagę na dwie pętle – zewnętrzna wskazuje pozycję, na którą ma trafić najmniejszy element nieposortowanej części listy, a wewnętrzna przeszukuje pozostałą, nieposortowaną część listy.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
+    <span class="c1"># Zakładamy, że pierwszy element nieposortowanej części jest najmniejszy</span>
+    <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">lista</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lista</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]:</span>
+            <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span>
+
+    <span class="c1"># Zamiana miejscami: najmniejszy znaleziony trafia na pozycję o indeksie i</span>
+    <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lista</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">min_idx</span><span class="p">],</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Posortowana lista:&quot;</span><span class="p">,</span> <span class="n">lista</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="zadania-do-rozwiazania-55-minut">Zadania do rozwiązania (55 minut)</h2>
+<ol>
+<li><strong>Sortowanie malejące</strong>: Zmodyfikuj powyższy kod tak, aby liczby były układane od największej do najmniejszej (odwrócenie kierunku sortowania).</li>
+<li><strong>Mediana</strong>: Napisz program, który wczyta od użytkownika 5 liczb, posortuje je, a następnie wypisze element środkowy (medianę).</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Wskazówka</p>
+<p>Skorzystaj z polecenia <code>len()</code>, aby odczytać długość tablicy i obliczyć środkowy indeks.</p>
+</div>
+<ol>
+<li><strong>Sortowanie imion</strong>: Stwórz listę kilku imion i spróbuj je posortować alfabetycznie. Czy Python radzi sobie z porównywaniem słów (operator <code>&lt;</code>) tak samo łatwo jak z liczbami?</li>
+<li><strong>Sortowanie par</strong>: Masz listę wyników biegaczy: <code>wyniki = [[12.5, "Jan"], [11.2, "Ola"], [13.1, "Piotr"]]</code>. Posortuj ją według czasu (pierwszy element w każdej parze). Zauważ, że Python przy zamianie <code>lista[i], lista[min_idx]</code> przenosi całe „paczki” danych (liczbę wraz z imieniem).</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Dobór algorytmu</p>
+<p>Sortowanie przez wybieranie ma złożoność kwadratową i służy tu do nauki. Dla setek tysięcy elementów użyj <code>sorted()</code> lub metody <code>sort()</code>.</p>
+</div>
+<h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
+<p><em>Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.</em></p>
+<h3 id="sortowanie-babelkowe">Sortowanie bąbelkowe</h3>
+<p>Jasio bardzo lubi porządek, dlatego ponumerował wszystkie samochodziki w swojej kolekcji i tak ustawił je na półce. Niestety zamiłowanie do porządku kończy mu się, gdy trzeba posprzątać w pokoju. Często więc mama, tracąc cierpliwość, sprząta sama.</p>
+<p>Kolejność samochodzików na półce nie ma dla mamy znaczenia. Jasio, zobaczywszy samochodziki poustawiane w losowej kolejności, bardzo się zasmucił. Chciałby je uporządkować, ale samochodzików jest bardzo dużo i trudno mu to zrobić – zwłaszcza że niektóre samochodziki pożyczył kolegom.</p>
+<p>Pomóż Jasiowi i napisz program, który posortuje samochodziki według ich numerów.</p>
+<p>Do wczytania danych wykorzystaj polecenia:
+<code>n = int(input())</code>
+<code>samochodziki = list(map(int, input().split()))</code></p>
+<h4 id="wejscie">Wejście</h4>
+<p>W pierwszym wierszu wejścia znajduje się liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 10^4\)</span>), oznaczająca liczbę samochodzików, które aktualnie znajdują się na półce.</p>
+<p>Drugi wiersz zawiera <span class="arithmatex">\(n\)</span> liczb całkowitych oddzielonych pojedynczymi spacjami – są to numery samochodzików w kolejności, w jakiej obecnie stoją na półce.</p>
+<h4 id="wyjscie">Wyjście</h4>
+<p>W jedynym wierszu wyjścia wypisz <span class="arithmatex">\(n\)</span> numerów samochodzików ułożonych w kolejności rosnącej, oddzielonych spacjami.</p>
+<h4 id="przykad">Przykład</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Wejście</th>
+<th style="text-align: left;">Wyjście</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10<br>19 15 17 1 5 10 14 7 16 2</td>
+<td style="text-align: left;">1 2 5 7 10 14 15 16 17 19</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Wskazówka</summary>
+<p>W języku Python wczytaną listę liczb można bardzo łatwo posortować za pomocą wbudowanej metody <code>.sort()</code> lub funkcji <code>sorted()</code>.
+Aby wypisać elementy listy oddzielone spacjami w jednym wierszu, użyj rozpakowania listy: <code>print(*samochodziki)</code>.</p>
+</details>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/zZRpgyajpZA5OAVa-Fi8BonM/site/?key=statement">Zobacz zadanie na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/zZRpgyajpZA5OAVa-Fi8BonM/site/?key=statement">odnośnik do zadania</a>.</p>
+<h3 id="10-wspaniaych">10 wspaniałych</h3>
+<div class="admonition warning">
+<p class="admonition-title">Niejednoznaczność oryginału</p>
+<p>Oryginał dopuszcza mniej niż 10 kandydatów, ale wymaga 10 wyników. Na potrzeby ćwiczenia przyjmij n ≥ 10. Zachowanie sprawdzarki dla mniejszych danych wymaga potwierdzenia.</p>
+</div>
+<p><img alt="muszkieter" src="../lesson17-materials/muszkieter.png" /></p>
+<p>D'Artagnan ogłosił konkurs na 3 muszkieterów. Niestety zgłosiło się mnóstwo chętnych – nawet milion!</p>
+<p>D'Artagnan stwierdził, że nie jest w stanie sprawdzić wszystkich kandydatów. Na szczęście każdy kandydat podał swoją moc, która może być również ujemna.</p>
+<p>D'Artagnan poprosił ciebie, byś wyznaczył 10 najlepszych kandydatów i wypisał ich moce.</p>
+<p>Do wczytania danych wykorzystaj polecenia:
+<code>n = int(input())</code>
+<code>moce = list(map(int, input().split()))</code></p>
+<h4 id="wejscie_1">Wejście</h4>
+<p>W pierwszym wierszu znajduje się jedna liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 1\ 000\ 000\)</span>), oznaczająca liczbę chętnych kandydatów.</p>
+<p>W drugim wierszu znajduje się <span class="arithmatex">\(n\)</span> liczb całkowitych z zakresu od <span class="arithmatex">\(-1\ 000\ 000\)</span> do <span class="arithmatex">\(1\ 000\ 000\)</span>, oznaczających moce kolejnych kandydatów.</p>
+<h4 id="wyjscie_1">Wyjście</h4>
+<p>Twój program powinien wypisać w jednym wierszu moce 10 kandydatów o największych wartościach, posortowane malejąco i oddzielone spacjami.</p>
+<h4 id="przykad_1">Przykład</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Wejście</th>
+<th style="text-align: left;">Wyjście</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">12<br>3 6 3 2 5 9 4 -1 -2 3 8 1</td>
+<td style="text-align: left;">9 8 6 5 4 3 3 3 2 1</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Wskazówka</summary>
+<p>Możesz posortować całą listę mocy malejąco, a następnie wypisać tylko pierwsze 10 elementów.
+Zamiast sortowania możesz również 10 razy wyszukać maksymalną wartość i usuwać ją ze zbioru.</p>
+</details>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/10wspanialych/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/10wspanialych/site/?key=statement">odnośnik do zadania</a>.</p>
+<h3 id="bitwa-pod-wiedniem">Bitwa pod Wiedniem</h3>
+<p>Największa turecka armia XVII wieku oblega Wiedeń. Jest już w odległości strzału z rusznicy od zamku cesarza. Gorące letnie słońce wypala resztki wiary obrońców. Losy Europy zawisły na włosku.</p>
+<p>Wiadomość, że Polacy idą na odsiecz, rozchodzi się błyskawicznie i podnosi morale. Wiedeń broni się nadzieją. Ale czy 27 tysięcy polskich żołnierzy może zadecydować w bitwie przeciwko 300 tysiącom agresorów? Obrońcy wierzą...</p>
+<p>Król Jan III Sobieski ma do dyspozycji chorągwie husarskie, pancerne, piechoty... Ale w jakiej kolejności mają uderzyć, by zaskoczyć wielkiego wezyra Kara Mustafę?</p>
+<p>Król Jan nadał wszystkim chorągwiom nazwy w postaci liczb. To nie są zwykłe liczby. To szyfr, który mówi chorągwiom, w jakiej kolejności mają się ustawić:</p>
+<ul>
+<li>
+<p>Im większa suma cyfr liczby, tym bardziej z przodu musi być chorągiew.</p>
+</li>
+<li>
+<p>Jeśli dwie chorągwie mają tę samą sumę cyfr, z przodu powinna być ta chorągiew, której liczba jest większa.</p>
+</li>
+</ul>
+<p>Do wczytania danych wykorzystaj polecenia:
+<code>n = int(input())</code>
+<code>choragwie = list(map(int, input().split()))</code></p>
+<h4 id="wejscie_2">Wejście</h4>
+<p>Pierwszy wiersz wejścia składa się z jednej liczby naturalnej <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 4 \cdot 10^5\)</span>), oznaczającej liczbę chorągwi.</p>
+<p>Drugi wiersz wejścia zawiera <span class="arithmatex">\(n\)</span> liczb całkowitych z przedziału od <span class="arithmatex">\(1\)</span> do <span class="arithmatex">\(10^{18}\)</span>, oznaczających nazwy chorągwi.</p>
+<h4 id="wyjscie_2">Wyjście</h4>
+<p>Twój program powinien wypisać w jednym wierszu wszystkie nazwy chorągwi w kolejności bojowej, oddzielone pojedynczym odstępem.</p>
+<h4 id="przykad_2">Przykład</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Wejście</th>
+<th style="text-align: left;">Wyjście</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">4<br>1000 122 9 32</td>
+<td style="text-align: left;">9 122 32 1000</td>
+</tr>
+</tbody>
+</table>
+<p><em>Wyjaśnienie:</em>
+Największą sumę cyfr ma liczba <span class="arithmatex">\(9\)</span> (suma <span class="arithmatex">\(9\)</span>) i tę chorągiew wypisujemy najpierw. Liczby <span class="arithmatex">\(122\)</span> i <span class="arithmatex">\(32\)</span> mają taką samą sumę cyfr (<span class="arithmatex">\(5\)</span>) – chorągiew <span class="arithmatex">\(122\)</span> wypisujemy wcześniej, gdyż jest większa od <span class="arithmatex">\(32\)</span>. Najmniejszą sumę cyfr ma liczba <span class="arithmatex">\(1000\)</span> (suma <span class="arithmatex">\(1\)</span>) i tę chorągiew wypisujemy na końcu.</p>
+<details class="tip">
+<summary>Wskazówka</summary>
+<p>Zdefiniuj funkcję pomocniczą obliczającą sumę cyfr liczby (np. <code>sum(int(c) for c in str(x))</code>).</p>
+</details>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/VDUW5eIFUfmutWAqey-KQG7O/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/VDUW5eIFUfmutWAqey-KQG7O/site/?key=statement">odnośnik do zadania</a>.</p>
 
 
 
@@ -1089,14 +1707,12 @@ Jednym z najprostszych modeli AI jest <strong>drzewo decyzyjne</strong> – seri
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       

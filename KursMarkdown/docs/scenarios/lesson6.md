@@ -1,131 +1,191 @@
-# Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+# Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
+
+**Czas realizacji:** 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-- Podstawy języka Python: instrukcje wejścia/wyjścia (input(), print()).
+- Podstawy języka Python: instrukcje wejścia/wyjścia (`input()`, `print()`).
+
 - Stosowanie zmiennych do przechowywania danych.
-- Instrukcje warunkowe (if, else) do podejmowania decyzji przez program.
-- Stosowanie własnych funkcji (def, return).
+
+- Instrukcje warunkowe (`if`, `else`) do podejmowania decyzji przez program.
 
 ## Treści z podstawy programowej
 
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
-| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: instrukcje wejścia/wyjścia, **wyrażenia arytmetyczne i logiczne**, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. |
-| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
 
-## Wstęp teoretyczny (przewidziany na około 15 minut)
+| Dział | Sekcja |
+| --- | --- |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, **funkcje** oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
+| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń: | |
+| | 1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […] |
 
-Python to nie tylko język dla programistów, ale potężne narzędzie matematyczne, które może zastąpić zaawansowany kalkulator naukowy. Pozwala on na automatyzację obliczeń z Twojej pracy domowej – od geometrii po teorię liczb.
+## Wstęp teoretyczny (przewidziany na około 10 minut)
 
-Aby skutecznie rozwiązywać zadania matematyczne, musimy najpierw stworzyć specyfikację, czyli określić, co jest daną w zadaniu (wejście), a co mamy obliczyć (wynik).
+Do tej pory pisaliśmy programy, które wykonywały się od góry do dołu. Jednak wraz ze wzrostem złożoności kodu powtarzanie tych samych fragmentów staje się uciążliwe. Funkcje to wydzielone części programu, które mają swoją nazwę i mogą być wielokrotnie wywoływane, co ułatwia zarządzanie kodem i czyni go bardziej czytelnym.
 
-Większość operacji wykonujemy za pomocą standardowych operatorów i funkcji wbudowanych. Część z nich już znamy, na przykład operatory działań  `+, -, *, /`. W Pythonie mamy również operator potęgowania: `2**4` oznacza matematyczne $2^4$.
+Część funkcji już znamy – korzystaliśmy z nich w programach. Są to funkcje **wbudowane** w
+język Python, otrzymujemy je „w pakiecie”:
 
-Przydatnymi operatorami są operatory dzielenia bez reszty `//` oraz operator modulo (reszta z dzielenia) `%`.
+- `print()` wyświetla informacje na ekranie;
 
-Popatrzmy na następujący przykład programu w Pythonie:
+- `input()` pobiera dane od użytkownika;
 
-```Python
-x = 12
-print("Wynik dzielenia całkowitego 12/5 to: ", 12//5, " a reszta z dzielenia to: ", 12 % 5)
+- `int()` przekształca tekst na liczbę całkowitą;
+
+- `range()` tworzy sekwencję liczb całkowitych; korzystaliśmy z niej w pętli `for`.
+
+O funkcjach myślimy często jak o „robocie”, który dla wejściowych danych wyprodukuje wynik, którego
+potrzebujemy. Uruchomienie funkcji nazywamy **wywołaniem**, a dane wejściowe nazywamy
+**argumentami**. Funkcja może przyjmować zero lub więcej argumentów, zgodnie z jej definicją. Wynik wywołania zwracany jest za pomocą instrukcji `return`.
+
+![funkcja_obrazek](./lesson6-materials/funkcja.png)
+
+Dla przykładu, argumentem funkcji `int()` może być napis reprezentujący liczbę całkowitą, a wynikiem jest liczba: `int("123")`
+jako wynik zwraca liczbę `123`.
+
+### Nowa funkcja
+
+Zobaczmy działanie funkcji `len()`. Czy potrafisz odgadnąć, co robi?
+
+```python
+wynik = len("kajak")
+print(wynik)
+
+wynik = len("ABC")
+print(wynik)
 ```
 
-**Wyzwanie**: Jak napisać program, który sprawdzi, czy wczytana liczba jest parzysta?
+Funkcja może wykonywać działanie bez zwracania użytecznego wyniku. Na przykład `print()` wyświetla tekst i zwraca specjalną wartość `None`.
 
-Prócz operatorów, w Pythonie mamy kilka przydatnych **funkcji** wbudowanych, na przykład:
+Przykład z życia:
 
-- `abs(liczba)` - zwraca wartość bezwzględną z liczby
-- `min(x, y, z)` oraz `max(x, y, z)` - zwraca minimalną/maksymalną wartość spośród podanych liczb
-- `round(liczba, ile_po_przecinku)` - zaokrągla liczbę
+- Automat z napojami: wrzucasz pieniądze (dane) – dostajesz napój (wynik), jak funkcja `int()`.
 
-Przeanalizujmy następujący program w Pythonie:
+- Domofon: naciskasz guzik i mówisz swoje imię (dane) – dzwoni, ale nic nie dostajesz do ręki, jak `print()`.
 
-```Python
-liczba = int(input())
-print("Wartość bezwzględna: ", abs(liczba))
-print("Minimum z liczby i 0: ", min(liczba, 0))
-print("Jedna trzecia część liczby, zaokrąglona: ", round(liczba/3, 2))
+## Jak tworzyć funkcje w Pythonie? (15 minut)
+
+Funkcje w Pythonie piszemy następująco:
+
+```python
+def nazwa_funkcji(argumenty):
+    # Uwaga na wcięcie!
+    logika
 ```
 
-Co zostanie wypisane na ekranie, po podaniu `-1` jako wejście?
+Uruchom i przetestuj poniższe funkcje:
 
-### Rozszerzenie możliwości - moduł math
+```python
+def narysuj_ksztalt():
+    print("....")
+    print(".  .")
+    print("....")
 
-Aby uzyskać dostęp do bardziej zaawansowanych funkcji, musimy „zaimportować” dodatkowy zestaw narzędzi `math`.
-Zawiera on przydatne funkcje, na przykład:
-
-- `sqrt(liczba)` – pierwiastek kwadratowy z liczby.
-- `pi` – bardzo dokładna wartość liczby π.
-- `ceil(liczba)` – zaokrąglenie w górę (sufit), z `2.5` zrobi `3`.
-- `floor(liczba)` – zaokrąglenie w dół (podłoga), z `2.5` zrobi `2`.
-- `gcd(a, b)` – największy wspólny dzielnik (NWD).
-
-Aby korzystać z `math`, na początku programu należy umieścić linijkę z `import`:
-
-```Python
-from math import *
-
-print(sqrt(25))
+narysuj_ksztalt()
+narysuj_ksztalt()
 ```
 
-## Wspólne eksperymenty z językiem Python (10 minut)
+```python
+def przedstaw(imie):
+    print("Witam, tu", imie)
 
-Sprawdźmy, jak Python radzi sobie z typowymi problemami z podręcznika:
+przedstaw("Kasia")
+przedstaw("Olek")
+```
 
-1. Liczba przeciwna i odwrotna - wczytaj liczbę i wypisz jej wartość przeciwną oraz odwrotną
-2. Precyzja zaokrągleń - wczytaj liczbę i zaokrąglij ją do 2 miejsc po przecinku
-3. Pierwiastkowanie/potęgowanie - wczytaj liczbę i wypisz jej pierwiastek oraz kwadrat
+```python
+def plus_jeden(x):
+    return x+1
+
+# Uwaga: Funkcja zwraca wynik, więc go wypisujemy!
+print(plus_jeden(5))
+```
+
+```python
+def suma(a, b, c):
+    return a+b+c
+
+# Uwaga: Funkcja zwraca wynik, więc go wypisujemy!
+print(suma(1, 2, 3))
+print(suma(3, -3, 0))
+```
+
+**Ciekawostka**: powiedzieliśmy, że funkcja `print()` zwraca specjalną wartość `None`. Możemy to sprawdzić!
+
+```python
+wynik_funkcji = print("Ala ma kota")
+print(wynik_funkcji)
+```
 
 ## Zadania do rozwiązania na komputerze (przewidziane na około 20 minut)
 
-Zaprojektuj programy, które pomogą Ci w nauce innych przedmiotów (wybierz 2 z poniższej listy):
+Zaimplementuj wybrane 3 funkcje z poniższej listy:
 
-- Twierdzenie Pitagorasa: Napisz funkcję, która przyjmuje długości dwóch przyprostokątnych a i b, a zwraca długość przeciwprostokątnej c. Wykorzystaj math.sqrt() oraz wzór $a^2 + b^2 = c^2$.
-- Pole koła i obwód: Wczytaj promień `r`. Oblicz pole ($\pi r^2$) i obwód ($2\pi r$). Użyj stałej `pi`. Zaokrąglij wynik do 2 miejsc po przecinku.
-- Kalkulator NWD: Wykorzystaj `gcd(a, b)`, aby sprawdzić, przez jaką największą liczbę można skrócić ułamek $\frac{a}{b}$.
-- Zakupy i reszta: Napisz program, który wczyta cenę towaru i kwotę, jaką zapłacił klient. Oblicz resztę, ale wypisz ją jako wartość bezwzględną (użyj `abs()`), na wypadek gdyby klient dał za mało pieniędzy.
-- Średnia ocen: Wczytaj 5 ocen z informatyki i oblicz ich średnią arytmetyczną. Jeśli średnia wynosi np. `4.75`, użyj `ceil()`, aby sprawdzić, czy uczeń ma szansę na ocenę bardzo dobrą.
+- **Powitanie 2.0**: Napisz funkcję `powitanie(imie)`, która wypisze tekst „Witaj, [imie]! Miło cię widzieć”. Wywołaj ją dla trzech różnych imion.
+
+- **Kalkulator BMI**: Napisz funkcję `oblicz_bmi(waga, wzrost)`, która zwróci wartość wskaźnika BMI ($masa/wzrost^2$). Parametr `waga` oznacza masę w kilogramach, a dodatni `wzrost` jest podany w metrach. Następnie w programie głównym wczytaj dane, wywołaj funkcję i wypisz wynik.
+
+- **Parzysta**: Napisz funkcję `czy_parzysta(liczba)`, która zwraca True, jeśli liczba jest parzysta, i False w przeciwnym razie. Użyj jej w pętli wypisującej tylko parzyste liczby z zakresu od 1 do 20.
+
+- **Pole trójkąta**: Napisz program z funkcją `pole_trojkata(a, h)`, która pomoże ci sprawdzić wyniki twojej pracy domowej z matematyki.
+
+- **Rysuj gwiazdki**: Napisz funkcję `rysuj_linie(dlugosc)`, która wypisuje ciąg gwiazdek o podanej długości. Użyj jej, aby narysować choinkę.
+
+- **Chemia – masa molowa**: Napisz funkcję `masa_molowa(masa, liczba_moli)`, która zwróci masę molową substancji. Następnie w programie głównym wczytaj dane i wypisz wynik.
+
+- **Matematyka – średnia ocen**: Napisz funkcję `srednia_ocen(oceny)`, która zwróci średnią arytmetyczną ocen zapisanych na niepustej liście. Sprawdź wynik dla przykładowych ocen.
+
+- **Geografia – temperatura**: Napisz funkcję `c_na_f(celsiusz)`, która zamienia stopnie Celsjusza na stopnie Fahrenheita. Użyj jej dla trzech różnych temperatur.
+
+- **Historia – wiek postaci**: Napisz funkcję `wiek_postaci(rok_urodzenia, rok_wydarzenia)`, która zwróci przybliżony wiek historycznej postaci jako różnicę lat (bez uwzględnienia daty urodzin).
+
+- **Fizyka – droga**: Napisz funkcję `oblicz_droge(predkosc, czas)`, która zwróci drogę przebytą przez ciało (droga=predkosc*czas). Sprawdź wynik dla przykładowych danych.
 
 ## Zadania do rozwiązania na platformie Szkopuł
 
-### Łamanie czekolady
+*Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.*
 
-![czekolada](./lesson6-materials/czekolada.png)
+### Podaj długość słowa
 
-Pan Integer kupił swoją ulubioną czekoladę z nadzieniem toffi. Czekolada ma kształt prostokąta o rozmiarze $n \times m$ kawałków. 
+Zastosuj funkcję `len()` w praktyce.
 
-Pan Integer chciałby teraz odłamać **jednym prostym ruchem** (wzdłuż linii podziału) dokładnie $k$ kawałków. Czy jest to możliwe?
+Wczytaj słowo, a następnie podaj jego długość. Możesz założyć, że słowo będzie miało najwyżej 15 znaków.
 
-Do wczytania danych wykorzystaj polecenia:
-`n, m = map(int, input().split())`
-`k = int(input())`
+[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/SAuc7UAS2ZnCLOMrnfURVcr5/site/?key=statement){ .md-button .md-button--primary }
+
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/SAuc7UAS2ZnCLOMrnfURVcr5/site/?key=statement).
+
+### Kwadrat
+
+**Uwaga: kod rysujący kwadrat powinien znajdować się w funkcji `kwadrat(n)`.**
+
+Napisz program, w którym użytkownik wprowadzi jedną liczbę nieparzystą $n$.
+
+Twoim zadaniem jest wypisanie wzoru o wymiarach $n \times n$ złożonego ze znaków `@`.
+
+Do wczytania danych wykorzystaj polecenie `n = int(input())`.
 
 #### Wejście
 
-Pierwszy wiersz wejścia zawiera dwie liczby całkowite $n$ oraz $m$ ($1 \le n, m \le 10^6$), oznaczające rozmiar czekolady. 
-
-W drugim wierszu znajduje się jedna liczba całkowita $k$ ($1 \le k \le 10^6$), oznaczająca liczbę kawałków, które chce odłamać Pan Integer.
+W jedynym wierszu wejścia znajduje się jedna nieparzysta liczba całkowita $n$ ($2 < n < 1002$).
 
 #### Wyjście
 
-Na wyjściu wypisz słowo `TAK`, jeśli Pan Integer może jednym przełamaniem oderwać dokładnie $k$ kawałków czekolady, lub `NIE` w przeciwnym wypadku.
+Na wyjściu wypisz $n$ wierszy po $n$ znaków w każdym, tworzących wzór złożony ze znaków `@`.
 
 #### Przykład
 
 | Wejście | Wyjście |
 | :--- | :--- |
-| 3 5<br>6 | TAK |
-| 4 8<br>6 | NIE |
+| 5 | @@@@@<br>@@@@@<br>@@@@@<br>@@@@@<br>@@@@@ |
+| 7 | @@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@ |
 
-??? Wskazówka
-    Jedno przełamanie prostokątnej czekolady wzdłuż linii podziału oddziela pasek o wymiarach $x \times m$ (jeśli łamiemy wzdłuż wierszy) lub $n \times y$ (jeśli łamiemy wzdłuż kolumn).
-    
-    Oznacza to, że odłamana część składa się z liczby kawałków będącej wielokrotnością $m$ (i nie większej niż cała czekolada $n \times m$) LUB wielokrotnością $n$ (i nie większej niż $n \times m$).
-    
-    Warunek można zapisać tak:
-    `k <= n * m and (k % n == 0 or k % m == 0)`
+??? tip "Wskazówka"
+    W Pythonie możesz wypisać wiele razy ten sam znak, korzystając z mnożenia: `'#'*5`
 
-[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/eSgi8Ae29vCPojodBrdDAooI/site/?key=statement){ .md-button .md-button--primary }
+[Zobacz zadanie na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/m7d6WQdRnYjrZQo6s3g6v5hY/site/?key=statement){ .md-button .md-button--primary }
+
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/m7d6WQdRnYjrZQo6s3g6v5hY/site/?key=statement).

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą? - Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera? - Scenariusze lekcji informatyki</title>
       
     
     
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,8 +66,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#petle-for-i-while-iteracje-przerwania-break-continue-jak-sobie-poradzic-z-powtarzalna-praca" class="md-skip">
-          Skip to content
+        <a href="#lekcja-3-instrukcje-warunkowe-if-elif-else-jak-kierowac-zachowaniem-komputera" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -79,8 +81,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-header__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Scenariusze lekcji Informatyka
+            Scenariusze lekcji informatyki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+              Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
             
           </span>
         </div>
@@ -122,16 +124,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -142,7 +144,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -176,15 +178,15 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-nav__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Scenariusze lekcji Informatyka
+    Scenariusze lekcji informatyki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -272,34 +274,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../lesson1/" class="md-nav__link">
         
   
@@ -307,7 +281,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.
+    Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
   
 
     
@@ -335,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+    Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
   
 
     
@@ -372,7 +346,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -390,7 +364,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -402,7 +376,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -411,7 +385,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -438,22 +412,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-przewidziany-na-okoo-20-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-przewidziany-na-okoo-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (przewidziany na około 20 minut)
+        Wstęp teoretyczny (przewidziany na około 15 minut)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 20 minut)">
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 15 minut)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sterowanie-robotem-wersja-trudniejsza-10-minut" class="md-nav__link">
+  <a href="#zadanie-wprowadzajace-5-minut-informatyka-unplugged" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sterowanie robotem - wersja trudniejsza (10 minut)
+        Zadanie wprowadzające (5 minut) – Informatyka „unplugged”
       
     </span>
   </a>
@@ -461,32 +435,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sterowanie-robotem-i-warunki-zatrzymania-5-minut" class="md-nav__link">
+  <a href="#skadnia-instrukcji-warunkowych-w-pythonie-10-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sterowanie robotem i warunki zatrzymania (5 minut)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analogia-sportowa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Analogia sportowa
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#skadnia-w-jezyku-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Składnia w języku Python
+        Składnia instrukcji warunkowych w Pythonie (10 minut)
       
     </span>
   </a>
@@ -499,24 +451,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-z-jezykiem-python-20-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-z-jezykiem-python-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty z językiem Python (20 minut)
+        Wspólne eksperymenty z językiem Python (15 minut)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wspólne eksperymenty z językiem Python (15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logika-matematyczna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logika matematyczna
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-50-minut" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#operatory-logiczne-and-i-or" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania na komputerze (przewidziane na około 50 minut)
+        Operatory logiczne and i or
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-15-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na komputerze (przewidziane na około 15 minut)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na komputerze (przewidziane na około 15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kategorie-wiekowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kategorie wiekowe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaktywny-system-zamowien-pizza-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaktywny system zamówień „Pizza-Bot”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warunek-trojkata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warunek trójkąta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -533,15 +552,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#smiech-informatyka-i-matematyka" class="md-nav__link">
+  <a href="#trzy-liczby-rosnaco" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Śmiech informatyka i matematyka
+        Trzy liczby rosnąco
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Śmiech informatyka i matematyka">
+    <nav class="md-nav" aria-label="Trzy liczby rosnąco">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -583,15 +602,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#koszykarz" class="md-nav__link">
+  <a href="#cwiartka" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Koszykarz
+        Ćwiartka
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Koszykarz">
+    <nav class="md-nav" aria-label="Ćwiartka">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -618,56 +637,6 @@
         
           <li class="md-nav__item">
   <a href="#przykad_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Przykład
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kwadrat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kwadrat
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Kwadrat">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wejscie_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wejście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wyjscie_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyjście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#przykad_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Przykład
@@ -710,7 +679,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?
+    Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?
   
 
     
@@ -738,7 +707,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.
+    Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
   
 
     
@@ -766,7 +735,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+    Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
   
 
     
@@ -794,7 +763,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -822,7 +791,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.
+    Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza
   
 
     
@@ -850,7 +819,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?
+    Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle
   
 
     
@@ -878,7 +847,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -906,7 +875,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+    Lekcja 11 – Kody ASCII – zamiana liter na liczby
   
 
     
@@ -934,7 +903,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.
+    Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania
   
 
     
@@ -962,7 +931,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -990,7 +959,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 15 - Algorytm Euklidesa – zastosowanie.
+    Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy
   
 
     
@@ -1018,7 +987,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -1046,7 +1015,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.
+    Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu
   
 
     
@@ -1074,7 +1043,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -1102,7 +1071,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.
+    Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
   
 
     
@@ -1130,7 +1099,35 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.
+    Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 20 – Trenowanie własnego modelu i eksploracja danych
   
 
     
@@ -1164,7 +1161,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -1173,7 +1170,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1200,22 +1197,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wstep-teoretyczny-przewidziany-na-okoo-20-minut" class="md-nav__link">
+  <a href="#wstep-teoretyczny-przewidziany-na-okoo-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wstęp teoretyczny (przewidziany na około 20 minut)
+        Wstęp teoretyczny (przewidziany na około 15 minut)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 20 minut)">
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (przewidziany na około 15 minut)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sterowanie-robotem-wersja-trudniejsza-10-minut" class="md-nav__link">
+  <a href="#zadanie-wprowadzajace-5-minut-informatyka-unplugged" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sterowanie robotem - wersja trudniejsza (10 minut)
+        Zadanie wprowadzające (5 minut) – Informatyka „unplugged”
       
     </span>
   </a>
@@ -1223,32 +1220,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sterowanie-robotem-i-warunki-zatrzymania-5-minut" class="md-nav__link">
+  <a href="#skadnia-instrukcji-warunkowych-w-pythonie-10-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sterowanie robotem i warunki zatrzymania (5 minut)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analogia-sportowa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Analogia sportowa
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#skadnia-w-jezyku-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Składnia w języku Python
+        Składnia instrukcji warunkowych w Pythonie (10 minut)
       
     </span>
   </a>
@@ -1261,24 +1236,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-z-jezykiem-python-20-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-z-jezykiem-python-15-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty z językiem Python (20 minut)
+        Wspólne eksperymenty z językiem Python (15 minut)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wspólne eksperymenty z językiem Python (15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logika-matematyczna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logika matematyczna
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-50-minut" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#operatory-logiczne-and-i-or" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania na komputerze (przewidziane na około 50 minut)
+        Operatory logiczne and i or
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-15-minut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadania do rozwiązania na komputerze (przewidziane na około 15 minut)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zadania do rozwiązania na komputerze (przewidziane na około 15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kategorie-wiekowe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kategorie wiekowe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaktywny-system-zamowien-pizza-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaktywny system zamówień „Pizza-Bot”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warunek-trojkata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warunek trójkąta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1295,15 +1337,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#smiech-informatyka-i-matematyka" class="md-nav__link">
+  <a href="#trzy-liczby-rosnaco" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Śmiech informatyka i matematyka
+        Trzy liczby rosnąco
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Śmiech informatyka i matematyka">
+    <nav class="md-nav" aria-label="Trzy liczby rosnąco">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1345,15 +1387,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#koszykarz" class="md-nav__link">
+  <a href="#cwiartka" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Koszykarz
+        Ćwiartka
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Koszykarz">
+    <nav class="md-nav" aria-label="Ćwiartka">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1394,56 +1436,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#kwadrat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kwadrat
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Kwadrat">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wejscie_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wejście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wyjscie_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyjście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#przykad_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Przykład
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1466,14 +1458,12 @@
 
 
 
-<h1 id="petle-for-i-while-iteracje-przerwania-break-continue-jak-sobie-poradzic-z-powtarzalna-praca">Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?</h1>
+<h1 id="lekcja-3-instrukcje-warunkowe-if-elif-else-jak-kierowac-zachowaniem-komputera">Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?</h1>
+<p class="lesson-duration"><strong>Czas realizacji:</strong> 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.</p>
 <h2 id="wymagana-wiedza">Wymagana wiedza</h2>
-<ul>
-<li>Podstawy składni języka Python: instrukcje wejścia/wyjścia (input(), print()) oraz zmienne.</li>
-<li>Umiejętność stosowania instrukcji warunkowych (if, elif, else) oraz operatorów logicznych (and, or).</li>
-<li>Rozumienie pojęcia algorytmu jako listy kroków prowadzącej do rozwiązania problemu.</li>
-</ul>
+<p>Podstawy języka Python: wczytywanie danych (<code>input()</code>), wypisywanie (<code>print()</code>), zmienne oraz podstawowe operatory arytmetyczne</p>
 <h2 id="tresci-z-podstawy-programowej">Treści z podstawy programowej</h2>
+<p><em>Wybrane wymagania z podstawy programowej dla klas VII–VIII. <a href="https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka">Źródło</a>.</em></p>
 <table>
 <thead>
 <tr>
@@ -1488,7 +1478,7 @@
 </tr>
 <tr>
 <td></td>
-<td>1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów.</td>
+<td>1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […]</td>
 </tr>
 <tr>
 <td>II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:</td>
@@ -1496,117 +1486,121 @@
 </tr>
 <tr>
 <td></td>
-<td>1) W programach stosuje: instrukcje wejścia/wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, <strong>instrukcje iteracyjne</strong>, funkcje oraz zmienne i tablice.</td>
+<td>1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, <strong>wyrażenia arytmetyczne i logiczne, instrukcje warunkowe</strong>, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2;</td>
 </tr>
 </tbody>
 </table>
-<h2 id="wstep-teoretyczny-przewidziany-na-okoo-20-minut">Wstęp teoretyczny (przewidziany na około 20 minut)</h2>
-<p>Programowanie pozwala nam przejść z roli konsumenta do roli twórcy, a jedną z najpotężniejszych umiejętności twórcy jest automatyzacja. Komputery są niezwykle szybkie w wykonywaniu powtarzalnych instrukcji, które dla ludzi byłyby nużące. Służą do tego pętle (instrukcje iteracyjne).</p>
-<h3 id="sterowanie-robotem-wersja-trudniejsza-10-minut">Sterowanie robotem - wersja trudniejsza (10 minut)</h3>
-<p>Wyobraź sobie, że masz robota, który rozumie tylko bardzo proste polecenia: "narysuj odcinek o długości <code>X</code> cm", "obróć się o <code>X</code> stopni w lewo/prawo" oraz "powtórz <code>X</code> razy".</p>
-<p>Na przykład, dla komend:</p>
-<div class="highlight"><pre><span></span><code>Powtórz 2 razy: 
-    narysuj odcinek o długości 5 cm, 
-    obróć się o 90 stopni w lewo, 
-    narysuj odcinek o długości 3 cm, 
-    obróć się o 90 stopni w prawo
+<h2 id="wstep-teoretyczny-przewidziany-na-okoo-15-minut">Wstęp teoretyczny (przewidziany na około 15 minut)</h2>
+<p>Do tej pory nasze programy działały jak proste przepisy kulinarne – komputer wykonywał instrukcje jedna po drugiej, od góry do dołu. Jednak w prawdziwym świecie często musimy podejmować decyzje na podstawie pewnych warunków. Instrukcje warunkowe pozwalają programowi „skręcać” i wybierać różne ścieżki działania w zależności od tego, czy dany warunek jest prawdziwy, czy fałszywy.</p>
+<h3 id="zadanie-wprowadzajace-5-minut-informatyka-unplugged">Zadanie wprowadzające (5 minut) – Informatyka „unplugged”</h3>
+<p>Zagrajmy w prostą grę: „Poprawna reakcja”. Uczniowie reagują na polecenia nauczyciela:</p>
+<ol>
+<li><strong>IF</strong> (jeśli) mam podniesioną prawą rękę -&gt; wszyscy szumią.</li>
+<li><strong>ELIF</strong> (w przeciwnym razie, jeśli) mam podniesioną lewą rękę -&gt; wszyscy tupią.</li>
+<li><strong>ELSE</strong> (w każdym innym przypadku) -&gt; wszyscy siedzą cicho z rękami na blacie.</li>
+</ol>
+<p>Sprawdzamy różne sytuacje: nauczyciel podnosi prawą rękę, lewą rękę albo nie podnosi żadnej. Co się stanie, jeśli podniesie obie ręce naraz?</p>
+<p><strong>Wniosek:</strong> Komputer sprawdza warunki po kolei. Gdy tylko znajdzie taki, który jest prawdziwy, wykonuje przypisane mu zadanie i pomija resztę.</p>
+<h3 id="skadnia-instrukcji-warunkowych-w-pythonie-10-minut">Składnia instrukcji warunkowych w Pythonie (10 minut)</h3>
+<p>Aby komputer mógł podjąć decyzję, używamy następującej konstrukcji:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">warunek</span><span class="p">:</span>
+    <span class="c1"># kod, gdy warunek jest prawdziwy</span>
+<span class="k">elif</span> <span class="n">inny_warunek</span><span class="p">:</span>
+    <span class="c1"># kod, gdy pierwszy był fałszywy, a ten jest prawdziwy</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># kod, gdy żadne z powyższych nie zadziałało</span>
 </code></pre></div>
-<p>Robot narysuje schodki:</p>
-<p><img alt="robot.gif" src="../lesson0-materials/robot.gif" /></p>
-<p>Napisz na kartce instrukcję, jak narysować kwadrat, używając tylko trzech komend, które zna robot.</p>
-<p>Jest to prostsze, niż poprzednim razem.</p>
-<p><strong>Wniosek:</strong> Pętla „powtórz” (w Pythonie for lub while) pozwala nam uniknąć nużącego przepisywania tych samych komend wiele razy.</p>
-<h3 id="sterowanie-robotem-i-warunki-zatrzymania-5-minut">Sterowanie robotem i warunki zatrzymania (5 minut)</h3>
-<p>Jedno dziecko staje się robotem, a pozostali wydają mu polecenia sterujące:</p>
+<p>Ważne: Zwróć uwagę na dwukropki na końcach wierszy oraz wcięcia (ang. indentation). Wcięcia informują Pythona, które wiersze kodu należą do danej instrukcji warunkowej.</p>
+<p>Piszemy przykładowy program sprawdzający, czy liczba jest liczbą dodatnią:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zero!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dodatnia&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ujemna&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="wspolne-eksperymenty-z-jezykiem-python-15-minut">Wspólne eksperymenty z językiem Python (15 minut)</h2>
+<h3 id="logika-matematyczna">Logika matematyczna</h3>
+<p>Uruchom poniższy kod i przeanalizuj jego działanie:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Co wypisze program dla liczby <code>15</code>?</p>
+<p>Zmodyfikuj warunki, wykorzystując następujące wyrażenia:</p>
+<p><code>4 &gt; 1</code>,  <code>x == 5</code>, <code>2 + 2 == 5</code>, <code>x != 20</code></p>
+<p>Jak działa teraz program?</p>
+<h3 id="operatory-logiczne-and-i-or">Operatory logiczne <code>and</code> i <code>or</code></h3>
+<p>W bardziej skomplikowanych problemach jeden prosty warunek to za mało. Wtedy stosujemy wyrażenia logiczne, które pozwalają łączyć wiele sprawdzeń w jedną całość.</p>
 <ul>
-<li>Polecenie: „Dopóki (while) nie dotkniesz ściany, idź naprzód o jeden krok”.</li>
-<li>Polecenie z break: „Jeśli usłyszysz klaśnięcie, natychmiast przestań (break)”.</li>
+<li><code>and</code> (i): Cały warunek jest prawdziwy tylko wtedy, gdy wszystkie jego części są prawdziwe.</li>
+<li><code>or</code> (lub): Cały warunek jest prawdziwy, jeśli przynajmniej jedna z jego części jest prawdziwa. Stosujemy go, gdy wystarczy nam spełnienie dowolnego z podanych wymagań. <code>Przykład: if wiek &gt;= 18 or ma_zgode_rodzicow:</code></li>
 </ul>
-<h3 id="analogia-sportowa">Analogia sportowa</h3>
-<p>Analogię pętli można porównać do treningu sportowego – zamiast mówić zawodnikowi sto razy „zrób pompkę”, trener wydaje jedno polecenie: „zrób serię 100 pompek” (for) lub „rób pompki, aż powiem stop” (while).</p>
-<h3 id="skadnia-w-jezyku-python">Składnia w języku Python</h3>
-<p>Zapisanie <code>while</code> w Python jest podobne do warunku <code>if</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">warunek</span><span class="p">:</span>
-    <span class="c1"># wykonuj</span>
-</code></pre></div>
-<p>Pętla <code>for</code> jest bardziej skomplikowana:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div>
-<p>Żeby przerwać wykonanie pętli, stosujemy <code>break</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">warunek</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK!&quot;</span><span class="p">)</span>
-    <span class="k">break</span>
-</code></pre></div>
+<p>Działanie operatorów logicznych można wyjaśnić na przykładzie zamawiania pizzy:</p>
+<ul>
+<li><code>and</code> jest jak zamówienie: „Chcę pizzę, która ma ser i pieczarki” – jeśli zabraknie choć jednego składnika, nie będziesz zadowolony.</li>
+<li><code>or</code> jest jak zamówienie: „Zjem pizzę, jeśli będzie na niej ser lub szynka” – będziesz zadowolony, gdy dostaniesz ser, gdy dostaniesz szynkę, albo oba te składniki naraz.</li>
+</ul>
+<h2 id="zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-15-minut">Zadania do rozwiązania na komputerze (przewidziane na około 15 minut)</h2>
+<h3 id="kategorie-wiekowe">Kategorie wiekowe</h3>
+<p>Napisz program, który wczyta nieujemną liczbę całkowitą oznaczającą wiek i przypisze ją do jednej z trzech kategorii:</p>
 <ol>
-<li>Pętla for: Używamy jej, gdy wiemy dokładnie, ile razy coś ma się powtórzyć lub chcemy przejść przez jakiś zbiór elementów (np. listę liczb).<ul>
-<li>Przykład: for i in range(5): wykona kod 5 razy.</li>
-</ul>
-</li>
-<li>Pętla while: Działa tak długo, jak długo spełniony jest określony warunek logiczny.<ul>
-<li>Przykład: „Dopóki herbata jest gorąca, czekaj”.</li>
-</ul>
-</li>
-<li>Instrukcje przerwania:<ul>
-<li>break: Natychmiastowe wyjście z pętli (np. gdy znajdziemy szukany element).</li>
-</ul>
-</li>
+<li>Wiek co najmniej 18 lat: „Kategoria: 18 lat i więcej”.</li>
+<li>Wiek co najmniej 16, ale mniej niż 18 lat: „Kategoria: 16–17 lat”.</li>
+<li>Wiek poniżej 16 lat: „Kategoria: poniżej 16 lat”.</li>
 </ol>
-<h2 id="wspolne-eksperymenty-z-jezykiem-python-20-minut">Wspólne eksperymenty z językiem Python (20 minut)</h2>
-<p>Przetestujmy zachowanie pętli w środowisku programistycznym. Przeanalizuj poniższe kody,
-a następnie je uruchom.</p>
-<div class="highlight"><pre><span></span><code><span class="n">wiek</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pełnoletni!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">wiek</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ile masz lat? &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">wiek</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kategoria: 18 lat i więcej&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">wiek</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kategoria: 16–17 lat&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kategoria: poniżej 16 lat&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">wiek</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pełnoletni!&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>Co się dzieje, gdy warunek zawsze jest prawdziwy?</p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pełnoletni!&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>Za pomocą pętli <code>while</code>, możemy zasymulować odliczanie do nowego roku:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ile_sekund_zostalo</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">while</span> <span class="n">ile_sekund_zostalo</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ile_sekund_zostalo</span><span class="p">)</span>
-    <span class="n">ile_sekund_zostalo</span> <span class="o">=</span> <span class="n">ile_sekund_zostalo</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wszystkiego dobrego w nowym roku!&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>Możemy wykorzystać pętle do wczytania danych wielokrotnie</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">liczba</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-    <span class="k">if</span> <span class="n">liczba</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wczytana szczęśliwa siódemka, przerywam wykonanie pętli!&quot;</span><span class="p">)</span>
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wczytana liczba to&quot;</span><span class="p">,</span> <span class="n">liczba</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="zadania-do-rozwiazania-na-komputerze-przewidziane-na-okoo-50-minut">Zadania do rozwiązania na komputerze (przewidziane na około 50 minut)</h2>
-<p>Podczas pracy nad poniższymi problemami skup się na poprawnym zastosowaniu instrukcji iteracyjnych (for, while) oraz wyrażeń arytmetycznych i logicznych.</p>
-<p>Pamiętaj, że każdy algorytm iteracyjny wymaga jasnej specyfikacji, czyli określenia, jakie masz dane wejściowe i jaki wynik chcesz osiągnąć. Jeśli Twój program wpada w „pętlę nieskończoną” (nie przestaje wypisywać liczb), możesz go przerwać w większości środowisk skrótem <code>Ctrl+C</code>.</p>
+<h3 id="interaktywny-system-zamowien-pizza-bot">Interaktywny system zamówień „Pizza-Bot”</h3>
+<p>Napisz program, który zdecyduje, czy zamówienie klienta może zostać zrealizowane na podstawie dostępności składników i jego preferencji.</p>
+<p><strong>Specyfikacja problemu:</strong></p>
+<ul>
+<li>Dane wejściowe: Odpowiedzi „tak” lub „nie” (wczytane jako tekst) na pytania o posiadanie sera, sosu pomidorowego, szynki oraz pieczarek.</li>
+<li>Wynik: Komunikat „Zamówienie przyjęte!” lub „Niestety, nie możemy zrobić twojej pizzy”.</li>
+</ul>
+<p><strong>Zasady logiczne do zaimplementowania:</strong></p>
 <ol>
-<li>Licznik: Wypisz liczby od 1 do 30. Wykorzystaj do tego pętlę for oraz funkcję range(), pamiętając, że jej prawy zakres jest otwarty.</li>
-<li>ASCII-Art: Narysuj z gwiazdek (*) kwadrat o boku 5 oraz/lub prostą choinkę. To zadanie uczy, jak za pomocą pętli tworzyć powtarzalne wzory graficzne.</li>
-<li>Parzystość: Wypisz liczby od 1 do 30, które są parzyste. Wykorzystaj instrukcję if z operatorem modulo (% 2 == 0) wewnątrz pętli.</li>
-<li>Zakres użytkownika: Wczytaj dwie liczby A i B. Wypisz wszystkie liczby od A do B. Pamiętaj o obsłużeniu sytuacji, w której A jest większe od B.</li>
-<li>Złożona podzielność: Wypisz liczby od 1 do 100, które są podzielne przez 2 lub 3, ale jednocześnie niepodzielne przez 6. To świetne ćwiczenie na łączenie operatorów and, or oraz not.</li>
-<li>Potęgi trójki: Wypisz kolejne potęgi liczby 3, które są mniejsze od 1000. Użyj pętli while, która będzie sprawdzać warunek wielkości wyniku przed każdym powtórzeniem.</li>
-<li>Licznik potęg: Policz i wypisz, ile jest potęg dwójki mniejszych od 10000. W tym zadaniu musisz stworzyć zmienną pełniącą rolę licznika, którą zwiększysz o 1 przy każdej iteracji.</li>
-<li>Silnia (n!): Wczytaj liczbę n, a następnie oblicz silnię według wzoru: n!=1⋅2⋅⋯⋅n. Pamiętaj, aby zmienna przechowująca wynik (akumulator) miała na początku wartość 1, a nie 0.</li>
-<li>Suma przedziału: Wczytaj liczby A i B. Oblicz i wypisz sumę wszystkich liczb znajdujących się w przedziale od A do B</li>
+<li>Warunek konieczny (<code>and</code>): Aby pizza w ogóle powstała, musisz mieć ser ORAZ sos. Jeśli brakuje choć jednego z nich, zamówienie jest odrzucane.</li>
+<li>Warunek preferencji (<code>or</code>): Klient zje pizzę tylko wtedy, gdy będzie na niej szynka LUB pieczarki. Jeśli nie ma żadnego z tych dodatków, zamówienie jest odrzucane (nawet jeśli jest ser i sos).</li>
 </ol>
+<p>Uzupełnij kod odpowiednim warunkiem tak, aby program spełniał specyfikację:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Wczytywanie danych od użytkownika</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy jest ser? (tak/nie): &quot;</span><span class="p">)</span>
+<span class="n">sos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy jest sos pomidorowy? (tak/nie): &quot;</span><span class="p">)</span>
+<span class="n">szynka</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy jest szynka? (tak/nie): &quot;</span><span class="p">)</span>
+<span class="n">pieczarki</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Czy są pieczarki? (tak/nie): &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">DODAJ_WARUNKI</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zamówienie przyjęte!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Niestety, nie możemy zrobić Twojej pizzy&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="warunek-trojkata">Warunek trójkąta</h3>
+<p>Napisz program, który wczyta trzy liczby całkowite (długości boków). Sprawdź, czy z tych odcinków można zbudować trójkąt. W Pythonie możesz użyć słowa <code>and</code> do łączenia warunków.</p>
+<details class="tip">
+<summary>Wskazówka</summary>
+<p>Zgodnie z nierównością trójkąta suma długości dowolnych dwóch boków musi być większa od długości trzeciego boku (<code>a + b &gt; c</code>, <code>a + c &gt; b</code> oraz <code>b + c &gt; a</code>).</p>
+</details>
 <h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
-<h3 id="smiech-informatyka-i-matematyka">Śmiech informatyka i matematyka</h3>
-<p>Jak śmieje się matematyk? <span class="arithmatex">\((Ha)^3\)</span> albo <span class="arithmatex">\((Ha)^{10}\)</span>, jeśli jest bardzo rozbawiony.</p>
-<p>Jak śmieje się informatyk? Wypisuje na konsoli <code>Ha</code> tyle razy, jak bardzo się cieszy.</p>
-<p>Ponieważ jesteś informatykiem, jednym z Twoich zadań jest napisanie programu, który będzie się śmiał za Ciebie. A więc do dzieła!</p>
-<p>Do wczytania danych wykorzystaj polecenie <code>n = int(input())</code>.</p>
+<p><em>Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.</em></p>
+<h3 id="trzy-liczby-rosnaco">Trzy liczby rosnąco</h3>
+<p>Napisz program, który czyta trzy liczby całkowite, a następnie wypisuje je w kolejności niemalejącej.</p>
+<p>Do wczytania danych wykorzystaj polecenie <code>a, b, c = map(int, input().split())</code>.</p>
 <h4 id="wejscie">Wejście</h4>
-<p>Wejście składa się z jednej liczby naturalnej <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \leq n \leq 10\,000\)</span>), oznaczającej jak bardzo rozbawiony jest informatyk.</p>
+<p>Dane wejściowe zawierają trzy liczby całkowite <span class="arithmatex">\(a, b, c\)</span> (<span class="arithmatex">\(1 \le a, b, c \le 1\ 000\ 000\)</span>) oddzielone pojedynczym odstępem.</p>
 <h4 id="wyjscie">Wyjście</h4>
-<p>Program powinien w pojedynczej linii wypisać tekst <code>Ha</code> dokładnie <span class="arithmatex">\(n\)</span> razy. Każde dwa napisy <code>Ha</code> muszą być oddzielone pojedynczym odstępem.</p>
+<p>Na wyjściu wypisz podane trzy liczby uporządkowane w kolejności niemalejącej, oddzielone odstępem.</p>
 <h4 id="przykad">Przykład</h4>
 <table>
 <thead>
@@ -1617,30 +1611,27 @@ a następnie je uruchom.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Ha Ha</td>
-</tr>
-<tr>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Ha Ha Ha Ha Ha</td>
+<td style="text-align: left;">7 5 3</td>
+<td style="text-align: left;">3 5 7</td>
 </tr>
 </tbody>
 </table>
-<details class="wskazówka">
+<details class="tip">
 <summary>Wskazówka</summary>
-<p>Zastosuj pętlę, która wykona <code>n</code> powtórzeń. Żeby nie oddzielać wyrażeń nową linią, zastosuj polecenie 
-<code>print('Ha', end=" ")</code></p>
+<p>Możesz użyć funkcji <code>sorted()</code> do posortowania wczytanych liczb, np.:
+<code>liczby = sorted([a, b, c])</code>
+a następnie wypisać je za pomocą <code>print(*liczby)</code>.</p>
 </details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/W-j2XQW1kC2sRuNtGwTEbGeQ/site/?key=statement">Zobacz zadanie na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
-<h3 id="koszykarz">Koszykarz</h3>
-<p><img alt="koszykarz" src="../lesson3-materials/koszykarz.png" /></p>
-<p>Kozik pragnie zostać koszykarzem. Po rozmowie z trenerem okazało się, że jest za niski. Kozik jest jednak tak zdeterminowany, że chce spełnić wymagania trenera, nawet jeśli okazałoby się to oszustwem.</p>
-<p>Wpadł więc na genialny pomysł robienia sobie guzów na głowie, aż osiągnie wymagany wzrost. Zauważył, że przy każdym uderzeniu guz powiększa się o <span class="arithmatex">\(a\)</span> cm. Kozik zastanawia się, ile minimalnie razy będzie musiał się uderzyć.</p>
-<p>Do wczytania danych wykorzystaj polecenie <code>k, w, a = map(int, input().split())</code>.</p>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/HSmxAaEATSIyNA_Dw8iA84yZ/site/?key=statement">Zobacz zadanie na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/HSmxAaEATSIyNA_Dw8iA84yZ/site/?key=statement">odnośnik do zadania</a>.</p>
+<h3 id="cwiartka">Ćwiartka</h3>
+<p>Napisz program, który dla danego punktu na płaszczyźnie sprawdzi, w której ćwiartce układu współrzędnych się on znajduje. Może jednak być tak, że punkt nie znajduje się w żadnej ćwiartce – leży na jednej z osi lub w początku układu współrzędnych. Wówczas program powinien to stwierdzić.</p>
+<p>Do wczytania danych możesz wykorzystać polecenie <code>x, y = map(int, input().split())</code>.</p>
 <h4 id="wejscie_1">Wejście</h4>
-<p>W pierwszej i jedynej linii wejścia znajdują się trzy liczby całkowite <span class="arithmatex">\(k, w, a\)</span> (<span class="arithmatex">\(1 \le k, w, a \le 1\ 000\ 000\ 000\)</span>), oznaczające odpowiednio aktualną wysokość Kozika, wymaganą przez trenera wysokość oraz przyrost wysokości po każdym uderzeniu.</p>
+<p>Na wejściu znajdują się dwie liczby całkowite <span class="arithmatex">\(x\)</span> oraz <span class="arithmatex">\(y\)</span> (<span class="arithmatex">\(-1\,000\,000\,000 \leq x, y \leq 1\,000\,000\,000\)</span>) oddzielone spacją, oznaczające współrzędne danego punktu.</p>
 <h4 id="wyjscie_1">Wyjście</h4>
-<p>Pierwszy i jedyny wiersz wyjścia powinien zawierać jedną liczbę całkowitą równą minimalnej liczbie uderzeń, które musi wykonać Kozik, aby osiągnąć wzrost co najmniej <span class="arithmatex">\(w\)</span>.</p>
+<p>Jeżeli podany punkt nie leży na żadnej z osi, twój program powinien wypisać: <code>I</code>, <code>II</code>, <code>III</code> lub <code>IV</code>, w przypadku gdy punkt należy do, odpowiednio, pierwszej, drugiej, trzeciej lub czwartej ćwiartki układu współrzędnych.</p>
+<p>Jeżeli punkt leży w początku układu współrzędnych, program powinien wypisać liczbę <code>0</code>. W przeciwnym razie program powinien wypisać <code>OX</code> (duże O i duże X), jeśli punkt leży na osi X, a <code>OY</code> – jeśli punkt leży na osi Y.</p>
 <h4 id="przykad_1">Przykład</h4>
 <table>
 <thead>
@@ -1651,49 +1642,25 @@ a następnie je uruchom.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">180 202 10</td>
-<td style="text-align: left;">3</td>
+<td style="text-align: left;">5 7</td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">0 -1000000000</td>
+<td style="text-align: left;">OY</td>
+</tr>
+<tr>
+<td style="text-align: left;">0 0</td>
+<td style="text-align: left;">0</td>
 </tr>
 </tbody>
 </table>
-<details class="wskazówka">
+<details class="tip">
 <summary>Wskazówka</summary>
-<p>Różnicę wzrostu do nadrobienia stanowi <span class="arithmatex">\(w - k\)</span>. Jeśli <span class="arithmatex">\(k \ge w\)</span>, Kozik nie musi się uderzać wcale (<span class="arithmatex">\(0\)</span> razy). Zastanów się, czy to zadanie musisz wykonać za pomocą pętli? A może wystarczy działanie
-dzielenia?</p>
+<p>Użyj instrukcji warunkowej <code>if ... elif ... else</code>. Najpierw sprawdź przypadek <span class="arithmatex">\((0, 0)\)</span>, następnie sprawdź, czy punkt leży na jednej z osi (<code>x == 0</code> lub <code>y == 0</code>), a na końcu sprawdź znaki współrzędnych <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>, aby określić ćwiartkę (np. <span class="arithmatex">\(x &gt; 0\)</span> i <span class="arithmatex">\(y &gt; 0\)</span> to I ćwiartka).</p>
 </details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/Iq7nk3Jqo4PzMs5MIx-sI2ET/site/?key=statement">Zobacz zadanie na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
-<h3 id="kwadrat">Kwadrat</h3>
-<p>Napisz program, w którym użytkownik wprowadzi jedną liczbę nieparzystą <span class="arithmatex">\(n\)</span>.</p>
-<p>Twoim zadaniem jest wypisanie wzoru o wymiarach <span class="arithmatex">\(n \times n\)</span> złożonego ze znaków <code>@</code>.</p>
-<p>Do wczytania danych wykorzystaj polecenie <code>n = int(input())</code>.</p>
-<h4 id="wejscie_2">Wejście</h4>
-<p>W jedynym wierszu wejścia znajduje się jedna nieparzysta liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(2 &lt; n &lt; 1002\)</span>).</p>
-<h4 id="wyjscie_2">Wyjście</h4>
-<p>Na wyjściu wypisz <span class="arithmatex">\(n\)</span> wierszy po <span class="arithmatex">\(n\)</span> znaków w każdym, tworzących wzór złożony ze znaków <code>@</code> oraz <code>X</code>.</p>
-<h4 id="przykad_2">Przykład</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Wejście</th>
-<th style="text-align: left;">Wyjście</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">@@@@@<br>@@@@@<br>@@@@@<br>@@@@@<br>@@@@@</td>
-</tr>
-<tr>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@<br>@@@@@@@</td>
-</tr>
-</tbody>
-</table>
-<details class="wskazówka">
-<summary>Wskazówka</summary>
-<p>W Pythonie możesz wypisać wiele razy ten sam znak, korzystając z mnożenia: <code>'#'*5</code></p>
-</details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/m7d6WQdRnYjrZQo6s3g6v5hY/site/?key=statement">Zobacz zadanie na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/QbhwEI326MIf0rE4BlshlObK/site/?key=statement">Zobacz zadanie na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/QbhwEI326MIf0rE4BlshlObK/site/?key=statement">odnośnik do zadania</a>.</p>
 
 
 
@@ -1743,14 +1710,12 @@ dzielenia?</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       

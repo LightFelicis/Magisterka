@@ -1,42 +1,55 @@
-# Moduł scikit-learn i sprytniejsze drzewa decyzyjne
+# Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
+
+**Czas realizacji:** 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-- Podstawy funkcji i list
-- Instalacja bibliotek (`pip install scikit-learn`)
+- Instrukcje warunkowe `if`, `elif` i `else`.
 
-## Wstęp teoretyczny (15 minut)
+## Treści z podstawy programowej
 
-Zamiast ręcznie pisać instrukcje `if`, możemy pozwolić komputerowi "nauczyć się" zasad na podstawie przykładów. Do tego służy biblioteka **scikit-learn**.
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
 
-## Przykład kodu (20 minut)
+| Dział | Sekcja |
+| --- | --- |
+| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń: | |
+| | 1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […] |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
 
-![owoce](./lesson18-materials/owoce.png)
+## Wstęp teoretyczny (20 minut)
 
-Nauczymy komputer rozpoznawać, czy owoc to jabłko czy pomarańcza na podstawie wagi i tekstury:
+Sztuczna inteligencja (AI) to dziedzina informatyki zajmująca się tworzeniem programów, które potrafią wykonywać zadania zwykle kojarzone z ludzką inteligencją.
+Jednym z najprostszych modeli AI jest **drzewo decyzyjne** – seria pytań, które prowadzą do wyniku (decyzji).
+
+**Przykłady z życia wzięte:**
+
+*   **Bankowość**: decyzja o przyznaniu pożyczki na podstawie informacji o dochodach i historii spłat.
+
+*   **Dobór ubrania**: wybór kurtki lub parasola na podstawie temperatury i opadów.
+
+## Wspólne eksperymenty (15 minut)
+
+Ręcznie zapisane instrukcje warunkowe ilustrują strukturę drzewa decyzji, ale nie pokazują uczenia maszynowego. Uczenie drzewa na danych poznamy na kolejnej lekcji.
+
+Stwórzmy system klasyfikujący zwierzęta:
 
 ```python
-from sklearn import tree
+print("Odpowiedz na pytania (tak/nie):")
+czy_ma_piora = input("Czy ma pióra? ")
 
-# Dane: [waga w gramach, tekstura (0-gładka, 1-szorstka)]
-features = [[140, 0], [130, 0], [150, 1], [170, 1]]
-# Wyniki: 0 dla jabłka, 1 dla pomarańczy
-labels = [0, 0, 1, 1]
-
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(features, labels)
-
-wynik = clf.predict([[160, 1]])
-if wynik == 0:
-    print("To jabłko!")
+if czy_ma_piora == "tak":
+    czy_lata = input("Czy lata? ")
+    if czy_lata == "tak":
+        print("To prawdopodobnie wróbel!")
+    else:
+        print("To prawdopodobnie struś!")
 else:
-    print("To pomarańcza!")
+    print("To prawdopodobnie ssak lub gad.")
 ```
 
 ## Zadania do rozwiązania (10 minut)
 
-1. **Więcej danych**: Dodaj 4 własne przykłady do listy `features` i `labels`. Czy model stał się "mądrzejszy"?
-2. **Nowa cecha**: Dodaj trzecią cechę (np. kolor: 0-czerwony, 1-pomarańczowy) i sprawdź, jak wpływa na wynik.
-
-!!! note
-    To, co zrobiliśmy, nazywa się **uczeniem nadzorowanym** (supervised learning).
+1. **Akinator**: Rozbuduj drzewo decyzyjne tak, aby potrafiło rozpoznać co najmniej pięć różnych zwierząt lub postaci z gier.
+2. **Diagnoza komputera**: Napisz program, który pyta o objawy (np. „czy ekran działa?”, „czy słychać wentylator?”) i sugeruje rozwiązanie problemu z komputerem.

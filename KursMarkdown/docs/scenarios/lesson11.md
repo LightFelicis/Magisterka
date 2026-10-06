@@ -1,58 +1,115 @@
-# Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+# Lekcja 11 – Kody ASCII – zamiana liter na liczby
+
+**Czas realizacji:** 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-- Podstawy języka Python (lekcje 1-9)
-- Intuicyjne rozumienie algorytmu jako listy kroków
-- Podstawy myślenia analitycznego i krytyczne podejście do informacji
-- Podstawowe metody szyfrowania
+- Podstawy języka Python (lekcje 1–9).
+- Intuicyjne rozumienie algorytmu jako listy kroków.
+- Podstawy myślenia analitycznego i krytyczne podejście do informacji.
+- Podstawowe metody szyfrowania.
 
 ## Treści z podstawy programowej
 
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
-| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
-| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: instrukcje wejścia/wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. |
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
+
+| Dział | Sekcja |
+| --- | --- |
+| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń: | |
+| | 1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […] |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
 | V. Przestrzeganie prawa i zasad bezpieczeństwa. Uczeń: | |
-| | 1) Opisuje kwestie etyczne związane z wykorzystaniem komputerów i sieci komputerowych, takie jak: **bezpieczeństwo**, cyfrowa tożsamość, **prywatność**, **równy dostęp do informacji i dzielenie się informacją**; | 
-| IV. Rozwijanie kompetencji społecznych. Uczeń: | |
-| | 1) bierze udział w różnych formach współpracy, jak: (...) realizacja projektów (...) tworzy i prezentuje efekty wspólnej pracy |
+| | 1) opisuje kwestie etyczne związane z wykorzystaniem komputerów i sieci komputerowych, takie jak: **bezpieczeństwo**, cyfrowa tożsamość, **prywatność**, własność intelektualna, **równy dostęp do informacji i dzielenie się informacją**; |
 
-## Wstęp do projektu (10 minut)
+## Wspólne eksperymenty w języku Python (15 minut)
 
-Na poprzednich dwóch lekcjach poznawaliśmy różne metody szyfrowania, w tym szyfr Cezara oraz Leet Speak.
+Aby zrozumieć, jak komputer „widzi” litery, musimy poznać kody ASCII.
+Każda litera ma przypisaną liczbę.
 
-Program musi:
-- Wczytać wiadomość do zakodowania (może zawierać spacje).
-- Wykonać wybraną metodę szyfrowania - Cezara, ROT-13, Leet Speak, podstawieniowa.
-- Wypisać zaszyfrowaną wiadomość oraz jaka metoda szyfrowania została wybrana.
+W Pythonie funkcja `ord('A')` powie nam, jaki numer ma litera A.
+Funkcja `chr(65)` zamieni numer z powrotem na literę.
 
-Szkielet programu:
+Wielkim literom od `A` do `Z` odpowiadają kolejne kody od `65` do `90`.
+Litera `A` ma numer `65`, litera `B` ma numer `66` i tak dalej.
 
-```Python
-print("Podaj wiadomość do zakodowania")
-wiadomosc = input()
-wiadomosc_zakodowana = ""
-
-# Algorytm kodujący
-
-print(wiadomosc_zakodowana)
-print("Zaszyfrowane metodą <METODA>")
-
+```python
+litera = "A"
+kod = ord(litera)
+nowy_kod = kod + 3
+nowa_litera = chr(nowy_kod)
+print(nowa_litera) # Wypisze "D"
 ```
 
-## Samodzielna implementacja i pomysły na rozszerzenie programu (35+45 minut)
+Zagadka: Jak przesunąć literę `Z` o `1` do przodu, czyli zamienić ją na `A`?
 
-Dla chętnych, bazową wersję algorytmu mozna rozszerzyć o takie funkcjonalności, jak:
+Funkcje `ord()` i `chr()` obsługują Unicode. Dla znaków należących do ASCII otrzymujemy wartości zgodne z ASCII. W poniższych zadaniach używamy wielkich liter alfabetu angielskiego A–Z. Po przesunięciu litery Z wracamy do A, np. `chr((ord(litera) - ord("A") + 1) % 26 + ord("A"))`.
 
-* Wsparcie dla liter języka polskiego
-* Wybór metody szyfrowania (zaimplementowanie 2-3 metod)
-* Szyfrowanie zawartości pliku tekstowego (wczytaj plik.txt i stwórz plik_zakodowany.txt)
-* **TRUDNE**: Zaimplementuj metodę szyfrowania Rozier.
+## Zadania do rozwiązania na komputerze (30 minut)
 
-## Podsumowanie i prezentacja projektów
+### Zadanie 1: Rozgrzewka z ASCII
 
-Po zakończeniu pracy każdy z uczniów prezentuje swój program nauczycielowi.
-Testowanie własnego rozwiązania i wprowadzanie korekt to naturalna część pracy programisty.
+Napisz program, który wczyta jedną wielką literę alfabetu i wypisze jej kod ASCII.
+
+### Zadanie 2: Kodowanie ASCII
+
+Napisz program, który wczyta słowo i wypisze wszystkie jego litery jako kody ASCII.
+
+Na przykład dla napisu `ABC` program powinien wypisać `65 66 67`.
+
+### Zadanie 3: Mały Cezar
+
+Napisz program, który wczyta jedną wielką literę alfabetu i wypisze literę przesuniętą o 1 miejsce (szyfr Cezara z kluczem 1).
+
+### Zadanie 4: Szyfrator słów
+
+Zmodyfikuj program tak, aby wczytał słowo i wypisał je w postaci zaszyfrowanej, przesunięte o 1 miejsce. Potraktuj słowo jako ciąg znaków i do każdego zastosuj przesunięcie.
+
+## Zadania do rozwiązania na platformie Szkopuł
+
+*Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.*
+
+### Haxor
+
+![haxor](./lesson11-materials/haxor.png)
+
+Od dawna wiadomo, że hakerzy posługują się własnym językiem, różnymi skrótami i innymi formami zaciemniania, żeby zacierać ścieżki po sobie. O najlepszych z nich zwykle mawia się „h4x0rzy”.
+
+Niektórzy hakerzy czasami zamieniają niektóre litery na cyfry, żeby ich tekst wyglądał bardziej profesjonalnie. Każde wystąpienie jednej z liter podanych poniżej w tabeli zamieniane jest na odpowiadającą jej cyfrę. Pozostałe znaki pozostają niezmienione.
+
+| Litera | Cyfra |
+| :---: | :---: |
+| **a** | **4** |
+| **e** | **3** |
+| **i** | **1** |
+| **o** | **0** |
+| **s** | **5** |
+
+Napisz program, który wczyta napis, przekształci go do hakerskiego slangu zgodnie z powyższą tabelą i wypisze wynik na standardowe wyjście.
+
+Do wczytania danych wykorzystaj polecenie `tekst = input()`.
+
+#### Wejście
+
+W pierwszym (jedynym) wierszu wejścia znajduje się niepusty ciąg małych liter alfabetu angielskiego – napis, który należy przekształcić. Długość napisu nie przekracza $1\ 000\ 000$ znaków.
+
+#### Wyjście
+
+W pierwszym (jedynym) wierszu wyjścia powinien się znaleźć napis z wejścia przedstawiony w hakerskim slangu.
+
+#### Przykład
+
+| Wejście | Wyjście |
+| :--- | :--- |
+| haxor | h4x0r |
+| rigcz | r1gcz |
+| aeios | 43105 |
+
+??? tip "Wskazówka"
+    Wykorzystaj instrukcję `if` i sprawdź kody ASCII kolejnych liter słowa. Jeśli kod znaku odpowiada literze `a`,
+    wypisz `4`, podobnie z pozostałymi literami `e`, `i` itd.
+
+[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/-sW59iNCsLGhh8xyFPEmtn7F/site/?key=statement){ .md-button .md-button--primary }
+
+**Źródło:** publiczne archiwum zadań serwisu Szkopuł — [odnośnik do zadania](https://szkopul.edu.pl/problemset/problem/-sW59iNCsLGhh8xyFPEmtn7F/site/?key=statement).

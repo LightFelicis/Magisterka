@@ -1,104 +1,120 @@
-# Kody ASCII – zmiana liter w liczbę
+# Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
+
+**Czas realizacji:** 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.
+{: .lesson-duration }
 
 ## Wymagana wiedza
 
-- Podstawy języka Python (lekcje 1-9)
-- Intuicyjne rozumienie algorytmu jako listy kroków
-- Podstawy myślenia analitycznego i krytyczne podejście do informacji
-- Podstawowe metody szyfrowania
+- Podstawy języka Python (lekcje 1–9).
+
+- Intuicyjne rozumienie algorytmu jako listy kroków.
+
+- Podstawy myślenia analitycznego i krytyczne podejście do informacji.
 
 ## Treści z podstawy programowej
 
-| Dział      | Sekcja                          |
-| ----------- | ------------------------------------ |
-| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:      |  |
-|       | 1) Formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) i wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. |
-| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:       |  |
-| | 1) W programach stosuje: instrukcje wejścia/wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. |
+*Wybrane wymagania z podstawy programowej dla klas VII–VIII. [Źródło](https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka).*
+
+| Dział | Sekcja |
+| --- | --- |
+| I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń: | |
+| | 1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […] |
+| II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń: | |
+| | 1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2; |
 | V. Przestrzeganie prawa i zasad bezpieczeństwa. Uczeń: | |
-| | 1) Opisuje kwestie etyczne związane z wykorzystaniem komputerów i sieci komputerowych, takie jak: **bezpieczeństwo**, cyfrowa tożsamość, **prywatność**, **równy dostęp do informacji i dzielenie się informacją**; | 
+| | 1) opisuje kwestie etyczne związane z wykorzystaniem komputerów i sieci komputerowych, takie jak: **bezpieczeństwo**, cyfrowa tożsamość, **prywatność**, własność intelektualna, **równy dostęp do informacji i dzielenie się informacją**; |
 
-## Wspólne eksperymenty w języku Python (15 minut)
+## Wstęp teoretyczny (przewidziany na około 45 minut)
 
-Aby zrozumieć, jak komputer „widzi” litery, musimy poznać kody ASCII. 
-Każda litera ma przypisaną liczbę. 
+Znaczna część obecnej komunikacji odbywa się w Internecie. Kiedy wysyłamy wiadomość do kolegi
+przez Messengera lub inny komunikator, zakładamy, że ta wiadomość jest **zabezpieczona** i nikt inny nie
+będzie mógł jej odczytać.
 
-W Pythonie funkcja `ord('A')` powie nam, jaki numer ma litera A.
-Funkcja `chr(65)` zamieni numer z powrotem na literę.
+Zabezpieczaniem wiadomości i łamaniem ich zabezpieczeń ludzkość zajmuje się od wielu wieków.
+Dziedzina zajmująca się różnymi metodami utajniania informacji to **kryptografia**, a dzisiaj
+poznamy kilka takich metod.
 
-Litery wielkie (od `A` do `Z`) są ponumerowane zaczynając od `65`, i kolejne litery alfabetu mają kolejne wartości.
-Litera `A` ma numer `65`, litera `B` ma numer `66` i tak dalej.
+Przy projektowaniu zabezpieczeń musimy założyć, że haker (lub inna osoba planująca przechwycić wiadomość)
+może zobaczyć, co znajduje się w kopercie/wiadomości wysłanej siecią. W związku z tym zawartość
+musi być **zaszyfrowana**.
 
-```Python
-litera = "A"
-kod = ord(litera)
-nowy_kod = kod + 3
-nowa_litera = chr(nowy_kod)
-print(nowa_litera) # Wypisze "D"
+![podsluch.png](./lesson10-materials/lesson9_eve.png)
+
+Wyobraźmy sobie, że Bob chce wysłać Alicji tajną wiadomość, ale wie, że może ona zostać
+przechwycona po drodze. Hakerka Ewa otworzy kopertę, przeczyta jej zawartość, a następnie przekaże
+list od Boba do Alicji. Alicja i Bob uzgadniają **klucz** przed wysłaniem wiadomości. Zakładamy, że Ewa zna metodę szyfrowania, ale nie zna klucza.
+
+![zakodowana.png](./lesson10-materials/coded.png)
+
+Zapoznajmy się z poniższą metodą szyfrowania.
+
+### Szyfr Cezara
+
+Jest to metoda, której prawdopodobnie używał Juliusz Cezar, by komunikować się z przyjaciółmi.
+Polega ona na zmianie każdej litery alfabetu na inną, przesuwając ją o ustaloną wartość, na przykład **3**.
+
+![cezar.png](./lesson10-materials/cezar.png)
+
+Przy takim przesunięciu litera **A** zmienia się na literę **D**, litera **B** na **E** i tak dalej.
+Warto zauważyć, że ta metoda zamieni literę **Z** na literę **C**.
+
+Zaszyfrujmy słowo `TAJNA`, używając alfabetu angielskiego, bez polskich liter, takich jak `Ż`.
+
+```
+T -> W
+A -> D
+J -> M
+N -> Q
+A -> D
 ```
 
-Zagadka: Jak przesunąć literę `Z` o `1` do przodu, czyli zamienić w `A`?
+Gdyby Ewa przechwyciła taką wiadomość, zobaczyłaby słowo `WDMQD`, które nie istnieje w języku polskim.
 
-## Zadania do rozwiązania na komputerze (30 minut)
+### Wyścig kodołamaczy
 
-### Zadanie 1: Rozgrzewka z ASCII
+Zadanie:
 
-Napisz program, który wczyta jedną wielką literę alfabetu i wypisze jej kod ASCII.
+- Podzielcie się na pary: Nadawca i Łamacz.
 
-### Zadanie 2: ASCII kodowanie
+- Nadawca wybiera klucz (liczbę od 1 do 25) i szyfruje krótkie hasło (np. „PYTHON”).
 
-Napisz program, który wczyta słowo i wypisał wszystkie jego litery jako kody ASCII.
+- Łamacz próbuje odgadnąć hasło, nie znając klucza.
 
-Na przykład, dla `ABC`, program powinien wypisać `65 66 67`.
+Wnioski: Jak szybko udało się złamać szyfr? Szyfr Cezara jest słabym zabezpieczeniem, ponieważ ma tylko 25 możliwych kluczy. Metoda brute-force (sprawdzenie wszystkich możliwości) zajmuje człowiekowi kilka minut, a komputerowi ułamek sekundy.
 
-### Zadanie 3: Mały Cezar
+### ROT13
 
-Napisz program, który wczyta jedną wielką literę alfabetu i wypisze literę przesuniętą o 1 miejsce (szyfr Cezara z kluczem 1).
+ROT13 to specjalny przypadek szyfru Cezara, w którym przesunięcie to `13`. Alfabet angielski ma `26` liter, więc
+ta sama metoda zarówno szyfruje, jak i odszyfrowuje wiadomość.
 
-### Zadanie 4: Szyfrator słów
+ROT13 jest stosowany na forach internetowych, by zakryć część wiadomości, która mogłaby urazić niektórych
+uczestników rozmowy. Na przykład, spojler nowego odcinka serialu mógłby być „zakryty” przed osobami, które
+jeszcze go nie obejrzały. Jednocześnie pozostali uczestnicy rozmowy mogą szybko odczytać ukrytą wiadomość.
 
-Zmodyfikuj program tak, aby wczytał słowo i wypisał je w postaci zaszyfrowanej, przesunięte o 1 miejsce. Potraktuj słowo jako zbiór znaków i do każdego zastosuj przesunięcie.
+### Leet speak (Hack-mowa)
 
-## Zadania do rozwiązania na platformie Szkopuł
+W hack-mowie niektóre litery zastępujemy cyframi lub kombinacją znaków, które wyglądają podobnie. Jest to oparty na języku angielskim slang, stosowany w grach i na forach internetowych. Prawdopodobnie widzieliście taki zapis podczas gry, szczególnie w pseudonimach graczy. Leet speak jest sposobem zapisu, który nie zapewnia poufności.
 
-### Haxor
+Przykładowe zmiany liter:
 
-![haxor](./lesson10-materials/haxor.png)
+```
+A -> 4
+E -> 3
+```
 
-Od dawna wiadomo, że hakerzy posługują się własnym językiem, różnymi skrótami i innymi formami zaciemniania, żeby zacierać ścieżki po sobie. O najlepszych z nich zwykle mawia się „h4x0rzy”.
+Słowo `HAKER` moglibyśmy wobec tego zakodować jako `H4K3R`.
 
-Niektórzy hakerzy czasami zamieniają niektóre litery na cyfry, żeby ich tekst wyglądał bardziej profesjonalnie. Każde wystąpienie jednej z liter podanych poniżej w tabeli zamieniane jest na odpowiadającą jej cyfrę. Pozostałe znaki pozostają niezmienione.
+Większą tabelę kodowania znajdziecie na [Wikipedii](https://pl.wikipedia.org/wiki/Leet_speak
+). Zakodujcie słowo `INFORMATYKA`. Czy można tego dokonać na wiele różnych sposobów?
 
-| Litera | Cyfra |
-| :---: | :---: |
-| **a** | **4** |
-| **e** | **3** |
-| **i** | **1** |
-| **o** | **0** |
-| **s** | **5** |
+### Metoda podstawieniowa
 
-Napisz program, który wczyta napis, przekształci go do hakerskiego slangu zgodnie z powyższą tabelą i wypisze wynik na standardowe wyjście.
+Metoda podstawieniowa jest trudniejszym do złamania wariantem szyfru Cezara.
+Zamiast przesuwać każdą literę o taki sam klucz, możemy przypisać każdej literze dowolnie wybraną inną literę alfabetu,
+bez powtórzeń. Na przykład, literze `A` przypisać `Z`, a literze `B` przypisać `D`.
 
-Do wczytania danych wykorzystaj polecenie `tekst = input()`.
+Wspólnie zastanówmy się, jak można złamać taki szyfr.
 
-#### Wejście
+### Wniosek
 
-W pierwszym (jedynym) wierszu wejścia znajduje się niepusty ciąg małych liter alfabetu angielskiego – napis, który należy przekształcić. Długość napisu nie przekracza $1\ 000\ 000$ znaków.
-
-#### Wyjście
-
-W pierwszym (jedynym) wierszu wyjścia powinien się znaleźć napis z wejścia przedstawiony w hakerskim slangu.
-
-#### Przykład
-
-| Wejście | Wyjście |
-| :--- | :--- |
-| haxor | h4x0r |
-| rigcz | r1gcz |
-| aeios | 43105 |
-
-??? Wskazówka
-    Wykorzystaj instrukcję `if` i sprawdź kody ASCII kolejnych liter słowa. Jeśli kodem jest kod litery `a`,
-    wypisz `4`, podobnie z pozostałymi literami `e`, `i` itd.
-
-[Sprawdź kod na Szkopule :fontawesome-solid-paper-plane:](https://szkopul.edu.pl/problemset/problem/-sW59iNCsLGhh8xyFPEmtn7F/site/?key=statement){ .md-button .md-button--primary }
+Szyfry klasyczne służą tu jako przykłady edukacyjne i nie powinny być używane do ochrony poufnych danych.

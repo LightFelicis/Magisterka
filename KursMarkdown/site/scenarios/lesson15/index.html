@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum. - Scenariusze lekcji Informatyka</title>
+        <title>Lekcja 15 – Algorytm Euklidesa – zastosowanie - Scenariusze lekcji informatyki</title>
       
     
     
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,8 +66,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#wyszukiwanie-w-zbiorze-liniowo-znajdujemy-minimum-maksimum" class="md-skip">
-          Skip to content
+        <a href="#lekcja-15-algorytm-euklidesa-zastosowanie" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -79,8 +81,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-header__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-header__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Scenariusze lekcji Informatyka
+            Scenariusze lekcji informatyki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+              Lekcja 15 – Algorytm Euklidesa – zastosowanie
             
           </span>
         </div>
@@ -122,16 +124,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -142,7 +144,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -176,15 +178,15 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Scenariusze lekcji Informatyka" class="md-nav__button md-logo" aria-label="Scenariusze lekcji Informatyka" data-md-component="logo">
+    <a href="../.." title="Scenariusze lekcji informatyki" class="md-nav__button md-logo" aria-label="Scenariusze lekcji informatyki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Scenariusze lekcji Informatyka
+    Scenariusze lekcji informatyki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -272,34 +274,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lekcja 1 - Podstawy Pythona – pierwsze kroki. Po co programować?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../lesson1/" class="md-nav__link">
         
   
@@ -307,7 +281,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 2 - Algorytmy od kuchni i nie tylko. Podstawowe pojęcia, algorytm i jego specyfikacja.
+    Lekcja 1 – Podstawy Pythona – pierwsze kroki. Po co programować?
   
 
     
@@ -335,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 3 - Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
+    Lekcja 2 – Algorytmy od kuchni i nie tylko. Podstawowe pojęcia: algorytm i jego specyfikacja
   
 
     
@@ -363,7 +337,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 4 - Pętle for i while – iteracje, przerwania (break, continue). Jak sobie poradzić z powtarzalną pracą?
+    Lekcja 3 – Instrukcje warunkowe – if, elif, else. Jak kierować zachowaniem komputera?
   
 
     
@@ -391,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 5 - Zastosowanie praktyczne. Quiz. Jak użyć tego co umiem?
+    Lekcja 4 – Pętle for i while – iteracje oraz instrukcje break i continue. Jak radzić sobie z powtarzalnymi zadaniami?
   
 
     
@@ -419,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 6 - Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane.
+    Lekcja 5 – Zastosowanie praktyczne – quiz. Jak wykorzystać to, co umiem?
   
 
     
@@ -447,7 +421,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 7 - Matematyka z pomocą Pythona – Jak napisać program rozwiązujący moją pracę domową?
+    Lekcja 6 – Funkcje w Pythonie – argumenty, wartości zwracane, funkcje wbudowane. Jak ułatwić sobie pisanie dużych programów?
   
 
     
@@ -475,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 8 - Lista, słowa – kiedy zmienna nie wystarcza.
+    Lekcja 7 – Matematyka z pomocą Pythona. Jak napisać program rozwiązujący zadania z pracy domowej?
   
 
     
@@ -503,7 +477,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 9 - Zastosowanie praktyczne – Sterowanie „robotem”. Biblioteka turtle.
+    Lekcja 8 – Listy i napisy – kiedy jedna zmienna nie wystarcza
   
 
     
@@ -531,7 +505,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 10 - Podstawy kryptografii – Poznajemy szyfr Cezara, rot13. Dlaczego są słabym zabezpieczeniem?
+    Lekcja 9 – Zastosowanie praktyczne – sterowanie „robotem” za pomocą modułu turtle
   
 
     
@@ -559,7 +533,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 11 - Kody ASCII – zmiana liter w liczbę.
+    Lekcja 10 – Podstawy kryptografii – szyfr Cezara i ROT13. Dlaczego są słabym zabezpieczeniem?
   
 
     
@@ -587,7 +561,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 12 - Zastosowanie praktyczne. Implementacja wybranej metody szyfrowania.
+    Lekcja 11 – Kody ASCII – zamiana liter na liczby
   
 
     
@@ -615,7 +589,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 13 - Własności liczbowe – podzielność, suma cyfr, iloczyn cyfr.
+    Lekcja 12 – Zastosowanie praktyczne – implementacja wybranej metody szyfrowania lub kodowania
   
 
     
@@ -643,7 +617,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 14 - Kod binarny, szesnastkowy.
+    Lekcja 13 – Własności liczb – podzielność, suma cyfr i iloczyn cyfr
   
 
     
@@ -671,7 +645,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 15 - Algorytm Euklidesa – zastosowanie.
+    Lekcja 14 – Systemy liczbowe: dwójkowy i szesnastkowy
   
 
     
@@ -708,7 +682,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -726,7 +700,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 16 - Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum.
+    Lekcja 15 – Algorytm Euklidesa – zastosowanie
   
 
     
@@ -738,7 +712,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -747,7 +721,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -782,13 +756,52 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlaczego-odejmowanie-dziaa-dowod-intuicyjny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dlaczego odejmowanie działa? (Dowód intuicyjny)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad-na-kartce-nwd28-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład „na kartce”: NWD(28, 12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wizualizacja-geometryczna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wizualizacja geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-10-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty (15 minut)
+        Wspólne eksperymenty (10 minut)
       
     </span>
   </a>
@@ -796,10 +809,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-60-minut" class="md-nav__link">
+  <a href="#zadania-do-rozwiazania-20-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (60 minut)
+        Zadania do rozwiązania (20 minut)
       
     </span>
   </a>
@@ -819,15 +832,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minimum-na-przedziale" class="md-nav__link">
+  <a href="#nww-najmniejsza-wspolna-wielokrotnosc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimum na przedziale
+        NWW (najmniejsza wspólna wielokrotność)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Minimum na przedziale">
+    <nav class="md-nav" aria-label="NWW (najmniejsza wspólna wielokrotność)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -854,56 +867,6 @@
         
           <li class="md-nav__item">
   <a href="#przykad" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Przykład
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mistrzostwa-w-brydza-dla-olimpijczykow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mistrzostwa w brydża dla olimpijczyków
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mistrzostwa w brydża dla olimpijczyków">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wejscie_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wejście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wyjscie_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyjście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#przykad_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Przykład
@@ -946,7 +909,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 17 - Porządkowanie zbioru – sortowanie przez wybieranie.
+    Lekcja 16 – Wyszukiwanie w zbiorze – liniowe wyznaczanie minimum, maksimum i k-tego elementu
   
 
     
@@ -974,7 +937,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 18 - Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne.
+    Lekcja 17 – Porządkowanie zbioru – sortowanie przez wybieranie
   
 
     
@@ -1002,7 +965,7 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 19 - Moduł scikit-learn i sprytniejsze drzewa decyzyjne.
+    Lekcja 18 – Czym jest sztuczna inteligencja? Implementujemy uproszczone drzewo decyzyjne
   
 
     
@@ -1030,7 +993,35 @@
   <span class="md-ellipsis">
     
   
-    Lekcja 20 - Trenowanie własnego modelu i eksploracja danych.
+    Lekcja 19 – Biblioteka scikit-learn i uczenie drzew decyzyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lekcja 20 – Trenowanie własnego modelu i eksploracja danych
   
 
     
@@ -1064,7 +1055,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
@@ -1073,7 +1064,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1108,13 +1099,52 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Wstęp teoretyczny (15 minut)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlaczego-odejmowanie-dziaa-dowod-intuicyjny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dlaczego odejmowanie działa? (Dowód intuicyjny)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad-na-kartce-nwd28-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład „na kartce”: NWD(28, 12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wizualizacja-geometryczna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wizualizacja geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#wspolne-eksperymenty-15-minut" class="md-nav__link">
+  <a href="#wspolne-eksperymenty-10-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wspólne eksperymenty (15 minut)
+        Wspólne eksperymenty (10 minut)
       
     </span>
   </a>
@@ -1122,10 +1152,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zadania-do-rozwiazania-60-minut" class="md-nav__link">
+  <a href="#zadania-do-rozwiazania-20-minut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zadania do rozwiązania (60 minut)
+        Zadania do rozwiązania (20 minut)
       
     </span>
   </a>
@@ -1145,15 +1175,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minimum-na-przedziale" class="md-nav__link">
+  <a href="#nww-najmniejsza-wspolna-wielokrotnosc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimum na przedziale
+        NWW (najmniejsza wspólna wielokrotność)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Minimum na przedziale">
+    <nav class="md-nav" aria-label="NWW (najmniejsza wspólna wielokrotność)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1194,56 +1224,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#mistrzostwa-w-brydza-dla-olimpijczykow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mistrzostwa w brydża dla olimpijczyków
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mistrzostwa w brydża dla olimpijczyków">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wejscie_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wejście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wyjscie_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyjście
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#przykad_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Przykład
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1266,13 +1246,15 @@
 
 
 
-<h1 id="wyszukiwanie-w-zbiorze-liniowo-znajdujemy-minimum-maksimum">Wyszukiwanie w zbiorze – Liniowo znajdujemy minimum, maksimum</h1>
+<h1 id="lekcja-15-algorytm-euklidesa-zastosowanie">Lekcja 15 – Algorytm Euklidesa – zastosowanie</h1>
+<p class="lesson-duration"><strong>Czas realizacji:</strong> 45 minut (1 godzina lekcyjna). Podany czas jest przybliżony i należy dostosować go do potrzeb oraz tempa pracy klasy.</p>
 <h2 id="wymagana-wiedza">Wymagana wiedza</h2>
 <ul>
-<li>Listy (<code>list</code>)</li>
-<li>Pętla <code>for</code> przechodząca po elementach</li>
+<li>Pętla <code>while</code>.</li>
+<li>Pojęcie największego wspólnego dzielnika (NWD).</li>
 </ul>
 <h2 id="tresci-z-podstawy-programowej">Treści z podstawy programowej</h2>
+<p><em>Wybrane wymagania z podstawy programowej dla klas VII–VIII. <a href="https://zpe.gov.pl/podstawa-programowa/szkola-podstawowa/informatyka">Źródło</a>.</em></p>
 <table>
 <thead>
 <tr>
@@ -1282,47 +1264,76 @@
 </thead>
 <tbody>
 <tr>
-<td>I. Rozumienie, analizowanie i rozwiązywanie problemów.</td>
-<td>1) Opisuje dane i wyniki.</td>
+<td>I. Rozumienie, analizowanie i rozwiązywanie problemów. Uczeń:</td>
+<td></td>
 </tr>
 <tr>
-<td>II. Programowanie i rozwiązywanie problemów.</td>
-<td>1) Stosuje zmienne i tablice.</td>
+<td></td>
+<td>1) formułuje problem w postaci specyfikacji (czyli opisuje dane i wyniki) oraz wyróżnia kroki w algorytmicznym rozwiązywaniu problemów. […]</td>
+</tr>
+<tr>
+<td>II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera i innych urządzeń cyfrowych. Uczeń:</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1) projektuje, tworzy i testuje programy w procesie rozwiązywania problemów. W programach stosuje: instrukcje wejścia / wyjścia, wyrażenia arytmetyczne i logiczne, instrukcje warunkowe, instrukcje iteracyjne, funkcje oraz zmienne i tablice. W szczególności programuje algorytmy z działu I pkt 2;</td>
 </tr>
 </tbody>
 </table>
 <h2 id="wstep-teoretyczny-15-minut">Wstęp teoretyczny (15 minut)</h2>
-<p>Aby znaleźć najmniejszą liczbę w worku (liście), zakładamy, że pierwsza z brzegu jest najmniejsza, a potem porównujemy ją z każdą kolejną. Jeśli znajdziemy mniejszą – ona staje się naszym nowym "rekordzistą".</p>
-<h2 id="wspolne-eksperymenty-15-minut">Wspólne eksperymenty (15 minut)</h2>
-<div class="highlight"><pre><span></span><code><span class="n">liczby</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">najmniejsza</span> <span class="o">=</span> <span class="n">liczby</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">liczby</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">najmniejsza</span><span class="p">:</span>
-        <span class="n">najmniejsza</span> <span class="o">=</span> <span class="n">x</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Najmniejsza liczba to:&quot;</span><span class="p">,</span> <span class="n">najmniejsza</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="zadania-do-rozwiazania-60-minut">Zadania do rozwiązania (60 minut)</h2>
+<p>Algorytm Euklidesa to jeden z najstarszych znanych algorytmów (opisany już około 300 r. p.n.e.!). Służy do znajdowania <strong>największego wspólnego dzielnika (NWD)</strong> dwóch liczb całkowitych.</p>
+<p>Zamiast wypisywać wszystkie dzielniki obu liczb i szukać największego, Euklides zauważył pewną własność:</p>
+<h3 id="dlaczego-odejmowanie-dziaa-dowod-intuicyjny">Dlaczego odejmowanie działa? (Dowód intuicyjny)</h3>
+<p>Załóżmy, że mamy dwie liczby: <span class="arithmatex">\(a\)</span> oraz <span class="arithmatex">\(b\)</span> (<span class="arithmatex">\(a &gt; b\)</span>). Jeśli jakaś liczba <span class="arithmatex">\(d\)</span> jest wspólnym dzielnikiem <span class="arithmatex">\(a\)</span> i <span class="arithmatex">\(b\)</span>, to musi ona również dzielić ich różnicę, czyli <span class="arithmatex">\((a - b)\)</span>.</p>
+<p><strong>Dlaczego?</strong>
+1. Skoro <span class="arithmatex">\(d\)</span> dzieli <span class="arithmatex">\(a\)</span>, to możemy zapisać: <span class="arithmatex">\(a = n \cdot d\)</span>.
+2. Skoro <span class="arithmatex">\(d\)</span> dzieli <span class="arithmatex">\(b\)</span>, to możemy zapisać: <span class="arithmatex">\(b = m \cdot d\)</span>.
+3. Wtedy ich różnica: <span class="arithmatex">\(a - b = (n \cdot d) - (m \cdot d) = d \cdot (n - m)\)</span>.</p>
+<p>Odwrotnie, każdy wspólny dzielnik <span class="arithmatex">\(a-b\)</span> i <span class="arithmatex">\(b\)</span> dzieli też <span class="arithmatex">\(a = (a-b)+b\)</span>. Zatem obie pary mają te same wspólne dzielniki.</p>
+<p>Jak widzisz, różnica <span class="arithmatex">\((a - b)\)</span> również jest wielokrotnością liczby <span class="arithmatex">\(d\)</span>. Oznacza to, że szukając NWD, możemy zastąpić większą liczbę różnicą tych liczb, a wynik się nie zmieni. Powtarzając to, aż liczby będą równe, otrzymamy właśnie ich największy wspólny dzielnik.</p>
+<h3 id="przykad-na-kartce-nwd28-12">Przykład „na kartce”: NWD(28, 12)</h3>
 <ol>
-<li><strong>Maksimum</strong>: Napisz program znajdujący największy element w liście.</li>
-<li><strong>Pozycja</strong>: Zmodyfikuj program tak, aby oprócz samej wartości wypisał też indeks (miejsce), na którym znajduje się najmniejsza liczba.</li>
-<li><strong>Rozpiętość</strong>: Oblicz różnicę między największą a najmniejszą liczbą w zbiorze (tzw. rozstęp).</li>
-<li><strong>Średnia bez skrajności</strong>: Oblicz średnią ocen ucznia, ale odrzuć najniższą i najwyższą ocenę (tak jak w skokach narciarskich).</li>
+<li>Mamy parę (28, 12). <span class="arithmatex">\(28 &gt; 12\)</span>, więc odejmujemy: <span class="arithmatex">\(28 - 12 = 16\)</span>.</li>
+<li>Mamy parę (16, 12). <span class="arithmatex">\(16 &gt; 12\)</span>, więc odejmujemy: <span class="arithmatex">\(16 - 12 = 4\)</span>.</li>
+<li>Mamy parę (4, 12). <span class="arithmatex">\(12 &gt; 4\)</span>, więc odejmujemy: <span class="arithmatex">\(12 - 4 = 8\)</span>.</li>
+<li>Mamy parę (4, 8). <span class="arithmatex">\(8 &gt; 4\)</span>, więc odejmujemy: <span class="arithmatex">\(8 - 4 = 4\)</span>.</li>
+<li>Mamy parę (4, 4). Liczby są równe! <strong>NWD to 4</strong>.</li>
 </ol>
-<p>W Pythonie istnieją gotowe funkcje <code>min(lista)</code> oraz <code>max(lista)</code>, ale warto wiedzieć, jak działają "pod spodem".</p>
+<h3 id="wizualizacja-geometryczna">Wizualizacja geometryczna</h3>
+<p>Wyobraź sobie prostokąt o bokach <span class="arithmatex">\(a\)</span> i <span class="arithmatex">\(b\)</span>. Szukanie NWD to tak naprawdę próba znalezienia największego kwadratu, którym można idealnie „wykafelkować” ten prostokąt bez pozostawiania wolnych miejsc.</p>
+<h2 id="wspolne-eksperymenty-10-minut">Wspólne eksperymenty (10 minut)</h2>
+<p>Wersja z odejmowaniem wymaga dodatnich liczb całkowitych <code>a</code> i <code>b</code>. Przeanalizujmy kod:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;a: &quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;b: &quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NWD to:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="zadania-do-rozwiazania-20-minut">Zadania do rozwiązania (20 minut)</h2>
+<ol>
+<li><strong>NWW</strong>: Wykorzystaj wzór <code>NWW(a, b) = a * b // NWD(a, b)</code>, aby napisać kalkulator najmniejszej wspólnej wielokrotności.</li>
+<li><strong>Skracanie ułamków</strong>: Napisz program, który wczyta licznik i mianownik, a następnie wypisze je po podzieleniu obu przez ich NWD.</li>
+<li><strong>Wersja z modulo</strong>: Spróbuj zaimplementować szybszą wersję algorytmu Euklidesa, używając operatora <code>%</code>.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Ciekawostka</p>
+<p>W module <code>math</code> istnieje gotowa funkcja <code>gcd(a, b)</code>, która robi to samo!</p>
+</div>
 <h2 id="zadania-do-rozwiazania-na-platformie-szkopu">Zadania do rozwiązania na platformie Szkopuł</h2>
-<h3 id="minimum-na-przedziale">Minimum na przedziale</h3>
-<p>Napisz program, który dla danej tablicy liczb wyznaczy i wypisze wartość minimalną na podanym przedziale indeksów.</p>
-<p>Do wczytania danych wykorzystaj polecenia:
+<p><em>Poniższe opisy są adaptacjami redakcyjnymi treści zadań. Pełne treści są dostępne na platformie Szkopuł.</em></p>
+<h3 id="nww-najmniejsza-wspolna-wielokrotnosc">NWW (najmniejsza wspólna wielokrotność)</h3>
+<p>Napisz program, który wczyta dwie liczby całkowite i obliczy ich najmniejszą wspólną wielokrotność (NWW).</p>
+<p>Do wczytania danych wykorzystaj polecenie:
 <code>import sys</code>
-<code>dane = sys.stdin.read().split()</code></p>
+<code>a, b = map(int, sys.stdin.read().split())</code></p>
 <h4 id="wejscie">Wejście</h4>
-<p>W pierwszej linii wejścia znajduje się jedna liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 10^6\)</span>), oznaczająca liczbę elementów.</p>
-<p>W drugiej linii znajduje się <span class="arithmatex">\(n\)</span> liczb całkowitych – każda z przedziału od <span class="arithmatex">\(-10^5\)</span> do <span class="arithmatex">\(10^5\)</span>.</p>
-<p>W trzeciej linii znajdują się dwie liczby całkowite oddzielone spacją <span class="arithmatex">\(a\)</span> oraz <span class="arithmatex">\(b\)</span> (<span class="arithmatex">\(0 \le a \le b \le n - 1\)</span>), oznaczające początkowy i końcowy indeks przedziału (indeksowanie od <span class="arithmatex">\(0\)</span>).</p>
+<p>Wejście składa się z dwóch liczb całkowitych <span class="arithmatex">\(a\)</span> oraz <span class="arithmatex">\(b\)</span> (<span class="arithmatex">\(2 \le a, b \le 32\ 000\)</span>), podanych w osobnych wierszach lub oddzielonych odstępem.</p>
 <h4 id="wyjscie">Wyjście</h4>
-<p>Twój program powinien wypisać jedną liczbę całkowitą – najmniejszą wartość wśród elementów od indeksu <span class="arithmatex">\(a\)</span> do indeksu <span class="arithmatex">\(b\)</span> włącznie.</p>
+<p>W jedynym wierszu wyjścia wypisz jedną liczbę całkowitą – najmniejszą wspólną wielokrotność liczb <span class="arithmatex">\(a\)</span> i <span class="arithmatex">\(b\)</span>.</p>
 <h4 id="przykad">Przykład</h4>
 <table>
 <thead>
@@ -1333,70 +1344,22 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">6<br>2 5 4 7 1 8<br>1 3</td>
-<td style="text-align: left;">4</td>
+<td style="text-align: left;">12<br>15</td>
+<td style="text-align: left;">60</td>
+</tr>
+<tr>
+<td style="text-align: left;">7<br>14</td>
+<td style="text-align: left;">14</td>
 </tr>
 </tbody>
 </table>
-<p><em>Wyjaśnienie:</em>
-Dla indeksów od 1 do 3 wartości w liście to odpowiednio: <span class="arithmatex">\(5\)</span> (indeks 1), <span class="arithmatex">\(4\)</span> (indeks 2) oraz <span class="arithmatex">\(7\)</span> (indeks 3). Najmniejsza z tych liczb to <span class="arithmatex">\(4\)</span>.</p>
-<details class="wskazówka">
+<details class="tip">
 <summary>Wskazówka</summary>
-<p>Stosując pętlę for lub while, sprawdź każdy element listy pomiędzy indeksami <code>a</code> i <code>b</code>. </p>
+<p>Najmniejszą wspólną wielokrotność można obliczyć, wykorzystując największy wspólny dzielnik (NWD) ze wzoru:
+$<span class="arithmatex">\(\text{NWW}(a, b) = \frac{a \cdot b}{\text{NWD}(a, b)}\)</span>$</p>
 </details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/minp/site">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
-<h3 id="mistrzostwa-w-brydza-dla-olimpijczykow">Mistrzostwa w brydża dla olimpijczyków</h3>
-<p><img alt="karty" src="../lesson15-materials/karty.png" /></p>
-<p>Kuba zapisał się na mistrzostwa w brydża dla olimpijczyków. Brydż to szlachetna gra, w której każdy z czterech graczy dostaje rękę złożoną z dokładnie 13 kart ze standardowej talii. Dla pewności: standardowa talia to taka, w której każda z kart: <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code>, <code>10</code>, <code>J</code>, <code>Q</code>, <code>K</code>, <code>A</code> występuje w dokładnie czterech kopiach (kolory kart są nieważne).</p>
-<p>Podstawowy system punktacji ręki jest następujący:
-* Walet (<code>J</code>) – 1 punkt
-* Dama (<code>Q</code>) – 2 punkty
-* Król (<code>K</code>) – 3 punkty
-* As (<code>A</code>) – 4 punkty
-* Pozostałe poprawne karty (<code>2</code>–<code>10</code>) – 0 punktów</p>
-<p>Kuba trenując do turnieju ćwiczy liczenie punktów. W tym celu rozdał sobie <span class="arithmatex">\(n\)</span> kart i poprosił Cię o wyznaczenie wartości punktowej ręki. Kuba jako znany troll lubi jednak oszukiwać i zaprezentowana ręka niekoniecznie musi być legalna. </p>
-<p>Ręka jest <strong>nielegalna</strong>, jeśli spełniony jest choć jeden z warunków:
-1. Nie składa się z dokładnie 13 kart (<span class="arithmatex">\(n \neq 13\)</span>).
-2. Zawiera niedozwoloną wartość karty (jakąkolwiek inną niż podane powyżej).
-3. Zawiera więcej niż 4 kopie którejś z poprawnych kart.</p>
-<p>Do wczytania danych wykorzystaj polecenia:
-<code>import sys</code>
-<code>dane = sys.stdin.read().split()</code></p>
-<h4 id="wejscie_1">Wejście</h4>
-<p>W pierwszym wierszu wejścia znajduje się jedna liczba całkowita <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(1 \le n \le 52\)</span>), oznaczająca liczbę kart na ręce Kuby.</p>
-<p>Każdy z kolejnych <span class="arithmatex">\(n\)</span> wierszy zawiera jeden napis złożony jedynie z cyfr i wielkich liter alfabetu łacińskiego (o długości co najwyżej 5), reprezentujący wartość kolejnej karty.</p>
-<h4 id="wyjscie_1">Wyjście</h4>
-<p>Twój program powinien wypisać jedną liczbę całkowitą – sumaryczną wartość punktową ręki Kuby, o ile jest ona legalna. Jeśli ręka jest niezgodna z zasadami, wypisz słowo <code>OSZUST!</code>.</p>
-<h4 id="przykad_1">Przykład</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Wejście</th>
-<th style="text-align: left;">Wyjście</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">13<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>J<br>Q<br>K<br>K</td>
-<td style="text-align: left;">9</td>
-</tr>
-<tr>
-<td style="text-align: left;">33<br>2<br>2<br>2<br>2<br>3<br>3<br>3<br>3<br>4<br>4<br>4<br>4<br>5<br>5<br>5<br>5<br>6<br>6<br>6<br>6<br>7<br>7<br>7<br>7<br>8<br>8<br>8<br>8<br>9<br>9<br>9<br>9<br>10</td>
-<td style="text-align: left;">OSZUST!</td>
-</tr>
-</tbody>
-</table>
-<p><em>Wyjaśnienie dla przykładu 1:</em>
-Ręka jest zgodna z zasadami (13 kart), warta 9 punktów: 1 za <code>J</code>, 2 za <code>Q</code> i 6 za dwa <code>K</code>.</p>
-<p><em>Wyjaśnienie dla przykładu 2:</em>
-33 karty na ręce zamiast 13? OSZUST!</p>
-<details class="wskazówka">
-<summary>Wskazówka</summary>
-<p>Najpierw sprawdź, czy <span class="arithmatex">\(n == 13\)</span>. Jeśli nie, od razu wypisz <code>OSZUST!</code>. Potem, utwórz listę,
-która zlicza ile razy wystąpiła każda karta. Przejdź po kartach trzymanych przez Kubę,
-i kolejno sprawdzaj, ile razy wystąpił dany rodzaj.</p>
-</details>
-<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/TE3Ga-gbceEEst3mL-gFw_AT/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href="https://szkopul.edu.pl/problemset/problem/r2en9YCg-KJu9-nMJCMxQfZQ/site/?key=statement">Sprawdź kod na Szkopule <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg></span></a></p>
+<p><strong>Źródło:</strong> publiczne archiwum zadań serwisu Szkopuł — <a href="https://szkopul.edu.pl/problemset/problem/r2en9YCg-KJu9-nMJCMxQfZQ/site/?key=statement">odnośnik do zadania</a>.</p>
 
 
 
@@ -1446,14 +1409,12 @@ i kolejno sprawdzaj, ile razy wystąpił dany rodzaj.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="../../javascripts/preview-popup.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
       
